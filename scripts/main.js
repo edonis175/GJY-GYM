@@ -1,13 +1,8 @@
-/* ============================================
-   Eo Fitness - External JavaScript File
-   Interactive Functionality
-   ============================================ */
-
 // Wait for DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", function () {
   /* ============================================
        DYNAMIC COPYRIGHT YEAR
-       Updates the copyright year automatically
+       Updates the copyright year automatically in Footer Section
        ============================================ */
   function EoUpdateCopyrightYear() {
     const copyrightYearElement = document.getElementById("EoCopyrightYear");
@@ -20,104 +15,104 @@ document.addEventListener("DOMContentLoaded", function () {
   // Call function to update copyright year
   EoUpdateCopyrightYear();
 
-  /* ============================================
-       FORM VALIDATION
-       Custom form validation with HTML5 validation
-       ============================================ */
-  const EoContactForm = document.getElementById("EoContactForm");
+  // /* ============================================
+  //      FORM VALIDATION
+  //      Custom form validation with HTML5 validation in Contact Form Section
+  //      ============================================ */
+  // const EoContactForm = document.getElementById("EoContactForm");
 
-  if (EoContactForm) {
-    // Get form inputs
-    const EoFormName = document.getElementById("EoFormName");
-    const EoFormEmail = document.getElementById("EoFormEmail");
-    const EoFormMessage = document.getElementById("EoFormMessage");
+  // if (EoContactForm) {
+  //   // Get form inputs
+  //   const EoFormName = document.getElementById("EoFormName");
+  //   const EoFormEmail = document.getElementById("EoFormEmail");
+  //   const EoFormMessage = document.getElementById("EoFormMessage");
 
-    // Real-time validation on input
-    EoFormName.addEventListener("input", function () {
-      EoValidateField(this, this.value.length >= 2);
-    });
+  //   // Real-time validation on input
+  //   EoFormName.addEventListener("input", function () {
+  //     EoValidateField(this, this.value.length >= 2);
+  //   });
 
-    EoFormEmail.addEventListener("input", function () {
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      EoValidateField(this, emailPattern.test(this.value));
-    });
+  //   EoFormEmail.addEventListener("input", function () {
+  //     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //     EoValidateField(this, emailPattern.test(this.value));
+  //   });
 
-    EoFormMessage.addEventListener("input", function () {
-      EoValidateField(this, this.value.length >= 10);
-    });
+  //   EoFormMessage.addEventListener("input", function () {
+  //     EoValidateField(this, this.value.length >= 10);
+  //   });
 
-    // Form submission handler
-    EoContactForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-      event.stopPropagation();
+  //   // Form submission handler
+  //   EoContactForm.addEventListener("submit", function (event) {
+  //     event.preventDefault();
+  //     event.stopPropagation();
 
-      // Validate all fields
-      let isNameValid = EoFormName.value.length >= 2;
-      let isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(EoFormEmail.value);
-      let isMessageValid = EoFormMessage.value.length >= 10;
+  //     // Validate all fields
+  //     let isNameValid = EoFormName.value.length >= 2;
+  //     let isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(EoFormEmail.value);
+  //     let isMessageValid = EoFormMessage.value.length >= 10;
 
-      // Update validation states
-      EoValidateField(EoFormName, isNameValid);
-      EoValidateField(EoFormEmail, isEmailValid);
-      EoValidateField(EoFormMessage, isMessageValid);
+  //     // Update validation states
+  //     EoValidateField(EoFormName, isNameValid);
+  //     EoValidateField(EoFormEmail, isEmailValid);
+  //     EoValidateField(EoFormMessage, isMessageValid);
 
-      // Check if form is valid
-      if (isNameValid && isEmailValid && isMessageValid) {
-        // Form is valid - show success alert
-        EoShowFormSuccessAlert();
+  //     // Check if form is valid
+  //     if (isNameValid && isEmailValid && isMessageValid) {
+  //       // Form is valid - show success alert
+  //       EoShowFormSuccessAlert();
 
-        // Reset form after successful submission
-        setTimeout(function () {
-          EoContactForm.reset();
-          EoContactForm.classList.remove("was-validated");
-          // Remove validation classes from inputs
-          EoFormName.classList.remove("is-invalid", "is-valid");
-          EoFormEmail.classList.remove("is-invalid", "is-valid");
-          EoFormMessage.classList.remove("is-invalid", "is-valid");
-        }, 2000);
-      } else {
-        // Form is invalid - add Bootstrap validation class
-        EoContactForm.classList.add("was-validated");
-      }
-    });
-  }
+  //       // Reset form after successful submission
+  //       setTimeout(function () {
+  //         EoContactForm.reset();
+  //         EoContactForm.classList.remove("was-validated");
+  //         // Remove validation classes from inputs
+  //         EoFormName.classList.remove("is-invalid", "is-valid");
+  //         EoFormEmail.classList.remove("is-invalid", "is-valid");
+  //         EoFormMessage.classList.remove("is-invalid", "is-valid");
+  //       }, 2000);
+  //     } else {
+  //       // Form is invalid - add Bootstrap validation class
+  //       EoContactForm.classList.add("was-validated");
+  //     }
+  //   });
+  // }
 
   // Helper function to validate individual fields
-  function EoValidateField(field, isValid) {
-    if (isValid) {
-      field.classList.remove("is-invalid");
-      field.classList.add("is-valid");
-    } else {
-      field.classList.remove("is-valid");
-      field.classList.add("is-invalid");
-    }
-  }
+  // function EoValidateField(field, isValid) {
+  //   if (isValid) {
+  //     field.classList.remove("is-invalid");
+  //     field.classList.add("is-valid");
+  //   } else {
+  //     field.classList.remove("is-valid");
+  //     field.classList.add("is-invalid");
+  //   }
+  // }
 
-  // Function to show success alert after form submission
-  function EoShowFormSuccessAlert() {
-    // Create alert element
-    const alertDiv = document.createElement("div");
-    alertDiv.className =
-      "alert alert-success alert-dismissible fade show EoFormSuccessAlert";
-    alertDiv.setAttribute("role", "alert");
-    alertDiv.innerHTML = `
-            <i class="fas fa-check-circle me-2"></i>
-            <strong>Success!</strong> Thank you for contacting us. We will get back to you soon!
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        `;
+  // // Function to show success alert after form submission
+  // function EoShowFormSuccessAlert() {
+  //   // Create alert element
+  //   const alertDiv = document.createElement("div");
+  //   alertDiv.className =
+  //     "alert alert-success alert-dismissible fade show EoFormSuccessAlert";
+  //   alertDiv.setAttribute("role", "alert");
+  //   alertDiv.innerHTML = `
+  //           <i class="fas fa-check-circle me-2"></i>
+  //           <strong>Success!</strong> Thank you for contacting us. We will get back to you soon!
+  //           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  //       `;
 
-    // Insert alert before the form
-    const formSection = document.querySelector(".EoFormSection");
-    if (formSection) {
-      formSection.insertBefore(alertDiv, EoContactForm);
+  //   // Insert alert before the form
+  //   const formSection = document.querySelector(".EoFormSection");
+  //   if (formSection) {
+  //     formSection.insertBefore(alertDiv, EoContactForm);
 
-      // Auto-dismiss after 5 seconds
-      setTimeout(function () {
-        const bsAlert = new bootstrap.Alert(alertDiv);
-        bsAlert.close();
-      }, 5000);
-    }
-  }
+  //     // Auto-dismiss after 5 seconds
+  //     setTimeout(function () {
+  //       const bsAlert = new bootstrap.Alert(alertDiv);
+  //       bsAlert.close();
+  //     }, 5000);
+  //   }
+  // }
 
   /* ============================================
        CAROUSEL CONTROL
@@ -128,20 +123,16 @@ document.addEventListener("DOMContentLoaded", function () {
   if (EoMainCarousel) {
     // Initialize carousel
     const carousel = new bootstrap.Carousel(EoMainCarousel, {
-      interval: 5000, // Auto-advance every 5 seconds
+      interval: 6000, // Auto-advance every 6 seconds
       wrap: true,
       keyboard: true,
       pause: "hover",
     });
 
     // Add custom event listeners
-    EoMainCarousel.addEventListener("slide.bs.carousel", function (event) {
-      console.log("Carousel sliding to slide:", event.to);
-    });
+    EoMainCarousel.addEventListener("slide.bs.carousel", function (event) {});
 
-    EoMainCarousel.addEventListener("slid.bs.carousel", function (event) {
-      console.log("Carousel finished sliding to slide:", event.to);
-    });
+    EoMainCarousel.addEventListener("slid.bs.carousel", function (event) {});
 
     // Custom function to go to specific slide
     window.EoGoToCarouselSlide = function (slideIndex) {

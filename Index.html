@@ -34,16 +34,23 @@
   <body id="EoBody">
     <!-- HEADER: Responsive Bootstrap Navbar -->
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark EoNavbar">
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark EoNavbar">
         <div class="container">
-          <!-- Website Logo -->
-          <a class="navbar-brand EoLogo" href="index.html">
+          <!-- <a class="navbar-brand EoLogo" href="index.html">
             <i class="fas fa-dumbbell me-2"></i>GJY-Gym
+          </a> -->
+          <!-- Website Logo -->
+          <a href="#" class="Eo-Logo">
+            <img
+              src="./images/ChatGPT Image Dec 7, 2025, 07_23_45 PM.png"
+              alt="GJY-Gym Fitness Logo"
+              class="EoLogoImage"
+            />
           </a>
 
           <!-- Mobile Hamburger Menu Button -->
           <button
-            class="navbar-toggler"
+            class="navbar-toggler navbar-light bg-light collapsed"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#EoNavbarNav"
@@ -51,64 +58,43 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span class="toggler-icon hamburger-icon">&#9776;</span>
+            <span class="toggler-icon close-icon">&times;</span>
           </button>
 
           <!-- Navbar Links -->
           <div class="collapse navbar-collapse" id="EoNavbarNav">
             <ul class="navbar-nav ms-auto EoNavLinks">
-              <li class="nav-item">
+              <li class="Eo-nav-itemH">
                 <a class="nav-link active" href="index.html">Home</a>
               </li>
-              <li class="nav-item">
+              <li class="Eo-nav-itemAb">
                 <a class="nav-link" href="about.html">About</a>
               </li>
-              <li class="nav-item">
+              <li class="Eo-nav-itemS">
                 <a class="nav-link" href="services.html">Services</a>
               </li>
-              <li class="nav-item">
+              <li class="Eo-nav-itemB">
                 <a class="nav-link" href="Blog.html">Blog</a>
               </li>
-              <li class="nav-item">
+              <li class="Eo-nav-itemG">
                 <a class="nav-link" href="Gallery.html">Gallery</a>
               </li>
-              <li class="nav-item">
+              <li class="Eo-nav-itemT">
                 <a class="nav-link" href="Team.html">Team</a>
               </li>
-              <li class="nav-item">
+              <li class="Eo-nav-itemP">
                 <a class="nav-link" href="Programs.html">Programs</a>
               </li>
 
-              <li class="nav-item">
+              <li class="Eo-nav-itemF">
                 <a class="nav-link" href="Faq.html">FAQ</a>
               </li>
-              <li class="nav-item">
+              <li class="Eo-nav-itemTes">
                 <a class="nav-link" href="Testimonials.html">Testimonials</a>
               </li>
-              <li class="nav-item">
+              <li class="Eo-nav-itemC">
                 <a class="nav-link" href="Contact.html">Contact</a>
-              </li>
-              <li class="nav-item dropdown">
-                <ul
-                  class="dropdown-menu EoDropdownMenu"
-                  aria-labelledby="EoDropdownMenu"
-                >
-                  <li><a class="dropdown-item" href="Blog.html">Blog</a></li>
-                  <li><a class="dropdown-item" href="Team.html">Team</a></li>
-                  <li>
-                    <a class="dropdown-item" href="Testimonials.html"
-                      >Testimonials</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="Gallery.html">Gallery</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="Programs.html">Programs</a>
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li><a class="dropdown-item" href="Faq.html">FAQ</a></li>
-                </ul>
               </li>
             </ul>
           </div>
@@ -118,170 +104,7 @@
 
     <!-- MAIN CONTENT -->
     <main>
-      <!-- Carousel Section -->
-      <section class="EoCarouselSection">
-        <div id="EoMainCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#EoMainCarousel"
-              data-bs-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#EoMainCarousel"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#EoMainCarousel"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img
-                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=600&fit=crop"
-                class="d-block w-100 EoCarouselImage"
-                alt="Fitness Training"
-              />
-              <div class="carousel-caption d-none d-md-block EoCarouselCaption">
-                <h1 class="EoCarouselHeading">Transform Your Body</h1>
-                <p class="EoCarouselText">
-                  Start your fitness journey today with professional trainers
-                </p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&h=600&fit=crop"
-                class="d-block w-100 EoCarouselImage"
-                alt="Group Training"
-              />
-              <div class="carousel-caption d-none d-md-block EoCarouselCaption">
-                <h1 class="EoCarouselHeading">Join Our Community</h1>
-                <p class="EoCarouselText">
-                  Train with like-minded individuals and achieve your goals
-                </p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=1200&h=600&fit=crop"
-                class="d-block w-100 EoCarouselImage"
-                alt="Strength Training"
-              />
-              <div class="carousel-caption d-none d-md-block EoCarouselCaption">
-                <h1 class="EoCarouselHeading">Build Your Strength</h1>
-                <p class="EoCarouselText">
-                  Professional equipment and expert guidance for maximum results
-                </p>
-              </div>
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#EoMainCarousel"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#EoMainCarousel"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </section>
-
-      <!-- Welcome Section with All Heading Levels -->
-      <section class="container my-5 EoWelcomeSection">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h1 class="EoMainHeading">Welcome to GJY-Gym Fitness</h1>
-            <h2 class="EoSubHeading">Your Journey to Excellence Starts Here</h2>
-            <h3 class="EoSectionHeading">State-of-the-Art Facilities</h3>
-            <h4 class="EoSubSectionHeading">Professional Training Equipment</h4>
-            <h5 class="EoMinorHeading">Expert Trainers</h5>
-            <h6 class="EoSmallHeading">24/7 Support</h6>
-            <p class="EoWelcomeText">
-              At GJY-Gym Fitness, we believe in transforming lives through
-              fitness. Our comprehensive programs are designed to help you
-              achieve your health and wellness goals, whether you're a beginner
-              or an experienced athlete.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Image/Video Section -->
-      <section class="container my-5 EoMediaSection">
-        <div class="row">
-          <div class="col-md-6 EoImageContainer">
-            <img
-              src="./images/file_00000000456461f78a6d8d2132c4c054.png"
-              class="img-fluid rounded EoFitnessImage"
-              alt="Fitness Training Session"
-            />
-          </div>
-          <div class="col-md-6 EoVideoContainer">
-            <div class="ratio ratio-16x9 EoVideoWrapper">
-              <iframe
-                id="EoFitnessVideo"
-                width="100%"
-                height="950px"
-                src="https://www.youtube.com/embed/B12MXF0bSFo?enablejsapi=1&controls=1&loop=1&playlist=B12MXF0bSFo"
-                title="Fitness Video"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- List Section -->
-      <section class="container my-5 EoListSection">
-        <div class="row">
-          <div class="col-lg-6">
-            <h3 class="EoListHeading">Why Choose GJY-Gym Fitness?</h3>
-            <ul class="EoFeatureList">
-              <li class="EoListItem">Certified Personal Trainers</li>
-              <li class="EoListItem">Modern Equipment & Facilities</li>
-              <li class="EoListItem">Flexible Membership Plans</li>
-              <li class="EoListItem">Group Training Classes</li>
-              <li class="EoListItem">Nutritional Guidance</li>
-              <li class="EoListItem">24/7 Gym Access (Premium Members)</li>
-              <li class="EoListItem">Progress Tracking App</li>
-              <li class="EoListItem">Community Support & Events</li>
-            </ul>
-          </div>
-          <div class="col-lg-6">
-            <h3 class="EoListHeading">Training Steps to Success</h3>
-            <ol class="EoStepsList">
-              <li class="EoStepItem">Initial Fitness Assessment</li>
-              <li class="EoStepItem">Customized Workout Plan</li>
-              <li class="EoStepItem">Regular Training Sessions</li>
-              <li class="EoStepItem">Progress Monitoring</li>
-              <li class="EoStepItem">Plan Adjustments</li>
-              <li class="EoStepItem">Achieve Your Goals</li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
+      <div id="Eo-main-Section"></div>
       <!-- Table Section: Membership Plans -->
       <section class="container my-5 EoTableSection">
         <h2 class="text-center mb-4 EoTableHeading">Membership Plans</h2>
@@ -327,45 +150,6 @@
               </tr>
             </tbody>
           </table>
-        </div>
-      </section>
-
-      <!-- Eo Special Training Section -->
-      <section class="container my-5 EoSpecialSection">
-        <div class="row">
-          <div class="col-12">
-            <div class="card EoSpecialCard">
-              <div class="card-body text-center">
-                <h2 class="card-title EoSpecialTitle">
-                  Eo Special Training Section
-                </h2>
-                <p class="card-text EoSpecialText">
-                  Introducing our exclusive Eo Special Training Program - a
-                  revolutionary approach to fitness that combines high-intensity
-                  interval training (HIIT), functional movement, and
-                  personalized coaching. This program is designed specifically
-                  for individuals who want to maximize their results in minimal
-                  time.
-                </p>
-                <p class="EoSpecialFeatures">
-                  <strong>What Makes It Special:</strong> Our Eo Special
-                  Training uses cutting-edge techniques including metabolic
-                  conditioning, mobility work, and strength building in one
-                  comprehensive session. Each workout is tailored to your
-                  fitness level and goals, ensuring you get the most effective
-                  training experience.
-                </p>
-                <button
-                  type="button"
-                  class="btn btn-primary btn-lg EoSpecialButton"
-                  data-bs-toggle="modal"
-                  data-bs-target="#EoSpecialModal"
-                >
-                  Learn More About Eo Special Training
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -429,104 +213,6 @@
                 >
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Bootstrap Alert Section -->
-      <section class="container my-5 EoAlertSection">
-        <div
-          class="alert alert-success alert-dismissible fade show EoSuccessAlert"
-          role="alert"
-        >
-          <i class="fas fa-check-circle me-2"></i>
-          <strong>New Member Special!</strong> Join this month and get your
-          first month free. Limited time offer!
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="alert"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="alert alert-info EoInfoAlert" role="alert">
-          <i class="fas fa-info-circle me-2"></i>
-          <strong>Did you know?</strong> Regular exercise can improve your
-          mental health and boost your energy levels significantly.
-        </div>
-      </section>
-
-      <!-- Contact Form Section -->
-      <section class="container my-5 EoFormSection">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <h2 class="text-center mb-4 EoFormHeading">Get In Touch</h2>
-            <form id="EoContactForm" class="EoContactForm" novalidate>
-              <div class="mb-3">
-                <label for="EoFormName" class="form-label EoFormLabel"
-                  >Name <span class="text-danger">*</span></label
-                >
-                <input
-                  type="text"
-                  class="form-control EoFormInput"
-                  id="EoFormName"
-                  name="name"
-                  required
-                  minlength="2"
-                  placeholder="Enter your full name"
-                />
-                <div class="invalid-feedback EoFormFeedback">
-                  Please provide a valid name (at least 2 characters).
-                </div>
-              </div>
-              <div class="mb-3">
-                <label for="EoFormEmail" class="form-label EoFormLabel"
-                  >Email <span class="text-danger">*</span></label
-                >
-                <input
-                  type="email"
-                  class="form-control EoFormInput"
-                  id="EoFormEmail"
-                  name="email"
-                  required
-                  placeholder="Enter your email address"
-                />
-                <div class="invalid-feedback EoFormFeedback">
-                  Please provide a valid email address.
-                </div>
-              </div>
-              <div class="mb-3">
-                <label for="EoFormMessage" class="form-label EoFormLabel"
-                  >Message <span class="text-danger">*</span></label
-                >
-                <textarea
-                  class="form-control EoFormTextarea"
-                  id="EoFormMessage"
-                  name="message"
-                  rows="5"
-                  required
-                  minlength="10"
-                  placeholder="Enter your message"
-                ></textarea>
-                <div class="invalid-feedback EoFormFeedback">
-                  Please provide a message (at least 10 characters).
-                </div>
-              </div>
-              <div class="text-center">
-                <button
-                  type="submit"
-                  class="btn btn-primary btn-lg EoFormSubmit"
-                >
-                  Submit
-                </button>
-                <button
-                  type="reset"
-                  class="btn btn-secondary btn-lg ms-2 EoFormReset"
-                >
-                  Reset
-                </button>
-              </div>
-            </form>
           </div>
         </div>
       </section>
@@ -594,8 +280,8 @@
           <div class="col-12">
             <div class="text-center py-3 EoCopyright">
               <p class="mb-0 EoCopyrightText">
-                &copy; <span id="EoCopyrightYear"></span> Eo Fitness. All rights
-                reserved.
+                &copy; <span id="EoCopyrightYear"></span> GJY-GYM Fitness. All
+                rights reserved.
               </p>
             </div>
           </div>

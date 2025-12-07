@@ -111,22 +111,23 @@
 
 /* Navbar Custom Styling */
 .EoNavbar {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--EoBgOverlay);
   padding: 1rem 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Logo Styling */
-.EoLogo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--EoThemeHeadingText) !important;
-  text-decoration: none;
-  transition: transform 0.3s ease;
+.Eo-Logo {
+  max-width: 100px;
+  height: 80px;
+  transform: scale(0.1);
 }
-
-.EoLogo:hover {
-  transform: scale(1.05);
+.EoLogoImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -250px;
+  margin-left: -500px;
 }
 
 /* Navbar Links Styling */
@@ -179,226 +180,46 @@
   background-color: #667eea;
   color: #fff;
 }
-
-/* ============================================
- CAROUSEL STYLES
- ============================================ */
-
-/* Carousel Section */
-.EoCarouselSection {
-  margin-top: 0;
+/* Hide the close icon by default */
+.navbar-toggler .close-icon {
+  display: none;
 }
 
-.EoCarouselImage {
-  height: 600px;
-  object-fit: cover;
-  filter: brightness(0.7);
+/* Show the hamburger icon when the navbar is in collapsed state */
+.navbar-toggler.collapsed .hamburger-icon {
+  display: inline;
 }
 
-/* Carousel Caption */
-.EoCarouselCaption {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
-  border-radius: 10px;
-  backdrop-filter: blur(5px);
+/* Hide the hamburger icon when the navbar is expanded (not collapsed) */
+.navbar-toggler:not(.collapsed) .hamburger-icon {
+  display: none;
 }
 
-.EoCarouselHeading {
-  font-size: 3.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+/* Display the close icon when the navbar is expanded, with slight bottom padding */
+.navbar-toggler:not(.collapsed) .close-icon {
+  display: block;
+  padding-bottom: 5px;
 }
 
-.EoCarouselText {
-  font-size: 1.25rem;
-  font-weight: 400;
-}
-
-/* ============================================
- HEADING STYLES
- ============================================ */
-
-/* Main Heading */
-.EoMainHeading {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #667eea;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-}
-
-/* Sub Heading */
-.EoSubHeading {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #764ba2;
-  margin-bottom: 1rem;
-}
-
-/* Section Heading */
-.EoSectionHeading {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 0.75rem;
-}
-
-/* Sub Section Heading */
-.EoSubSectionHeading {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #555;
-  margin-bottom: 0.5rem;
-}
-
-/* Minor Heading */
-.EoMinorHeading {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #666;
-  margin-bottom: 0.5rem;
-}
-
-/* Small Heading */
-.EoSmallHeading {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #777;
-  margin-bottom: 0.5rem;
-}
-
-/* Welcome Section */
-.EoWelcomeSection {
-  padding: 3rem 0;
-}
-
-.EoWelcomeText {
-  font-size: 1.1rem;
-  color: #555;
-  margin-top: 1.5rem;
-  line-height: 1.8;
-}
-
-/* ============================================
- MEDIA SECTION STYLES
- ============================================ */
-
-.EoMediaSection {
-  padding: 2rem 0;
-}
-
-.EoImageContainer {
-  margin-bottom: 2rem;
-}
-
-.EoFitnessImage {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.EoFitnessImage:hover {
-  transform: scale(1.02);
-}
-
-.EoVideoContainer {
-  margin-bottom: 2rem;
-}
-
-.EoVideoWrapper {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.EoFitnessVideo {
-  border: none;
-}
-
-/* ============================================
- LIST SECTION STYLES
- ============================================ */
-
-.EoListSection {
-  padding: 2rem 0;
-  background-color: #f8f9fa;
-  border-radius: 10px;
-  margin: 2rem 0;
-}
-
-.EoListHeading {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #667eea;
-  margin-bottom: 1.5rem;
-}
-
-/* Feature List (Unordered) */
-.EoFeatureList {
-  list-style: none;
-  padding-left: 0;
-}
-
-.EoListItem {
-  padding: 0.75rem 0;
-  padding-left: 2rem;
-  position: relative;
-  font-size: 1.1rem;
-  color: #555;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.EoListItem::before {
-  content: "\f00c";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  position: absolute;
-  left: 0;
-  color: #667eea;
-  font-size: 1.2rem;
-}
-
-.EoListItem:last-child {
-  border-bottom: none;
-}
-
-/* Steps List (Ordered) */
-.EoStepsList {
-  counter-reset: step-counter;
-  list-style: none;
-  padding-left: 0;
-}
-
-.EoStepItem {
-  counter-increment: step-counter;
-  padding: 0.75rem 0;
-  padding-left: 3rem;
-  position: relative;
-  font-size: 1.1rem;
-  color: #555;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.EoStepItem::before {
-  content: counter(step-counter);
-  position: absolute;
-  left: 0;
-  top: 0.5rem;
-  width: 2rem;
-  height: 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #fff;
-  border-radius: 50%;
+/* Style the toggler icons with fixed size and center them both horizontally and vertically */
+.toggler-icon {
+  font-size: 30px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 1rem;
+  align-items: center;
 }
-
-.EoStepItem:last-child {
-  border-bottom: none;
+@media screen and (max-width: 980px) {
+  .EoLogoImage {
+    margin-left: 900px;
+    margin-right: auto;
+  }
+}
+#Eo-main-Section {
+  background-image: url(../images/HomeBanner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; /* This makes the image cover the whole area */
+  background-position: center; /* This centers the image */
+  height: 970px;
 }
 
 /* ============================================
@@ -442,64 +263,6 @@
 .EoTableBody tr:hover {
   background-color: #f0f0f0;
   transition: background-color 0.3s ease;
-}
-
-/* ============================================
- SPECIAL TRAINING SECTION
- ============================================ */
-
-.EoSpecialSection {
-  padding: 3rem 0;
-  background: linear-gradient(
-    135deg,
-    rgba(102, 126, 234, 0.1) 0%,
-    rgba(118, 75, 162, 0.1) 100%
-  );
-  border-radius: 15px;
-  margin: 3rem 0;
-}
-
-.EoSpecialCard {
-  border: none;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 15px;
-  overflow: hidden;
-}
-
-.EoSpecialTitle {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #667eea;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-}
-
-.EoSpecialText {
-  font-size: 1.1rem;
-  color: #555;
-  line-height: 1.8;
-  margin-bottom: 1rem;
-}
-
-.EoSpecialFeatures {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-}
-
-.EoSpecialButton {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
-  padding: 1rem 2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.EoSpecialButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
 /* ============================================
@@ -565,104 +328,6 @@
   background-color: #667eea;
   color: #fff;
   transform: translateY(-2px);
-}
-
-/* ============================================
- ALERT SECTION STYLES
- ============================================ */
-
-.EoAlertSection {
-  padding: 2rem 0;
-}
-
-.EoSuccessAlert {
-  border-left: 5px solid #28a745;
-  border-radius: 8px;
-  font-size: 1.1rem;
-}
-
-.EoInfoAlert {
-  border-left: 5px solid #17a2b8;
-  border-radius: 8px;
-  font-size: 1.1rem;
-}
-
-/* ============================================
- FORM SECTION STYLES
- ============================================ */
-
-.EoFormSection {
-  padding: 3rem 0;
-  background-color: #f8f9fa;
-  border-radius: 15px;
-  margin: 3rem 0;
-}
-
-.EoFormHeading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #667eea;
-  text-transform: uppercase;
-}
-
-.EoContactForm {
-  background: #fff;
-  padding: 2.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.EoFormLabel {
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-}
-
-.EoFormInput,
-.EoFormTextarea {
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-.EoFormInput:focus,
-.EoFormTextarea:focus {
-  border-color: #667eea;
-  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
-  outline: none;
-}
-
-.EoFormInput.is-invalid,
-.EoFormTextarea.is-invalid {
-  border-color: #dc3545;
-}
-
-.EoFormFeedback {
-  font-size: 0.9rem;
-  color: #dc3545;
-}
-
-.EoFormSubmit {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
-  padding: 0.75rem 2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.EoFormSubmit:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-}
-
-.EoFormReset {
-  padding: 0.75rem 2rem;
-  font-weight: 600;
-  text-transform: uppercase;
 }
 
 /* ============================================
@@ -740,10 +405,29 @@
 }
 
 .EoSocialIcon:hover {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);
   color: #fff;
+}
+
+.EoSocialIcon:nth-child(1):hover {
+  background: #1877f2;
+}
+
+.EoSocialIcon:nth-child(2):hover {
+  background: rgb(143, 100, 19);
+}
+
+.EoSocialIcon:nth-child(3):hover {
+  background: #1da1f2;
+}
+
+.EoSocialIcon:nth-child(4):hover {
+  background: #ff0000;
+}
+
+.EoSocialIcon:nth-child(5):hover {
+  background: #0a66c2;
 }
 
 /* Copyright Section */
