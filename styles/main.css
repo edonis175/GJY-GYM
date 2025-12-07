@@ -1,7 +1,921 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
+/* ============================================
+   CSS COLOR VARIABLES
+   Root, Light Mode, and Dark Mode Variables
+   ============================================ */
+
+/* Root/Base Color Variables (Default - Light Mode) */
+:root {
+  /* Primary Colors */
+  --EoPrimary: #667eea;
+  --EoPrimaryDark: #764ba2;
+  --EoPrimaryLight: #8b9ef0;
+  --EoPrimaryGradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+  /* Secondary Colors */
+  --EoSecondary: #6c757d;
+  --EoSecondaryDark: #5a6268;
+  --EoSecondaryLight: #868e96;
+
+  /* Accent Colors */
+  --EoAccent: #f39c12;
+  --EoAccentDark: #e67e22;
+  --EoAccentLight: #f5b041;
+
+  /* Background Colors */
+  --EoBgPrimary: #ffffff;
+  --EoBgSecondary: #f8f9fa;
+  --EoBgTertiary: #e9ecef;
+  --EoBgOverlay: rgba(0, 0, 0, 0.5);
+  --EoBgGradient: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.1) 0%,
+    rgba(118, 75, 162, 0.1) 100%
+  );
+
+  /* Theme Specific */
+  --EoThemeBg: #ffffff;
+  --EoThemeText: #333333;
+  --EoThemeHeadingText: #f8f8f8;
+  --EoThemeCardBg: #ffffff;
+  --EoThemeBorder: #e0e0e0;
+}
+
+/* Light Mode Variables (Explicit) */
+[data-theme="light"],
+:root {
+  /* Light mode uses the same as root */
+  --EoThemeBg: #ffffff;
+  --EoThemeText: #333333;
+  --EoThemeHeadingText: #f8f8f8;
+  --EoThemeCardBg: #ffffff;
+  --EoThemeBorder: #e0e0e0;
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+  /* Primary Colors  */
+  --EoPrimary: #7c8ef5;
+  --EoPrimaryDark: #8b6fb8;
+  --EoPrimaryLight: #9ba5f8;
+  --EoPrimaryGradient: linear-gradient(135deg, #7c8ef5 0%, #8b6fb8 100%);
+
+  /* Secondary Colors */
+  --EoSecondary: #6c757d;
+  --EoSecondaryDark: #5a6268;
+  --EoSecondaryLight: #868e96;
+
+  /* Accent Colors */
+  --EoAccent: #f39c12;
+  --EoAccentDark: #e67e22;
+  --EoAccentLight: #f5b041;
+
+  /* Background Colors */
+  --EoBgPrimary: #1a1a1a;
+  --EoBgSecondary: #2d2d2d;
+  --EoBgTertiary: #3a3a3a;
+  --EoBgOverlay: rgba(0, 0, 0, 0.7);
+  --EoBgGradient: linear-gradient(
+    135deg,
+    rgba(124, 142, 245, 0.15) 0%,
+    rgba(139, 111, 184, 0.15) 100%
+  );
+
+  /* Theme Specific */
+  --EoThemeBg: #1a1a1a;
+  --EoThemeText: #e0e0e0;
+  --EoThemeCardBg: #2d2d2d;
+  --EoThemeBorder: #404040;
+  --EoCardShadow: rgba(0, 0, 0, 0.3);
+  --EoCardShadowHover: rgba(0, 0, 0, 0.5);
+}
+
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Body ID Styling */
+#EoBody {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+ HEADER & NAVBAR STYLES
+ ============================================ */
+
+/* Navbar Custom Styling */
+.EoNavbar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Styling */
+.EoLogo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--EoThemeHeadingText) !important;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.EoLogo:hover {
+  transform: scale(1.05);
+}
+
+/* Navbar Links Styling */
+.EoNavLinks .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.EoNavLinks .nav-link:hover,
+.EoNavLinks .nav-link.active {
+  color: #fff !important;
+}
+
+.EoNavLinks .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.EoNavLinks .nav-link:hover::after,
+.EoNavLinks .nav-link.active::after {
+  width: 80%;
+}
+
+/* Dropdown Menu Styling */
+.EoDropdownMenu {
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.EoDropdownMenu .dropdown-item {
+  color: #333;
+  padding: 0.75rem 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.EoDropdownMenu .dropdown-item:hover {
+  background-color: #667eea;
+  color: #fff;
+}
+
+/* ============================================
+ CAROUSEL STYLES
+ ============================================ */
+
+/* Carousel Section */
+.EoCarouselSection {
+  margin-top: 0;
+}
+
+.EoCarouselImage {
+  height: 600px;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+/* Carousel Caption */
+.EoCarouselCaption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+.EoCarouselHeading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.EoCarouselText {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+/* ============================================
+ HEADING STYLES
+ ============================================ */
+
+/* Main Heading */
+.EoMainHeading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+/* Sub Heading */
+.EoSubHeading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #764ba2;
+  margin-bottom: 1rem;
+}
+
+/* Section Heading */
+.EoSectionHeading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+
+/* Sub Section Heading */
+.EoSubSectionHeading {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+/* Minor Heading */
+.EoMinorHeading {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+/* Small Heading */
+.EoSmallHeading {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+
+/* Welcome Section */
+.EoWelcomeSection {
+  padding: 3rem 0;
+}
+
+.EoWelcomeText {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 1.5rem;
+  line-height: 1.8;
+}
+
+/* ============================================
+ MEDIA SECTION STYLES
+ ============================================ */
+
+.EoMediaSection {
+  padding: 2rem 0;
+}
+
+.EoImageContainer {
+  margin-bottom: 2rem;
+}
+
+.EoFitnessImage {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.EoFitnessImage:hover {
+  transform: scale(1.02);
+}
+
+.EoVideoContainer {
+  margin-bottom: 2rem;
+}
+
+.EoVideoWrapper {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.EoFitnessVideo {
+  border: none;
+}
+
+/* ============================================
+ LIST SECTION STYLES
+ ============================================ */
+
+.EoListSection {
+  padding: 2rem 0;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  margin: 2rem 0;
+}
+
+.EoListHeading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 1.5rem;
+}
+
+/* Feature List (Unordered) */
+.EoFeatureList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.EoListItem {
+  padding: 0.75rem 0;
+  padding-left: 2rem;
+  position: relative;
+  font-size: 1.1rem;
+  color: #555;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.EoListItem::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-size: 1.2rem;
+}
+
+.EoListItem:last-child {
+  border-bottom: none;
+}
+
+/* Steps List (Ordered) */
+.EoStepsList {
+  counter-reset: step-counter;
+  list-style: none;
+  padding-left: 0;
+}
+
+.EoStepItem {
+  counter-increment: step-counter;
+  padding: 0.75rem 0;
+  padding-left: 3rem;
+  position: relative;
+  font-size: 1.1rem;
+  color: #555;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.EoStepItem::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.EoStepItem:last-child {
+  border-bottom: none;
+}
+
+/* ============================================
+ TABLE SECTION STYLES
+ ============================================ */
+
+.EoTableSection {
+  padding: 2rem 0;
+}
+
+.EoTableHeading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #667eea;
+  text-transform: uppercase;
+}
+
+.EoMembershipTable {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.EoTableHeader {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+}
+
+.EoTableHeader th {
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 1rem;
+  border: none;
+}
+
+.EoTableBody td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.EoTableBody tr:hover {
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+/* ============================================
+ SPECIAL TRAINING SECTION
+ ============================================ */
+
+.EoSpecialSection {
+  padding: 3rem 0;
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.1) 0%,
+    rgba(118, 75, 162, 0.1) 100%
+  );
+  border-radius: 15px;
+  margin: 3rem 0;
+}
+
+.EoSpecialCard {
+  border: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.EoSpecialTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #667eea;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.EoSpecialText {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.EoSpecialFeatures {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.EoSpecialButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.EoSpecialButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* ============================================
+ CARDS SECTION STYLES
+ ============================================ */
+
+.EoCardsSection {
+  padding: 3rem 0;
+}
+
+.EoCardsHeading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #667eea;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.EoServiceCard {
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.EoServiceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.EoCardImage {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.EoServiceCard:hover .EoCardImage {
+  transform: scale(1.1);
+}
+
+.EoCardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.EoCardText {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.EoCardButton {
+  border: 2px solid #667eea;
+  color: #667eea;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.EoCardButton:hover {
+  background-color: #667eea;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ============================================
+ ALERT SECTION STYLES
+ ============================================ */
+
+.EoAlertSection {
+  padding: 2rem 0;
+}
+
+.EoSuccessAlert {
+  border-left: 5px solid #28a745;
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+
+.EoInfoAlert {
+  border-left: 5px solid #17a2b8;
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+
+/* ============================================
+ FORM SECTION STYLES
+ ============================================ */
+
+.EoFormSection {
+  padding: 3rem 0;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  margin: 3rem 0;
+}
+
+.EoFormHeading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #667eea;
+  text-transform: uppercase;
+}
+
+.EoContactForm {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.EoFormLabel {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.EoFormInput,
+.EoFormTextarea {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.EoFormInput:focus,
+.EoFormTextarea:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+  outline: none;
+}
+
+.EoFormInput.is-invalid,
+.EoFormTextarea.is-invalid {
+  border-color: #dc3545;
+}
+
+.EoFormFeedback {
+  font-size: 0.9rem;
+  color: #dc3545;
+}
+
+.EoFormSubmit {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.EoFormSubmit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.EoFormReset {
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ============================================
+ FOOTER STYLES
+ ============================================ */
+
+.EoFooter {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: #fff;
+  margin-top: auto;
+  padding: 2rem 0 0;
+}
+
+.EoFooterHeading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.EoFooterLinks {
+  list-style: none;
+  padding: 0;
+}
+
+.EoFooterLink {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.EoFooterLink:hover {
+  color: #fff;
+  padding-left: 0.5rem;
+}
+
+.EoFooterContact {
+  list-style: none;
+  padding: 0;
+}
+
+.EoFooterContactItem {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.EoFooterContactItem i {
+  color: #667eea;
+  width: 20px;
+}
+
+/* Social Media Icons */
+.EoSocialMedia {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.EoSocialIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.EoSocialIcon:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);
+  color: #fff;
+}
+
+/* Copyright Section */
+.EoCopyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
+}
+
+.EoCopyrightText {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+/* ============================================
+ MODAL STYLES
+ ============================================ */
+
+.EoModalContent {
+  border-radius: 15px;
+  border: none;
+  overflow: hidden;
+}
+
+.EoModalHeader {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border-bottom: none;
+  padding: 1.5rem;
+}
+
+.EoModalTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.EoModalBody {
+  padding: 2rem;
+}
+
+.EoModalSubtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.EoModalSubtitle:first-child {
+  margin-top: 0;
+}
+
+.EoModalText {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.EoModalList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.EoModalList li {
+  padding: 0.5rem 0;
+  padding-left: 2rem;
+  position: relative;
+  color: #555;
+}
+
+.EoModalList li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: #667eea;
+}
+
+.EoModalFooter {
+  border-top: 1px solid #e0e0e0;
+  padding: 1.5rem;
+}
+
+.EoModalButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  font-weight: 600;
+}
+
+.EoModalButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);
+}
+
+/* ============================================
+ RESPONSIVE STYLES
+ ============================================ */
+
+/* Tablet Styles */
+@media (max-width: 992px) {
+  .EoCarouselHeading {
+    font-size: 2.5rem;
+  }
+
+  .EoCarouselText {
+    font-size: 1rem;
+  }
+
+  .EoMainHeading {
+    font-size: 2.5rem;
+  }
+
+  .EoSubHeading {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .EoCarouselImage {
+    height: 400px;
+  }
+
+  .EoCarouselHeading {
+    font-size: 2rem;
+  }
+
+  .EoCarouselText {
+    font-size: 0.9rem;
+  }
+
+  .EoMainHeading {
+    font-size: 2rem;
+  }
+
+  .EoSubHeading {
+    font-size: 1.75rem;
+  }
+
+  .EoSectionHeading {
+    font-size: 1.5rem;
+  }
+
+  .EoContactForm {
+    padding: 1.5rem;
+  }
+
+  .EoSocialMedia {
+    justify-content: center;
+  }
+
+  .EoFooter {
+    text-align: center;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 576px) {
+  .EoCarouselImage {
+    height: 300px;
+  }
+
+  .EoCarouselHeading {
+    font-size: 1.5rem;
+  }
+
+  .EoMainHeading {
+    font-size: 1.75rem;
+  }
+
+  .EoTableSection {
+    overflow-x: auto;
+  }
 }
