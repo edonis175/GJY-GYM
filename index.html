@@ -31,16 +31,15 @@
     <!-- External JavaScript -->
     <script src="./scripts/main.js" defer></script>
   </head>
+  <!-- Main body container with my Intials ID -->
   <body id="EoBody">
     <!-- HEADER: Responsive Bootstrap Navbar -->
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-dark EoNavbar">
+      <nav class="navbar navbar-expand-lg bg-dark EoNavbar">
+        <!-- Bootstrap container for fixed width -->
         <div class="container">
-          <!-- <a class="navbar-brand EoLogo" href="index.html">
-            <i class="fas fa-dumbbell me-2"></i>GJY-Gym
-          </a> -->
           <!-- Website Logo -->
-          <a href="#" class="Eo-Logo">
+          <a href="#" class="Eo-Logo" alt="Website logo">
             <img
               src="./images/ChatGPT Image Dec 7, 2025, 07_23_45 PM.png"
               alt="GJY-Gym Fitness Logo"
@@ -48,9 +47,9 @@
             />
           </a>
 
-          <!-- Mobile Hamburger Menu Button -->
+          <!-- Mobile Hamburger Menu Button - Bootstrap: navbar-toggler, navbar-light, bg-light, collapsed -->
           <button
-            class="navbar-toggler navbar-light bg-light collapsed"
+            class="navbar-toggler bg-white collapsed"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#EoNavbarNav"
@@ -58,13 +57,17 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
+            <!-- Custom classes: toggler-icon, hamburger-icon, close-icon (hamburger menu icons X and 3 lines) -->
             <span class="toggler-icon hamburger-icon">&#9776;</span>
             <span class="toggler-icon close-icon">&times;</span>
           </button>
 
-          <!-- Navbar Links -->
+          <!-- Navbar Links - Bootstrap: collapse, navbar-collapse -->
           <div class="collapse navbar-collapse" id="EoNavbarNav">
+            <!-- Bootstrap: navbar-nav -->
             <ul class="navbar-nav ms-auto EoNavLinks">
+              <!-- Each nav item has custom classes: Eo-nav-itemH, Eo-nav-itemAb, etc. -->
+              <!-- Bootstrap: nav-link, active -->
               <li class="Eo-nav-itemH">
                 <a class="nav-link active" href="index.html">Home</a>
               </li>
@@ -104,7 +107,15 @@
 
     <!-- MAIN CONTENT -->
     <main>
-      <div id="Eo-main-Section"></div>
+      <section id="Eo-main-Section" class="Eo-text-center py-5 px-5">
+        <h1 class="Eo-main-title text-start py-5 px-5">
+          Transform Your Body. Elevate Your Life.
+        </h1>
+        <p class="Eo-main-p text-start py-5 px-5">
+          No matter your experience or goals, our expert trainers and premium
+          equipment make it easy to build a routine that works for you
+        </p>
+      </section>
       <!-- Table Section: Membership Plans -->
       <section class="container my-5 EoTableSection">
         <h2 class="text-center mb-4 EoTableHeading">Membership Plans</h2>
@@ -255,7 +266,7 @@
                 <i class="fas fa-phone me-2"></i>(555) 123-4567
               </li>
               <li class="EoFooterContactItem">
-                <i class="fas fa-envelope me-2"></i>info@GJY-GYM Fitness.com
+                <i class="fas fa-envelope me-2"></i>info@GJY-GYMFitness.com
               </li>
             </ul>
           </div>

@@ -7,55 +7,62 @@
 
 /* Root/Base Color Variables (Default - Light Mode) */
 :root {
-  /* Primary Colors */
+  /* Primary Colors - The main colors used for buttons and important stuff */
   --EoPrimary: #667eea;
   --EoPrimaryDark: #764ba2;
   --EoPrimaryLight: #8b9ef0;
   --EoPrimaryGradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 
-  /* Secondary Colors */
+  /* Secondary Colors - Gray colors used for less important text */
   --EoSecondary: #6c757d;
   --EoSecondaryDark: #5a6268;
   --EoSecondaryLight: #868e96;
 
-  /* Accent Colors */
+  /* Accent Colors - Orange/yellow colors that stand out and grab attention */
   --EoAccent: #f39c12;
   --EoAccentDark: #e67e22;
   --EoAccentLight: #f5b041;
 
-  /* Background Colors */
-  --EoBgPrimary: #ffffff;
-  --EoBgSecondary: #f8f9fa;
-  --EoBgTertiary: #e9ecef;
-  --EoBgOverlay: rgba(0, 0, 0, 0.5);
+  /* Background Colors - Different shades used for backgrounds and layers */
+  --EoBgPrimary: #ffffff; /* White - main background */
+  --EoBgSecondary: #f8f9fa; /* Light gray - secondary background */
+  --EoBgTertiary: #e9ecef; /* Darker gray - third level */
+  --EoBgOverlay: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Semi-transparent black - used for overlays on images */
   --EoBgGradient: linear-gradient(
     135deg,
     rgba(102, 126, 234, 0.1) 0%,
     rgba(118, 75, 162, 0.1) 100%
   );
 
-  /* Theme Specific */
-  --EoThemeBg: #ffffff;
-  --EoThemeText: #333333;
-  --EoThemeHeadingText: #f8f8f8;
-  --EoThemeCardBg: #ffffff;
-  --EoThemeBorder: #e0e0e0;
+  /* Theme Specific - The colors the whole site uses */
+  --EoThemeBg: #ffffff; /* Page background */
+  --EoThemeText: #333333; /* Regular text color */
+  --EoThemeHeadingText: #f8f8f8; /* Heading text color */
+  --EoThemeCardBg: #ffffff; /* Card/box backgrounds */
+  --EoThemeBorder: #e0e0e0; /* Borders and dividers */
 }
 
-/* Light Mode Variables (Explicit) */
+/* Light Mode Variables (Explicit)
+   When the site is in light mode, it uses these colors */
 [data-theme="light"],
 :root {
-  /* Light mode uses the same as root */
-  --EoThemeBg: #ffffff;
-  --EoThemeText: #333333;
-  --EoThemeHeadingText: #f8f8f8;
-  --EoThemeCardBg: #ffffff;
-  --EoThemeBorder: #e0e0e0;
+  /* Light mode uses the same colors as the default */
+  --EoThemeBg: #ffffff; /* White background */
+  --EoThemeText: #333333; /* Dark text (easy to read on white) */
+  --EoThemeHeadingText: #f8f8f8; /* Very light gray text */
+  --EoThemeCardBg: #ffffff; /* White cards */
+  --EoThemeBorder: #e0e0e0; /* Light gray borders */
 }
 
-/* Dark Mode Variables */
+/* Dark Mode Variables
+   When the site switches to dark mode, these colors replace the light mode ones */
 [data-theme="dark"] {
-  /* Primary Colors  */
+  /* Primary Colors for dark mode - brighter colors so they show up on dark backgrounds */
   --EoPrimary: #7c8ef5;
   --EoPrimaryDark: #8b6fb8;
   --EoPrimaryLight: #9ba5f8;
@@ -71,165 +78,176 @@
   --EoAccentDark: #e67e22;
   --EoAccentLight: #f5b041;
 
-  /* Background Colors */
-  --EoBgPrimary: #1a1a1a;
-  --EoBgSecondary: #2d2d2d;
-  --EoBgTertiary: #3a3a3a;
-  --EoBgOverlay: rgba(0, 0, 0, 0.7);
+  /* Background Colors - now dark instead of light */
+  --EoBgPrimary: #1a1a1a; /* Very dark gray/black - main background */
+  --EoBgSecondary: #2d2d2d; /* Dark gray - secondary background */
+  --EoBgTertiary: #3a3a3a; /* Slightly lighter dark gray */
+  --EoBgOverlay: rgba(0, 0, 0, 0.7); /* More opaque dark overlay */
   --EoBgGradient: linear-gradient(
     135deg,
     rgba(124, 142, 245, 0.15) 0%,
     rgba(139, 111, 184, 0.15) 100%
   );
 
-  /* Theme Specific */
-  --EoThemeBg: #1a1a1a;
-  --EoThemeText: #e0e0e0;
-  --EoThemeCardBg: #2d2d2d;
-  --EoThemeBorder: #404040;
-  --EoCardShadow: rgba(0, 0, 0, 0.3);
-  --EoCardShadowHover: rgba(0, 0, 0, 0.5);
+  /* Theme Specific - dark versions */
+  --EoThemeBg: #1a1a1a; /* Dark background */
+  --EoThemeText: #e0e0e0; /* Light gray text (easy to read on dark) */
+  --EoThemeCardBg: #2d2d2d; /* Dark cards */
+  --EoThemeBorder: #404040; /* Dark borders */
+  --EoCardShadow: rgba(0, 0, 0, 0.3); /* Shadow for dark mode */
+  --EoCardShadowHover: rgba(0, 0, 0, 0.5); /* Darker shadow on hover */
 }
 
-/* Global Styles */
+/* Global Styles - These apply to EVERYTHING on the page */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Remove default spacing around elements */
+  padding: 0; /* Remove default padding inside elements */
+  box-sizing: border-box; /* Make sizing calculations easier */
 }
 
-/* Body ID Styling */
+/* Body ID Styling - The main container for our whole page */
 #EoBody {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh; /* Make it at least the full height of the screen */
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Stack items vertically */
 }
 
 /* ============================================
- HEADER & NAVBAR STYLES
+ HEADER & NAVBAR STYLES - The top menu bar
  ============================================ */
 
-/* Navbar Custom Styling */
+/* Navbar Custom Styling - Make the navigation bar look nice */
 .EoNavbar {
-  background: var(--EoBgOverlay);
-  padding: 1rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: var(
+    --EoBgOverlay
+  ); /* Use our semi-transparent dark background variable */
+  padding: 1rem 0; /* Add space around the navbar */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow underneath */
 }
 
-/* Logo Styling */
+/* Logo Styling - The gym logo image */
 .Eo-Logo {
-  max-width: 100px;
-  height: 80px;
-  transform: scale(0.1);
+  max-width: 100px; /* Don't let it get wider than 100px */
+  height: 80px; /* Height is 80px */
+  transform: scale(0.1); /* Make it 10% of its original size */
 }
 .EoLogoImage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -250px;
-  margin-left: -500px;
+  display: flex; /* Use flexbox to center it */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-top: -250px; /* Move it up (negative margin) */
+  margin-left: -500px; /* Move it left */
 }
 
-/* Navbar Links Styling */
+/* Navbar Links Styling - The menu items in the navbar */
 .EoNavLinks .nav-link {
-  color: rgba(255, 255, 255, 0.9) !important;
-  font-weight: 500;
-  margin: 0 0.5rem;
-  transition: color 0.3s ease;
-  position: relative;
+  color: rgba(255, 255, 255, 0.9) !important; /* Almost white text */
+  font-weight: 500; /* Make text a bit thicker */
+  margin: 0 0.5rem; /* Add space on left and right */
+  transition: color 0.3s ease; /* Smoothly change color when hovering */
+  position: relative; /* Needed for the line effect below */
 }
 
+/* When you hover over or click a link, make it brighter white */
 .EoNavLinks .nav-link:hover,
 .EoNavLinks .nav-link.active {
   color: #fff !important;
 }
 
+/* Add a line underneath the links when you hover or click them */
 .EoNavLinks .nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: #fff;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
+  content: ""; /* Create an empty element using ::after */
+  position: absolute; /* Position it relative to the link */
+  bottom: 0; /* Put it at the bottom */
+  left: 50%; /* Start from the middle */
+  width: 0; /* Start with no width */
+  height: 2px; /* Make it 2px tall */
+  background: #fff; /* White color */
+  transition: all 0.3s ease; /* Smoothly animate it */
+  transform: translateX(-50%); /* Move it left so it grows from center */
 }
 
+/* When hovering or on the active link, make the line grow */
 .EoNavLinks .nav-link:hover::after,
 .EoNavLinks .nav-link.active::after {
-  width: 80%;
+  width: 65%;
+}
+/* Mobile view - full width line */
+@media (max-width: 768px) {
+  .EoNavLinks .nav-link:hover::after,
+  .EoNavLinks .nav-link.active::after {
+    width: 100%; /* Make the line 100% of the link width on mobile */
+  }
 }
 
 /* Dropdown Menu Styling */
-.EoDropdownMenu {
-  background-color: #fff;
-  border: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  margin-top: 0.5rem;
-}
-
 .EoDropdownMenu .dropdown-item {
-  color: #333;
-  padding: 0.75rem 1.5rem;
-  transition: background-color 0.3s ease;
+  color: #333; /* Dark text */
+  padding: 0.75rem 1.5rem; /* Space inside each item */
+  transition: background-color 0.3s ease; /* Smoothly change background on hover */
 }
 
 .EoDropdownMenu .dropdown-item:hover {
-  background-color: #667eea;
-  color: #fff;
+  color: #fff; /* White text on hover */
 }
-/* Hide the close icon by default */
+
+/* Hamburger Menu - Mobile menu button styling */
+
+/* Hide the close icon by default (show hamburger lines instead) */
 .navbar-toggler .close-icon {
   display: none;
 }
 
-/* Show the hamburger icon when the navbar is in collapsed state */
+/* Show the hamburger icon when the navbar is closed (collapsed state) */
 .navbar-toggler.collapsed .hamburger-icon {
   display: inline;
 }
 
-/* Hide the hamburger icon when the navbar is expanded (not collapsed) */
+/* Hide the hamburger icon when the navbar is open (not collapsed) */
 .navbar-toggler:not(.collapsed) .hamburger-icon {
   display: none;
 }
 
-/* Display the close icon when the navbar is expanded, with slight bottom padding */
+/* Show the close icon (X) when the navbar is open, with slight bottom padding */
 .navbar-toggler:not(.collapsed) .close-icon {
   display: block;
   padding-bottom: 5px;
 }
 
-/* Style the toggler icons with fixed size and center them both horizontally and vertically */
+/* Style the toggle icons (hamburger and X) - make them big and centered */
 .toggler-icon {
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 30px; /* Make them large */
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
+
+/* Media query for tablets and larger screens - adjust logo position */
 @media screen and (max-width: 980px) {
   .EoLogoImage {
-    margin-left: 900px;
+    margin-left: 900px; /* Move logo to the right side */
     margin-right: auto;
   }
 }
+
+/* Hero Banner Section - Big image at top of home page */
 #Eo-main-Section {
-  background-image: url(../images/HomeBanner.jpg);
-  background-repeat: no-repeat;
-  background-size: cover; /* This makes the image cover the whole area */
-  background-position: center; /* This centers the image */
-  height: 970px;
+  background-image: url(../images/HomeBanner.jpg); /* Use the home banner image */
+  background-repeat: no-repeat; /* Don't repeat the image */
+  background-size: cover; /* Make the image cover the whole area */
+  background-position: center; /* Center the image */
+  height: 100vh; /* Make it fill the full viewport height */
 }
 
 /* ============================================
- TABLE SECTION STYLES
+ TABLE SECTION STYLES - The membership plans table
  ============================================ */
 
 .EoTableSection {
-  padding: 2rem 0;
+  padding: 2rem 0; /* Add space above and below */
 }
 
+/* The main heading above the table */
 .EoTableHeading {
   font-size: 2.5rem;
   font-weight: 700;
