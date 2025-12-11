@@ -1,101 +1,63 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sekuya&display=swap");
 /* ============================================
    CSS COLOR VARIABLES
    Root, Light Mode, and Dark Mode Variables
    ============================================ */
 
-/* Root/Base Color Variables (Default - Light Mode) */
+/* =========================================
+   ROOT — Base Tokens (never change)
+========================================= */
 :root {
-  /* Primary Colors - The main colors used for buttons and important stuff */
-  --EoPrimary: #667eea;
-  --EoPrimaryDark: #764ba2;
-  --EoPrimaryLight: #8b9ef0;
-  --EoPrimaryGradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* Brand */
+  --primary: #667eea;
+  --accent: #f39c12;
 
-  /* Secondary Colors - Gray colors used for less important text */
-  --EoSecondary: #6c757d;
-  --EoSecondaryDark: #5a6268;
-  --EoSecondaryLight: #868e96;
+  /* Neutral gray scale */
+  --gray-0: #ffffff;
+  --gray-50: #f8f9fa;
+  --gray-100: #f1f3f5;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-900: #1a1a1a;
 
-  /* Accent Colors - Orange/yellow colors that stand out and grab attention */
-  --EoAccent: #f39c12;
-  --EoAccentDark: #e67e22;
-  --EoAccentLight: #f5b041;
-
-  /* Background Colors - Different shades used for backgrounds and layers */
-  --EoBgPrimary: #ffffff; /* White - main background */
-  --EoBgSecondary: #f8f9fa; /* Light gray - secondary background */
-  --EoBgTertiary: #e9ecef; /* Darker gray - third level */
-  --EoBgOverlay: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* Semi-transparent black - used for overlays on images */
-  --EoBgGradient: linear-gradient(
-    135deg,
-    rgba(102, 126, 234, 0.1) 0%,
-    rgba(118, 75, 162, 0.1) 100%
-  );
-
-  /* Theme Specific - The colors the whole site uses */
-  --EoThemeBg: #ffffff; /* Page background */
-  --EoThemeText: #333333; /* Regular text color */
-  --EoThemeHeadingText: #f8f8f8; /* Heading text color */
-  --EoThemeCardBg: #ffffff; /* Card/box backgrounds */
-  --EoThemeBorder: #e0e0e0; /* Borders and dividers */
+  /* Global UI tokens */
+  --radius: 8px;
+  --transition: 0.3s ease;
 }
 
-/* Light Mode Variables (Explicit)
-   When the site is in light mode, it uses these colors */
+/* =========================================
+   LIGHT MODE
+========================================= */
 [data-theme="light"],
 :root {
-  /* Light mode uses the same colors as the default */
-  --EoThemeBg: #ffffff; /* White background */
-  --EoThemeText: #333333; /* Dark text (easy to read on white) */
-  --EoThemeHeadingText: #f8f8f8; /* Very light gray text */
-  --EoThemeCardBg: #ffffff; /* White cards */
-  --EoThemeBorder: #e0e0e0; /* Light gray borders */
+  --bg: var(--gray-0);
+  --bg-secondary: var(--gray-50);
+
+  --text: #333333;
+  --text-muted: #6c757d;
+
+  --card-bg: var(--gray-0);
+  --border: var(--gray-200);
+
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-hover: rgba(0, 0, 0, 0.2);
 }
 
-/* Dark Mode Variables
-   When the site switches to dark mode, these colors replace the light mode ones */
+/* =========================================
+   DARK MODE
+========================================= */
 [data-theme="dark"] {
-  /* Primary Colors for dark mode - brighter colors so they show up on dark backgrounds */
-  --EoPrimary: #7c8ef5;
-  --EoPrimaryDark: #8b6fb8;
-  --EoPrimaryLight: #9ba5f8;
-  --EoPrimaryGradient: linear-gradient(135deg, #7c8ef5 0%, #8b6fb8 100%);
+  --bg: #1a1a1a;
+  --bg-secondary: #2a2a2a;
 
-  /* Secondary Colors */
-  --EoSecondary: #6c757d;
-  --EoSecondaryDark: #5a6268;
-  --EoSecondaryLight: #868e96;
+  --text: #e0e0e0;
+  --text-muted: #9e9e9e;
 
-  /* Accent Colors */
-  --EoAccent: #f39c12;
-  --EoAccentDark: #e67e22;
-  --EoAccentLight: #f5b041;
+  --card-bg: #2d2d2d;
+  --border: #404040;
 
-  /* Background Colors - now dark instead of light */
-  --EoBgPrimary: #1a1a1a; /* Very dark gray/black - main background */
-  --EoBgSecondary: #2d2d2d; /* Dark gray - secondary background */
-  --EoBgTertiary: #3a3a3a; /* Slightly lighter dark gray */
-  --EoBgOverlay: rgba(0, 0, 0, 0.7); /* More opaque dark overlay */
-  --EoBgGradient: linear-gradient(
-    135deg,
-    rgba(124, 142, 245, 0.15) 0%,
-    rgba(139, 111, 184, 0.15) 100%
-  );
-
-  /* Theme Specific - dark versions */
-  --EoThemeBg: #1a1a1a; /* Dark background */
-  --EoThemeText: #e0e0e0; /* Light gray text (easy to read on dark) */
-  --EoThemeCardBg: #2d2d2d; /* Dark cards */
-  --EoThemeBorder: #404040; /* Dark borders */
-  --EoCardShadow: rgba(0, 0, 0, 0.3); /* Shadow for dark mode */
-  --EoCardShadowHover: rgba(0, 0, 0, 0.5); /* Darker shadow on hover */
+  --shadow: rgba(0, 0, 0, 0.45);
+  --shadow-hover: rgba(0, 0, 0, 0.65);
 }
 
 /* Global Styles - These apply to EVERYTHING on the page */
@@ -232,11 +194,32 @@
 
 /* Hero Banner Section - Big image at top of home page */
 #Eo-main-Section {
-  background-image: url(../images/HomeBanner.jpg); /* Use the home banner image */
+  background-image: url(../images/homeBanner.jpg); /* Use the home banner image */
   background-repeat: no-repeat; /* Don't repeat the image */
   background-size: cover; /* Make the image cover the whole area */
   background-position: center; /* Center the image */
-  height: 100vh; /* Make it fill the full viewport height */
+  height: 90vh; /* Make it fill the full viewport height */
+}
+.Eo-main-title {
+  font-family: "Sekuya", sans-serif;
+  margin-left: 850px;
+  margin-top: 40px;
+  color: var(--gray-0);
+}
+
+.Eo-main-p {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: x-large;
+  color: var(--gray-50);
+  width: 550px;
+  height: 300px;
+  overflow: hidden;
+  margin-left: 900px;
+  margin-top: -35px;
+  padding-left: 50px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
 }
 
 /* ============================================
