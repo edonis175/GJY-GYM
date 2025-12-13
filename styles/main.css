@@ -21,7 +21,7 @@
   --gray-900: #1a1a1a;
 
   /* Global UI tokens */
-  --radius: 8px;
+  --radius: 20px;
   --transition: 0.3s ease;
 }
 
@@ -67,11 +67,20 @@
   box-sizing: border-box; /* Make sizing calculations easier */
 }
 
+/* Prevent horizontal scrolling */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 /* Body ID Styling - The main container for our whole page */
 #EoBody {
   min-height: 100vh; /* Make it at least the full height of the screen */
   display: flex; /* Use flexbox layout */
   flex-direction: column; /* Stack items vertically */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  max-width: 100vw; /* Ensure body doesn't exceed viewport width */
 }
 
 /* ============================================
@@ -152,6 +161,9 @@
 .EoDropdownMenu .dropdown-item:hover {
   color: #fff; /* White text on hover */
 }
+.navbar-toggler {
+  margin-right: 15px;
+}
 
 /* Hamburger Menu - Mobile menu button styling */
 
@@ -187,8 +199,18 @@
 /* Media query for tablets and larger screens - adjust logo position */
 @media screen and (max-width: 980px) {
   .EoLogoImage {
-    margin-left: 900px; /* Move logo to the right side */
+    margin-left: auto;
     margin-right: auto;
+    margin-top: -200px;
+  }
+}
+
+/* Mobile view - fix logo positioning */
+@media (max-width: 768px) {
+  .EoLogoImage {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -200px;
   }
 }
 
@@ -199,6 +221,9 @@
   background-size: cover; /* Make the image cover the whole area */
   background-position: center; /* Center the image */
   height: 90vh; /* Make it fill the full viewport height */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  width: 100%; /* Ensure section doesn't exceed viewport */
+  position: relative; /* For proper positioning of child elements */
 }
 .Eo-main-title {
   font-family: "Sekuya", sans-serif;
@@ -211,15 +236,122 @@
   font-family: "Bebas Neue", sans-serif;
   font-size: x-large;
   color: var(--gray-50);
-  width: 550px;
+  width: 545px;
   height: 300px;
   overflow: hidden;
   margin-left: 900px;
   margin-top: -35px;
   padding-left: 50px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.527);
   backdrop-filter: blur(10px);
   border-radius: 50px;
+}
+/* Responsive styles for title and paragraph */
+/* iPad and Tablet view */
+@media (max-width: 1024px) {
+  .Eo-main-title {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .Eo-main-p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    max-width: 500px;
+    margin-top: 20px;
+    padding: 30px;
+    padding-left: 30px;
+    height: auto;
+    min-height: 200px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .Eo-main-title {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.8rem;
+    padding: 0 20px;
+  }
+
+  .Eo-main-p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    max-width: none;
+    margin-top: 20px;
+    padding: 25px 20px;
+    height: auto;
+    min-height: 150px;
+    font-size: large;
+    border-radius: 30px;
+  }
+}
+
+/* Small mobile view */
+@media (max-width: 576px) {
+  .Eo-main-title {
+    font-size: 1.5rem;
+    padding: 0 15px;
+    margin-top: -60px;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - 30px);
+    max-width: 350px;
+    text-align: center;
+    transform: none;
+  }
+
+  .Eo-main-p {
+    width: calc(100% - 30px);
+    max-width: 320px;
+    padding: 20px 15px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1rem;
+    border-radius: 20px;
+    min-height: 120px;
+  }
+}
+
+/* ============================================
+ Fitness Facility Section
+ ============================================ */
+.Eo-facility-title {
+  display: inline-flex;
+  width: fit-content;
+  margin: 90px 0 0 70px;
+  color: var(--gray-900);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 5rem;
+}
+.Eo-facility-p {
+  font-family: "Sekuya", serif;
+  width: 550px;
+  height: 250px;
+  margin-left: 135px;
+  font-weight: 3rem;
+}
+.Eo-facility-image {
+  width: 40%;
+  height: 80%;
+  margin: -350px 0 0 1000px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 40px 0 rgba(102, 126, 234, 0.35); /* subtle blue shadow */
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Eo-facility-image:hover {
+  transform: scale(1.04);
+  box-shadow: 0 20px 60px 0 rgba(243, 156, 18, 0.3),
+    0 10px 35px 0 rgba(102, 126, 234, 0.22); /* accent + primary shadows */
 }
 
 /* ============================================
@@ -500,6 +632,13 @@
 
   .EoFooter {
     text-align: center;
+  }
+
+  /* Ensure containers don't cause horizontal overflow */
+  .container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
