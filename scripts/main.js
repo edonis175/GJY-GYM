@@ -1,3 +1,76 @@
+/**
+ * Observes an element and adds an animation class when it becomes visible
+ * @param {string} elementId - The ID of the element to observe
+ * @param {string} animationClass - The CSS class to add when element is visible (default: 'is-visible')
+ * @param {number} threshold - The percentage of element that must be visible (default: 0.1 = 10%)
+ * @returns {void}
+ */
+function EoAnimateOnScroll(
+  elementId,
+  animationClass = "is-visible",
+  threshold = 0.1
+) {
+  // Safely get the element by ID - fail gracefully if element doesn't exist
+  const element = document.getElementById(elementId);
+
+  // Early return if element doesn't exist - fail gracefully
+  if (!element) {
+    console.warn(
+      `EoAnimateOnScroll: Element with ID "${elementId}" not found. Animation not applied.`
+    );
+    return;
+  }
+
+  // Check if IntersectionObserver is supported by the browser
+  if (!("IntersectionObserver" in window)) {
+    console.warn(
+      "IntersectionObserver is not supported in this browser. Animation will not work."
+    );
+    // Fallback: add the class immediately if IntersectionObserver is not supported
+    element.classList.add(animationClass);
+    return;
+  }
+
+  // Configuration options for the IntersectionObserver
+  const observerOptions = {
+    threshold: threshold, // Trigger when at least 10% (0.1) of the element is visible
+    rootMargin: "0px", // No margin offset from the viewport
+  };
+
+  // Create the IntersectionObserver instance
+  const observer = new IntersectionObserver(function (entries) {
+    // Process each entry (in case multiple elements are observed)
+    entries.forEach(function (entry) {
+      // Check if the element is currently intersecting (visible in viewport)
+      if (entry.isIntersecting) {
+        // Add the animation class to trigger CSS animations
+        entry.target.classList.add(animationClass);
+
+        // Stop observing this element after animation is triggered once
+        // This improves performance by not continuously checking elements that have already animated
+        observer.unobserve(entry.target);
+
+        // Optional: Log for debugging (can be removed in production)
+        console.log(`Animation triggered for element: ${elementId}`);
+      }
+    });
+  }, observerOptions);
+
+  // Start observing the target element
+  observer.observe(element);
+}
+
+// Apply animations to the elements by just calling the id here
+// Each element will animate when it enters the viewport
+EoAnimateOnScroll("Eo-main-title");
+EoAnimateOnScroll("Eo-main-p");
+EoAnimateOnScroll("Eo-facility-title");
+EoAnimateOnScroll("Eo-facility-p");
+EoAnimateOnScroll("Eo-facility-image");
+EoAnimateOnScroll("Tables");
+
+// End //
+
 // Wait for DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", function () {
   /* ============================================
@@ -115,106 +188,27 @@ document.addEventListener("DOMContentLoaded", function () {
   // }
 
   /* ============================================
-       CAROUSEL CONTROL
-       Custom carousel functionality
-       ============================================ */
-  const EoMainCarousel = document.getElementById("EoMainCarousel");
-
-  if (EoMainCarousel) {
-    // Initialize carousel
-    const carousel = new bootstrap.Carousel(EoMainCarousel, {
-      interval: 6000, // Auto-advance every 6 seconds
-      wrap: true,
-      keyboard: true,
-      pause: "hover",
-    });
-
-    // Add custom event listeners
-    EoMainCarousel.addEventListener("slide.bs.carousel", function (event) {});
-
-    EoMainCarousel.addEventListener("slid.bs.carousel", function (event) {});
-
-    // Custom function to go to specific slide
-    window.EoGoToCarouselSlide = function (slideIndex) {
-      carousel.to(slideIndex);
-    };
-
-    // Pause carousel on user interaction
-    EoMainCarousel.addEventListener("mouseenter", function () {
-      carousel.pause();
-    });
-
-    EoMainCarousel.addEventListener("mouseleave", function () {
-      carousel.cycle();
-    });
-  }
-
-  /* ============================================
-       MODAL FUNCTIONALITY
-       Enhanced modal interactions
-       ============================================ */
-  const EoSpecialModal = document.getElementById("EoSpecialModal");
-
-  if (EoSpecialModal) {
-    // Get modal instance
-    const modal = new bootstrap.Modal(EoSpecialModal);
-
-    // Event listener for when modal is shown
-    EoSpecialModal.addEventListener("show.bs.modal", function (event) {
-      console.log("Eo Special Training modal is opening");
-    });
-
-    // Event listener for when modal is fully shown
-    EoSpecialModal.addEventListener("shown.bs.modal", function (event) {
-      console.log("Eo Special Training modal is now visible");
-    });
-
-    // Event listener for when modal is hidden
-    EoSpecialModal.addEventListener("hidden.bs.modal", function (event) {
-      console.log("Eo Special Training modal is now hidden");
-    });
-
-    // Handle "Book Consultation" button click
-    const EoModalButton = EoSpecialModal.querySelector(".EoModalButton");
-    if (EoModalButton) {
-      EoModalButton.addEventListener("click", function () {
-        // Show alert
-        EoShowBookingAlert();
-        // Close modal
-        modal.hide();
-      });
-    }
-  }
-
-  // Function to show booking alert
-  function EoShowBookingAlert() {
-    alert(
-      "Thank you for your interest! Please contact us at (555) 123-4567 or info@eofitness.com to book your consultation."
-    );
-  }
-
-  /* ============================================
        TOGGLE FUNCTION
        Toggle functionality for interactive elements
        ============================================ */
 
   // Toggle function for navbar on scroll
-  let EoLastScroll = 0;
-  const EoNavbar = document.querySelector(".EoNavbar");
+  // let EoLastScroll = 0;
+  // const EoNavbar = document.querySelector(".EoNavbar");
 
-  window.addEventListener("scroll", function () {
-    const currentScroll = window.pageYOffset;
+  // window.addEventListener("scroll", function () {
+  //   const currentScroll = window.pageYOffset;
 
-    if (EoNavbar) {
-      if (currentScroll > 100) {
-        EoNavbar.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.2)";
-      } else {
-        EoNavbar.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
-      }
-    }
+  //   if (EoNavbar) {
+  //     if (currentScroll > 100) {
+  //       EoNavbar.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.2)";
+  //     } else {
+  //       EoNavbar.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
+  //     }
+  //   }
 
-    EoLastScroll = currentScroll;
-  });
+  //   EoLastScroll = currentScroll;
+  // });
 
   /* ============================================
        SMOOTH SCROLLING

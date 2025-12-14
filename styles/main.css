@@ -230,6 +230,9 @@ body {
   margin-left: 850px;
   margin-top: 40px;
   color: var(--gray-0);
+  opacity: 0;
+  transform: translateX(-30px); /* or translateX, scale, etc. */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .Eo-main-p {
@@ -245,12 +248,46 @@ body {
   background: rgba(0, 0, 0, 0.527);
   backdrop-filter: blur(10px);
   border-radius: 50px;
+  opacity: 0;
+  transform: translateY(30px); /* Different direction for variety */
+  transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s; /* 0.2s delay */
+}
+/* Animation state when element becomes visible */
+.Eo-main-title.is-visible {
+  opacity: 1;
+  transform: translateY(0); /* Reset to original position */
+}
+
+.Eo-main-p.is-visible {
+  opacity: 1;
+  transform: translateY(0); /* Reset to original position */
 }
 /* Responsive styles for title and paragraph */
 /* iPad and Tablet view */
-@media (max-width: 1024px) {
+/* @media (max-width: 998px) {
   .Eo-main-title {
     margin-left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .Eo-main-p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    max-width: 500px;
+    margin-top: 20px;
+    padding: 30px;
+    padding-left: 30px;
+    height: auto;
+    min-height: 200px;
+  }
+} */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .Eo-main-title {
+    margin-left: 10%;
+    width: 550px;
     transform: translateX(-50%);
     text-align: center;
     margin-top: 40px;
@@ -272,7 +309,7 @@ body {
 /* Mobile view */
 @media (max-width: 768px) {
   .Eo-main-title {
-    margin-left: 50%;
+    margin-left: 5%;
     transform: translateX(-50%);
     text-align: center;
     margin-top: 30px;
@@ -299,8 +336,8 @@ body {
   .Eo-main-title {
     font-size: 1.5rem;
     padding: 0 15px;
-    margin-top: -60px;
-    margin-left: auto;
+    margin-top: -75px;
+    margin-left: -20px;
     margin-right: auto;
     width: calc(100% - 30px);
     max-width: 350px;
@@ -309,14 +346,13 @@ body {
   }
 
   .Eo-main-p {
-    width: calc(100% - 30px);
-    max-width: 320px;
-    padding: 20px 15px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 320px;
+    height: 280px;
+    padding: 20px 10px;
+    margin-top: -30px;
+    margin-left: -20px;
     font-size: 1rem;
     border-radius: 20px;
-    min-height: 120px;
   }
 }
 
@@ -326,32 +362,204 @@ body {
 .Eo-facility-title {
   display: inline-flex;
   width: fit-content;
-  margin: 90px 0 0 70px;
+  margin: 80px 0 0 100px;
   color: var(--gray-900);
   font-family: "Bebas Neue", sans-serif;
   font-size: 5rem;
+  /* Initial state for animation - hidden and translated */
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+
+/* Animation state when element becomes visible */
+.Eo-facility-title.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .Eo-facility-p {
-  font-family: "Sekuya", serif;
-  width: 550px;
-  height: 250px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  width: 560px;
+  height: 245px;
   margin-left: 135px;
-  font-weight: 3rem;
+  padding-top: 50px;
+  font-size: 1.2rem;
+  /* Initial state for animation - hidden and translated */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
 }
+
+/* Animation state when element becomes visible */
+.Eo-facility-p.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .Eo-facility-image {
   width: 40%;
   height: 80%;
   margin: -350px 0 0 1000px;
   border-radius: var(--radius);
   box-shadow: 0 6px 40px 0 rgba(102, 126, 234, 0.35); /* subtle blue shadow */
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+  /* Initial state for animation - hidden and scaled */
+  opacity: 0;
+  transform: scale(0.9);
+  /* Combined transition for all properties */
+  transition: opacity 0.8s ease-out 0.4s, transform 0.8s ease-out 0.4s,
     box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animation state when element becomes visible */
+.Eo-facility-image.is-visible {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .Eo-facility-image:hover {
   transform: scale(1.04);
   box-shadow: 0 20px 60px 0 rgba(243, 156, 18, 0.3),
     0 10px 35px 0 rgba(102, 126, 234, 0.22); /* accent + primary shadows */
+}
+
+/* Ensure hover works after animation completes */
+.Eo-facility-image.is-visible:hover {
+  transform: scale(1.04);
+}
+
+/* Tablets (Landscape view) & Small Laptops: 992px - 1024px */
+@media (min-width: 992px) and (max-width: 1024px) {
+  .Eo-facility-title {
+    font-size: 4rem;
+    margin: 60px 0 0 60px;
+  }
+
+  .Eo-facility-p {
+    width: 400px;
+    height: auto;
+    min-height: 200px;
+    margin-left: 80px;
+    padding-top: 30px;
+    font-size: 1.1rem;
+  }
+
+  .Eo-facility-image {
+    width: 450px;
+    height: 350px;
+    max-height: 500px;
+    margin: -350px 0 0 540px;
+  }
+}
+
+/* Tablets (Portrait view, e.g., iPad): 768px */
+@media (min-width: 768px) and (max-width: 991px) {
+  #Eo-fitness-Facility {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  .Eo-facility-title {
+    font-size: 3.5rem;
+    margin: 40px 0 20px 0;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .Eo-facility-p {
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    min-height: auto;
+    margin: 0 auto 40px auto;
+    padding: 30px;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .Eo-facility-image {
+    width: 70%;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* Large Phones/Small Tablets: 481px - 767px */
+@media (min-width: 481px) and (max-width: 767px) {
+  #Eo-fitness-Facility {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 15px;
+  }
+
+  .Eo-facility-title {
+    font-size: 2.5rem;
+    margin: 30px 0 20px 0;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .Eo-facility-p {
+    width: 95%;
+    max-width: 550px;
+    height: auto;
+    min-height: auto;
+    margin: 0 auto 30px auto;
+    padding: 25px 20px;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .Eo-facility-image {
+    width: 85%;
+    max-width: 450px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* Small Phones: up to 480px */
+@media (max-width: 480px) {
+  #Eo-fitness-Facility {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+  }
+
+  .Eo-facility-title {
+    font-size: 2rem;
+    margin: 20px 0 15px 0;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .Eo-facility-p {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    margin: 0 auto 25px auto;
+    padding: 20px 15px;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .Eo-facility-image {
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 /* ============================================
@@ -404,6 +612,17 @@ body {
 
 .EoCardsSection {
   padding: 3rem 0;
+}
+/* Add to your CSS for the Tables section */
+.EoTableSection {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.EoTableSection.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .EoCardsHeading {
