@@ -216,7 +216,7 @@ body {
 
 /* Hero Banner Section - Big image at top of home page */
 #Eo-main-Section {
-  background-image: url(../images/homeBanner.jpg); /* Use the home banner image */
+  background-image: url(../images/HomeBanner.jpg); /* Use the home banner image */
   background-repeat: no-repeat; /* Don't repeat the image */
   background-size: cover; /* Make the image cover the whole area */
   background-position: center; /* Center the image */
