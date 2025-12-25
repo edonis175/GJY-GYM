@@ -18,11 +18,7 @@
   --gray-100: #f1f3f5;
   --gray-200: #e9ecef;
   --gray-300: #dee2e6;
-  --gray-500: #6c757d;
-  --gray-700: #495057;
-  --gray-850: #212529;
   --gray-900: #1a1a1a;
-  --gray-950: #111111;
 
   /* Global UI tokens */
   --radius: 20px;
@@ -218,16 +214,12 @@ body {
   }
 }
 
-/* ============================================
-    MAIN HERO SECTION
-   ============================================ */
-
 #Eo-main-Section {
   background-image: url(../images/HomeBanner.jpg); /* Use the home banner image */
   background-repeat: no-repeat; /* Don't repeat the image */
   background-size: cover; /* Make the image cover the whole area */
   background-position: center; /* Center the image */
-  height: 100vh; /* Make it fill the full viewport height */
+  height: 90vh; /* Make it fill the full viewport height */
   overflow-x: hidden; /* Prevent horizontal overflow */
   width: 100%; /* Ensure section doesn't exceed viewport */
   position: relative; /* For proper positioning of child elements */
@@ -466,10 +458,13 @@ body {
   height: 80%;
   margin: -350px 0 0 1000px;
   border-radius: var(--radius);
-  box-shadow: 0 6px 40px 0 rgba(102, 126, 234, 0.35);
+  box-shadow: 0 6px 40px 0 rgba(102, 126, 234, 0.35); /* subtle blue shadow */
+  /* Initial state for animation - hidden and scaled */
   opacity: 0;
   transform: scale(0.9);
-  transition: opacity 0.8s ease 0.2s, transform 0.3s ease, box-shadow 0.3s ease;
+  /* Combined transition for all properties */
+  transition: opacity 0.8s ease-out 0.4s, transform 0.8s ease-out 0.4s,
+    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Animation state when element becomes visible */
@@ -623,8 +618,13 @@ body {
 }
 
 /* ============================================
+<<<<<<< HEAD
    MEMBERSHIP PLANS
    ============================================ */
+=======
+ TABLE SECTION STYLES - The membership plans table
+ ============================================ */
+>>>>>>> parent of 5197717 (Added 4 sections into Services.html)
 
 .EoTableSection {
   padding: 2rem 0; /* Add space above and below */
@@ -876,8 +876,8 @@ body {
 }
 
 /* ============================================
-   FOOTER - ALL PAGES
-   ============================================ */
+ FOOTER STYLES-For all pages
+ ============================================ */
 
 .EoFooter {
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
@@ -990,8 +990,8 @@ body {
   font-size: 0.9rem;
 }
 /* ============================================
-   GLOBAL RESPONSIVE STYLES
-   ============================================ */
+ RESPONSIVE STYLES
+ ============================================ */
 
 /* Tablet Styles */
 @media (max-width: 992px) {
@@ -1078,10 +1078,10 @@ body {
 }
 
 /* ============================================
-   ABOUT PAGE
+   ABOUT PAGE STYLES - Unique sections with hover effects
    ============================================ */
 
-/* About Page - Section 1: Hero Mission Statement */
+/* Section 1: Hero Mission Statement */
 .EoAboutHero {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   position: relative;
@@ -1275,7 +1275,6 @@ body {
   }
 }
 
-/* About Page - Section 2: Features */
 .EoFeaturesTitle {
   font-family: "Bebas Neue", sans-serif;
   font-size: 3.5rem;
@@ -1556,7 +1555,7 @@ body {
   }
 }
 
-/* About Page - Section 3: Core Values Flip Cards */
+/* Section 3: Core Values Flip Cards */
 .EoCoreValues {
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   margin-bottom: 1px;
@@ -1622,7 +1621,7 @@ body {
 }
 
 .EoValueCardBack {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
   transform: rotateY(180deg);
   color: #fff;
 }
@@ -1638,7 +1637,7 @@ body {
 .EoValueIcon {
   width: 100px;
   height: 100px;
-  background: linear-gradient(135deg, #2193b0 0%, #4ca7bbd7 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1667,10 +1666,10 @@ body {
 }
 
 .EoValueText {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.6;
   text-align: center;
-  color: rgba(46, 42, 42, 0.952);
+  color: rgba(255, 255, 255, 0.95);
   margin: 0;
 }
 
@@ -1718,6 +1717,7 @@ body {
     font-size: 1.75rem;
   }
 }
+<<<<<<< HEAD
 
 /* ============================================
    SERVICES PAGE
@@ -2546,3 +2546,5 @@ body {
     font-size: 2rem;
   }
 }
+=======
+>>>>>>> parent of 5197717 (Added 4 sections into Services.html)
