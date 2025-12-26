@@ -68,7 +68,6 @@
   scroll-behavior: smooth !important; /*Makes scrolling smother*/
 }
 
-/* Prevent horizontal scrolling */
 html,
 body {
   overflow-x: hidden;
@@ -416,6 +415,9 @@ body {
 /* ============================================
  Fitness Facility Section
  ============================================ */
+#Eo-fitness-Facility {
+  padding-top: 50px;
+}
 .Eo-facility-title {
   display: inline-flex;
   width: fit-content;
@@ -436,13 +438,12 @@ body {
 }
 
 .Eo-facility-p {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  width: 560px;
-  height: 245px;
+  font-family: "Bebas Neue", sans-serif;
+  width: 575px;
+  height: fit-content;
   margin-left: 135px;
   padding-top: 50px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   /* Initial state for animation - hidden and translated */
   opacity: 0;
   transform: translateY(30px);
@@ -458,7 +459,7 @@ body {
 .Eo-facility-image {
   width: 40%;
   height: 80%;
-  margin: -350px 0 0 1000px;
+  margin: -440px 0 0 1000px;
   border-radius: var(--radius);
   box-shadow: 0 6px 40px 0 rgba(102, 126, 234, 0.35); /* subtle blue shadow */
   /* Initial state for animation - hidden and scaled */
@@ -506,7 +507,7 @@ body {
     width: 450px;
     height: 350px;
     max-height: 500px;
-    margin: -350px 0 0 540px;
+    margin: -350px 0 0 563px;
   }
 }
 
@@ -520,7 +521,7 @@ body {
   }
 
   .Eo-facility-title {
-    font-size: 3.5rem;
+    font-size: 5rem;
     margin: 40px 0 20px 0;
     text-align: center;
     width: 100%;
@@ -594,7 +595,7 @@ body {
   }
 
   .Eo-facility-title {
-    font-size: 2rem;
+    font-size: 3rem;
     margin: 20px 0 15px 0;
     text-align: center;
     width: 100%;
@@ -669,11 +670,12 @@ body {
  ============================================ */
 
 .EoCardsSection {
-  padding: 3rem 0;
+  padding-top: 300px;
+  padding-bottom: 100px;
 }
 
 .EoCards-Heading {
-  font-size: 4.5rem;
+  font-size: 5rem;
   color: var(--gray-900);
   font-family: "Bebas Neue", sans-serif;
   text-transform: uppercase;
@@ -695,7 +697,7 @@ body {
 .EoCards-p {
   font-family: "Times New Roman", Times, serif;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .EoCardImage {
@@ -710,8 +712,8 @@ body {
 
 .EoCardTitle {
   font-size: 1.5rem;
-  font-weight: 600;
-  color: #667eea;
+  font-weight: bold;
+  color: rgba(10, 80, 10, 0.699);
   margin-bottom: 1rem;
 }
 
@@ -744,7 +746,7 @@ body {
     padding: 2.5rem 0;
   }
 
-  .EoCardsHeading {
+  .EoCards-Heading {
     font-size: 2.2rem;
     margin-bottom: 1.5rem;
   }
@@ -768,9 +770,8 @@ body {
     padding: 2rem 0;
   }
 
-  .EoCardsHeading {
-    font-size: 2rem;
-    margin-bottom: 1.25rem;
+  .EoCards-Heading {
+    font-size: 4rem;
   }
 
   .EoCardTitle {
@@ -799,7 +800,7 @@ body {
     padding: 1.5rem 0;
   }
 
-  .EoCardsHeading {
+  .EoCards-Heading {
     font-size: 1.75rem;
     margin-bottom: 1rem;
   }
@@ -833,18 +834,18 @@ body {
 /* Small mobile view: up to 480px */
 @media (max-width: 480px) {
   .EoCardsSection {
-    padding: 1rem 0;
+    padding-top: 150px;
   }
 
-  .EoCardsHeading {
-    font-size: 1.5rem;
+  .EoCards-Heading {
+    font-size: 3.5rem;
     margin-bottom: 0.75rem;
   }
 
   .EoCardsSection p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-bottom: 1.25rem;
-    padding: 0 1rem;
+    padding-top: 5px;
   }
 
   .EoServiceCard {
@@ -852,7 +853,7 @@ body {
   }
 
   .EoCardTitle {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     margin-bottom: 0.5rem;
   }
 
