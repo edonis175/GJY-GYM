@@ -1726,6 +1726,15 @@ body {
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f3f5 100%);
   position: relative;
   min-height: 100vh;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.EoServicesIntro.is-visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .EoServicesMainTitle {
@@ -1910,313 +1919,199 @@ body {
   }
 }
 
-/* Services Page - Section 2: Service Categories */
-.EoServicesSection {
-  background: #2d4a3e;
-  padding: 5rem 0;
+/* Services Page - Section 2: Unique Asymmetric Card Design */
+.EoServicesSection2 {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f3f5 100%);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.EoServicesSectionTitle {
+.EoServicesSection2.is-visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.EoServiceCard {
+  position: relative;
+  height: 400px;
+  background: #ffffff;
+  border: 2px solid var(--border);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.EoServiceCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.05) 0%,
+    rgba(243, 156, 18, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.EoServiceCard:hover::before {
+  transform: translateY(-15px) scale(1.5);
+  transition: transform 0.5s ease;
+}
+
+.EoServiceCardNumber {
+  position: absolute;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 3rem;
-  color: #ffffff;
-  font-weight: 600;
-  padding-top: 20px;
-  margin-bottom: 3rem;
+  font-size: 12rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(102, 126, 234, 0.08);
+  z-index: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.EoServicesContainer {
-  max-width: 1400px;
-  margin: 0 auto;
+.EoServiceCard:hover .EoServiceCardNumber {
+  color: rgba(102, 126, 234, 0.15);
+  transform: scale(1.1) rotate(0deg);
+}
+
+.EoServiceCardContent {
+  position: relative;
+  z-index: 2;
+  padding: 3rem 2.5rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.EoServicesList {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.EoServicesItem {
-  flex: 0 0 auto;
-}
-
-.EoServicesItem {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 0.75rem;
-}
-
-.EoServicesIcon {
-  font-size: 1.2rem;
-  color: #ffd700;
-  margin: 0;
-  font-weight: 400;
-  flex-shrink: 0;
-}
-
-.EoServicesNum {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #ffd700;
+.EoServiceCardTitle {
   font-family: "Bebas Neue", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
   letter-spacing: 1px;
-  min-width: 50px;
-  margin: 0;
-  flex-shrink: 0;
+  position: relative;
+  transition: all 0.5s ease;
 }
 
-.EoServicesName {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #ffd700;
-  font-family: "Bebas Neue", sans-serif;
-  letter-spacing: 0.5px;
-  margin: 0;
-  flex: 1;
-}
-
-.EoServicesDesc {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-between;
-}
-
-.EoServicesDescItem,
-.EoServicesDescItem1,
-.EoServicesDescItem2,
-.EoServicesDescItem3,
-.EoServicesDescItem4,
-.EoServicesDescItem5,
-.EoServicesDescItem6 {
+.EoServiceCardText {
   font-size: 1rem;
   line-height: 1.8;
-  color: #ffffff;
-  font-family: "Poppins", sans-serif;
+  color: #555;
   margin: 0;
-  flex: 1;
-  min-width: 200px;
+  opacity: 0.9;
+  transition: all 0.5s ease;
 }
 
-/* Media queries for Section 2: Service Categories */
-@media (max-width: 1024px) {
-  .EoServicesList {
-    gap: 1.5rem;
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .EoServiceCard {
+    height: 380px;
   }
 
-  .EoServicesDesc {
-    gap: 1.5rem;
+  .EoServiceCardNumber {
+    font-size: 10rem;
   }
 
-  .EoServicesNum {
-    font-size: 1.3rem;
-    min-width: 45px;
-  }
-
-  .EoServicesName {
-    font-size: 1.3rem;
-  }
-
-  .EoServicesDescItem,
-  .EoServicesDescItem1,
-  .EoServicesDescItem2,
-  .EoServicesDescItem3,
-  .EoServicesDescItem4,
-  .EoServicesDescItem5,
-  .EoServicesDescItem6 {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    min-width: 180px;
+  .EoServiceCardTitle {
+    font-size: 2.2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .EoServicesSection {
-    padding: 3rem 0;
-  }
-
-  .EoServicesSectionTitle {
-    font-size: 2.5rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .EoServicesContainer {
-    gap: 0;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .EoServicesList {
-    display: contents;
-  }
-
-  .EoServicesDesc {
-    display: contents;
-  }
-
-  .EoServicesContainer > * {
-    display: contents;
-  }
-
-  .EoServicesItem {
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .EoServicesIcon {
-    font-size: 1.1rem;
-  }
-
-  .EoServicesNum {
-    font-size: 1.2rem;
-    min-width: 40px;
-  }
-
-  .EoServicesName {
-    font-size: 1.2rem;
-  }
-
-  .EoServicesDescItem1,
-  .EoServicesDescItem2,
-  .EoServicesDescItem3,
-  .EoServicesDescItem4,
-  .EoServicesDescItem5,
-  .EoServicesDescItem6 {
-    font-size: 0.9rem;
-    line-height: 1.6;
+  .EoServiceCard {
+    height: 350px;
     margin-bottom: 2rem;
   }
 
-  .EoServicesItem:nth-child(1) {
-    order: 1;
+  .EoServiceCardNumber {
+    font-size: 8rem;
   }
 
-  .EoServicesDescItem1 {
-    order: 2;
+  .EoServiceCard1 .EoServiceCardNumber,
+  .EoServiceCard3 .EoServiceCardNumber,
+  .EoServiceCard5 .EoServiceCardNumber {
+    top: -15px;
+    left: -20px;
   }
 
-  .EoServicesItem:nth-child(2) {
-    order: 3;
+  .EoServiceCard2 .EoServiceCardNumber,
+  .EoServiceCard4 .EoServiceCardNumber,
+  .EoServiceCard6 .EoServiceCardNumber {
+    top: -15px;
+    right: -20px;
   }
 
-  .EoServicesDescItem2 {
-    order: 4;
+  .EoServiceCardContent {
+    padding: 2.5rem 2rem;
   }
 
-  .EoServicesItem:nth-child(3) {
-    order: 5;
-  }
-
-  .EoServicesDescItem3 {
-    order: 6;
-  }
-
-  .EoServicesItem:nth-child(4) {
-    order: 7;
-  }
-
-  .EoServicesDescItem4 {
-    order: 8;
-  }
-
-  .EoServicesItem:nth-child(5) {
-    order: 9;
-  }
-
-  .EoServicesDescItem5 {
-    order: 10;
-  }
-
-  .EoServicesItem:nth-child(6) {
-    order: 11;
-  }
-
-  .EoServicesDescItem6 {
-    order: 12;
-  }
-}
-
-@media (max-width: 480px) {
-  .EoServicesSection {
-    padding: 2.5rem 0;
-  }
-
-  .EoServicesSectionTitle {
+  .EoServiceCardTitle {
     font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .EoServicesContainer {
-    gap: 0;
-  }
-
-  .EoServicesList {
-    display: contents;
-  }
-
-  .EoServicesDesc {
-    display: contents;
-  }
-
-  .EoServicesContainer > * {
-    display: contents;
-  }
-
-  .EoServicesItem {
-    gap: 0.5rem;
-    flex-wrap: nowrap;
     margin-bottom: 1.25rem;
   }
 
-  .EoServicesIcon {
-    font-size: 1rem;
+  .EoServiceCardText {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 576px) {
+  .EoServiceCard {
+    height: 320px;
   }
 
-  .EoServicesNum {
-    font-size: 1.1rem;
-    min-width: 35px;
+  .EoServiceCardNumber {
+    font-size: 6rem;
   }
 
-  .EoServicesName {
-    font-size: 1.1rem;
+  .EoServiceCardContent {
+    padding: 2rem 1.5rem;
   }
 
-  .EoServicesDescItem1,
-  .EoServicesDescItem2,
-  .EoServicesDescItem3,
-  .EoServicesDescItem4,
-  .EoServicesDescItem5,
-  .EoServicesDescItem6 {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    margin-bottom: 1.75rem;
+  .EoServiceCardTitle {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .EoServiceCardText {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .EoServiceCard:hover {
+    transform: translateY(-10px) scale(1.01);
   }
 }
 
 /* Services Page - Section 3: Service Benefits */
 .EoServicesBenefits {
   padding: 4rem 0;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  margin-bottom: 1px;
 }
 
 .EoServicesBenefitsTitle {
   font-family: "Bebas Neue", sans-serif;
   font-size: 2.5rem;
-  color: var(--gray-900);
+  color: var(--gray-0);
   font-weight: 600;
 }
 
 .EoServicesBenefitsText {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--text-muted);
+  color: var(--gray-0);
 }
 
 /* Media queries for Section 3: Service Benefits */

@@ -33,7 +33,7 @@ function EoAnimateOnScroll(
 
   // Configuration options for the IntersectionObserver
   const observerOptions = {
-    threshold: threshold, // Trigger when at least 10% (0.1) of the element is visible
+    threshold: 0.25, // Triggser when at least 10% (0.1) of the element is visible
     rootMargin: "0px", // No margin offset from the viewport
   };
 
@@ -68,6 +68,8 @@ EoAnimateOnScroll("Eo-facility-title");
 EoAnimateOnScroll("Eo-facility-p");
 EoAnimateOnScroll("Eo-facility-image");
 EoAnimateOnScroll("Tables");
+EoAnimateOnScroll("EoServicesIntro");
+EoAnimateOnScroll("EoServicesSection2");
 
 // End //
 
