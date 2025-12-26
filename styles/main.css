@@ -1619,7 +1619,7 @@ body {
 }
 
 .EoValueCardBack {
-  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+  background: linear-gradient(135deg, #70706f 0%, #b3b6b5 50%, #8e8d8d 100%);
   transform: rotateY(180deg);
   color: #fff;
 }
@@ -1635,7 +1635,7 @@ body {
 .EoValueIcon {
   width: 100px;
   height: 100px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(to bottom left, #1b4d3e 0%, #1a8f4b 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1664,7 +1664,7 @@ body {
 }
 
 .EoValueText {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   text-align: center;
   color: rgba(255, 255, 255, 0.95);
