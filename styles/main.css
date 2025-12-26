@@ -1088,6 +1088,18 @@ body {
   height: 90vh;
 }
 
+#EoAboutHero1 {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#EoAboutHero1.is-visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .EoAboutHero::before {
   content: "";
   position: absolute;
@@ -1271,6 +1283,18 @@ body {
   .EoAboutImage {
     height: 250px;
   }
+}
+
+#EoFeaturesShowcase2 {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#EoFeaturesShowcase2.is-visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .EoFeaturesTitle {

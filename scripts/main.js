@@ -68,6 +68,8 @@ EoAnimateOnScroll("Eo-facility-title");
 EoAnimateOnScroll("Eo-facility-p");
 EoAnimateOnScroll("Eo-facility-image");
 EoAnimateOnScroll("Tables");
+EoAnimateOnScroll("EoAboutHero1");
+EoAnimateOnScroll("EoFeaturesShowcase2");
 EoAnimateOnScroll("EoServicesIntro");
 EoAnimateOnScroll("EoServicesSection2");
 
