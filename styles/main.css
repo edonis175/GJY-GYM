@@ -2306,34 +2306,115 @@ body {
 
 /* Blog Page - Section 1: Blog Introduction */
 .EoBlogIntro {
-  padding: 4rem 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background-image: url(../images/BlogBanner.avif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0;
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Shared dark panel for intro */
+.EoBlogIntroPanel {
+  background: rgba(0, 0, 0, 0.72);
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  display: inline-block;
+  margin: 0 300px 0 270px;
+  padding-left: 30px;
+  height: 300px;
+  width: 720px;
 }
 
 .EoBlogMainTitle {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 4rem;
-  color: var(--gray-900);
-  font-weight: 600;
+  font-family: Manrope;
+  font-size: 5rem;
+  font-weight: bolder;
+  color: #ffffff;
+  margin: 0;
+  display: block;
 }
 
 .EoBlogIntroText {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: var(--text-muted);
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  max-width: 700px;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .EoBlogIntroPanel {
+    width: fit-content;
+    max-width: 600px;
+    height: fit-content;
+    margin: 0 auto;
+    display: block;
+  }
+  .EoBlogMainTitle {
+    font-size: 5rem;
+  }
+
+  .EoBlogIntroText {
+    font-size: 1.01rem;
+    max-width: 100%;
+    padding-top: 0.5rem;
+    font-weight: 400;
+  }
+}
+@media (max-width: 1024px) {
+  .EoBlogIntroPanel {
+    margin: 0 20px 0 0;
+    width: fit-content;
+    height: fit-content;
+    max-width: 100%;
+  }
+}
+
+/* Animation: Intro panel enter/visible state */
+.EoBlogIntroPanel {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.EoBlogIntroPanel.is-visible,
+.EoBlogIntroPanel.isvisible {
+  opacity: 1;
+  transform: none;
 }
 
 /* Blog Page - Section 2: Blog Articles */
 .EoBlogArticles {
   padding: 4rem 0;
+  cursor: pointer;
 }
 
+.BlogHeading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  font-family: "Babas Neue", sans serif;
+}
 .EoBlogArticle {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 2rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.466);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.EoBlogArticle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .EoBlogArticleTitle {

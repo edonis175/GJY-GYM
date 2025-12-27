@@ -33,7 +33,7 @@ function EoAnimateOnScroll(
 
   // Configuration options for the IntersectionObserver
   const observerOptions = {
-    threshold: 0.25, // Triggser when at least 10% (0.1) of the element is visible
+    threshold: 0.3, // Triggser when at least 10% (0.1) of the element is visible
     rootMargin: "0px", // No margin offset from the viewport
   };
 
@@ -52,6 +52,11 @@ function EoAnimateOnScroll(
 
         // Optional: Log for debugging (can be removed in production)
         console.log(`Animation triggered for element: ${elementId}`);
+      } else {
+        // Optional: Remove the animation class if the element is not visible
+        // This allows re-triggering the animation if the user scrolls away and back
+        // entry.target.classList.remove(animationClass);
+        // Optional: Log for debugging (can be removed in production)
       }
     });
   }, observerOptions);
@@ -72,6 +77,8 @@ EoAnimateOnScroll("EoAboutHero1");
 EoAnimateOnScroll("EoFeaturesShowcase2");
 EoAnimateOnScroll("EoServicesIntro");
 EoAnimateOnScroll("EoServicesSection2");
+EoAnimateOnScroll("EoBlogPanel1");
+EoAnimateOnScroll("EoBlogArticle");
 
 // End //
 

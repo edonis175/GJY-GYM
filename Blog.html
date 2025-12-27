@@ -105,9 +105,779 @@
       </nav>
     </header>
 
-    <!-- MAIN CONTENT -->
     <main>
-      <!-- Add your blog page content here -->
+      <!-- Blog Intro -->
+      <section class="EoBlogIntro">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-7">
+              <div class="EoBlogIntroPanel" id="EoBlogPanel1">
+                <h1 class="EoBlogMainTitle">The GJYM Blog</h1>
+                <p class="EoBlogIntroText">
+                  Welcome to the GJYM Blog your go to source for training tips,
+                  nutrition guidance, injury prevention, and motivational
+                  stories. We publish actionable articles to help you train
+                  smarter, avoid injury, and stay consistent on your fitness
+                  journey whether you're a beginner or experienced athlete.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog Articles -->
+      <section class="EoBlogArticles">
+        <div class="container">
+          <h1 class="BlogHeading mt-3 pb-5">Latest</h1>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+              <article class="EoBlogArticle" id="EoBlogArticle">
+                <h2 class="EoBlogArticleTitle">
+                  5 Strength Exercises to Build a Solid Foundation
+                </h2>
+                <p class="EoBlogArticleDate">Dec 10, 2025 — by GJYM Team</p>
+                <p class="EoBlogArticleExcerpt">
+                  Learn the core strength movements you should include in every
+                  program to build durability and increase performance.
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-outline-primary mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalArticle1"
+                >
+                  Read more
+                </button>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <article class="EoBlogArticle">
+                <h2 class="EoBlogArticleTitle">
+                  HIIT Workouts for Busy Schedules
+                </h2>
+                <p class="EoBlogArticleDate">Nov 22, 2025 — by Coach Amy</p>
+                <p class="EoBlogArticleExcerpt">
+                  Short, intense interval sessions that deliver maximum results
+                  in minimal time — sample routines included.
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-outline-primary mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalArticle2"
+                >
+                  Read more
+                </button>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <article class="EoBlogArticle">
+                <h2 class="EoBlogArticleTitle">
+                  Mobility Drills to Improve Your Range of Motion
+                </h2>
+                <p class="EoBlogArticleDate">
+                  Oct 18, 2025 — by Rehab Specialist
+                </p>
+                <p class="EoBlogArticleExcerpt">
+                  Simple mobility flows to reduce pain, increase movement
+                  quality, and enhance workout performance.
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-outline-primary mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalArticle3"
+                >
+                  Read more
+                </button>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <article class="EoBlogArticle">
+                <h2 class="EoBlogArticleTitle">
+                  Cardio Strategies for Endurance Athletes
+                </h2>
+                <p class="EoBlogArticleDate">Sep 08, 2025 — by Coach Mike</p>
+                <p class="EoBlogArticleExcerpt">
+                  How to structure your conditioning sessions to improve VO2 max
+                  without overtraining.
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-outline-primary mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalArticle4"
+                >
+                  Read more
+                </button>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <article class="EoBlogArticle">
+                <h2 class="EoBlogArticleTitle">
+                  Primal Movement Patterns to Boost Functional Strength
+                </h2>
+                <p class="EoBlogArticleDate">Aug 14, 2025 — by Trainer Sam</p>
+                <p class="EoBlogArticleExcerpt">
+                  Integrate primal movement variations to improve athleticism
+                  and reduce injury risk.
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-outline-primary mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalArticle5"
+                >
+                  Read more
+                </button>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <article class="EoBlogArticle">
+                <h2 class="EoBlogArticleTitle">
+                  Yoga for Recovery and Stress Relief
+                </h2>
+                <p class="EoBlogArticleDate">
+                  Jul 02, 2025 — by Yoga Instructor
+                </p>
+                <p class="EoBlogArticleExcerpt">
+                  Gentle sequences and breathing techniques to help your body
+                  and mind recover between intense training blocks.
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-outline-primary mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalArticle6"
+                >
+                  Read more
+                </button>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modals: Articles -->
+        <section id="Modals">
+          <div
+            class="modal fade"
+            id="modalArticle1"
+            tabindex="-1"
+            aria-labelledby="modalArticle1Label"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalArticle1Label">
+                    5 Strength Exercises to Build a Solid Foundation
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  These five compound movements form the backbone of an
+                  effective strength program: squats, deadlifts, presses, rows
+                  and hinges. Focus on progressive overload, proper technique,
+                  and balanced accessory work to build durability and
+                  resilience.
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="modal fade"
+            id="modalArticle2"
+            tabindex="-1"
+            aria-labelledby="modalArticle2Label"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalArticle2Label">
+                    HIIT Workouts for Busy Schedules
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  Short, focused intervals can boost conditioning and burn
+                  calories efficiently. Try 20–30 minute protocols mixing
+                  sprints, kettlebell swings, and bodyweight circuits with
+                  measured rest.
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="modal fade"
+            id="modalArticle3"
+            tabindex="-1"
+            aria-labelledby="modalArticle3Label"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalArticle3Label">
+                    Mobility Drills to Improve Your Range of Motion
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  Focus on soft tissue prep, dynamic warm-ups and end-range
+                  holds. Prioritize quality movement in your daily routine to
+                  reduce stiffness and unlock better performance.
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="modal fade"
+            id="modalArticle4"
+            tabindex="-1"
+            aria-labelledby="modalArticle4Label"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalArticle4Label">
+                    Cardio Strategies for Endurance Athletes
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  Balance steady-state work with targeted intervals and
+                  recovery. Track intensity using perceived exertion, heart-rate
+                  zones, or pace and prioritize consistent progressive volume.
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="modal fade"
+            id="modalArticle5"
+            tabindex="-1"
+            aria-labelledby="modalArticle5Label"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalArticle5Label">
+                    Primal Movement Patterns to Boost Functional Strength
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  Incorporate crawling, lunging, carrying and rotational drills
+                  to improve real-world strength and movement efficiency. These
+                  exercises translate well to athletic tasks and daily function.
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="modal fade"
+            id="modalArticle6"
+            tabindex="-1"
+            aria-labelledby="modalArticle6Label"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalArticle6Label">
+                    Yoga for Recovery and Stress Relief
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  Gentle mobility flows, breathwork, and restorative poses help
+                  lower stress hormones and improve sleep. Aim for short daily
+                  practices to support training recovery.
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Blog Categories -->
+      <section class="EoBlogCategories">
+        <div class="container">
+          <div class="row mb-4">
+            <div class="col-12 text-center">
+              <h2 class="EoBlogCategoriesTitle">Explore Categories</h2>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="p-4 EoBlogCategoryItem">
+                <div class="mb-3">
+                  <img
+                    src="./images/Strength&ResistanceCard.avif"
+                    alt="Strength & Resistance"
+                    class="img-fluid rounded"
+                  />
+                </div>
+                <h3 class="EoBlogCategoryTitle">Strength & Resistance</h3>
+                <p class="EoBlogCategoryDescription">
+                  Training plans, programming tips, and technique breakdowns to
+                  help you get stronger.
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-outline-primary mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalCategory1"
+                >
+                  Learn more
+                </button>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="p-4 EoBlogCategoryItem">
+                <div class="mb-3">
+                  <img
+                    src="./images/HIITCard.avif"
+                    alt="HIIT"
+                    class="img-fluid rounded"
+                  />
+                </div>
+                <h3 class="EoBlogCategoryTitle">HIIT</h3>
+                <p class="EoBlogCategoryDescription">
+                  High-intensity interval workouts and progressions for fat loss
+                  and conditioning.
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-outline-primary mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalCategory2"
+                >
+                  Learn more
+                </button>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="p-4 EoBlogCategoryItem">
+                <div class="mb-3">
+                  <img
+                    src="./images/Mobility-TrainingCard.avif"
+                    alt="Mobility"
+                    class="img-fluid rounded"
+                  />
+                </div>
+                <h3 class="EoBlogCategoryTitle">Mobility</h3>
+                <p class="EoBlogCategoryDescription">
+                  Mobility routines, warm-ups, and recovery tips to keep you
+                  moving well.
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-outline-primary mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalCategory3"
+                >
+                  Learn more
+                </button>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="p-4 EoBlogCategoryItem">
+                <div class="mb-3">
+                  <img
+                    src="./images/CardiovascularCard.avif"
+                    alt="Cardiovascular"
+                    class="img-fluid rounded"
+                  />
+                </div>
+                <h3 class="EoBlogCategoryTitle">Cardiovascular</h3>
+                <p class="EoBlogCategoryDescription">
+                  Endurance training, pacing strategies, and conditioning plans
+                  for all levels.
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-outline-primary mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalCategory4"
+                >
+                  Learn more
+                </button>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="p-4 EoBlogCategoryItem">
+                <div class="mb-3">
+                  <img
+                    src="./images/PrimalCard.avif"
+                    alt="Primal Movements"
+                    class="img-fluid rounded"
+                  />
+                </div>
+                <h3 class="EoBlogCategoryTitle">Primal Movements</h3>
+                <p class="EoBlogCategoryDescription">
+                  Workouts and drills that focus on natural movement patterns
+                  for functional strength.
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-outline-primary mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalCategory5"
+                >
+                  Learn more
+                </button>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="p-4 EoBlogCategoryItem">
+                <div class="mb-3">
+                  <img
+                    src="./images/YogaCard.avif"
+                    alt="Yoga"
+                    class="img-fluid rounded"
+                  />
+                </div>
+                <h3 class="EoBlogCategoryTitle">Yoga</h3>
+                <p class="EoBlogCategoryDescription">
+                  Recovery flows, flexibility programming, and breathing
+                  practices for performance and calm.
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-outline-primary mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalCategory6"
+                >
+                  Learn more
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="modal fade"
+        id="modalCategory1"
+        tabindex="-1"
+        aria-labelledby="modalCategory1Label"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalCategory1Label">
+                Strength & Resistance
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              Strength & Resistance content covers programming templates,
+              technique cues, accessory work, and progressions to help you build
+              safe, measurable strength.
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="modalCategory2"
+        tabindex="-1"
+        aria-labelledby="modalCategory2Label"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalCategory2Label">HIIT</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              HIIT articles include sample circuits, interval structures, and
+              scaling options for all fitness levels to improve conditioning
+              efficiently.
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="modalCategory3"
+        tabindex="-1"
+        aria-labelledby="modalCategory3Label"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalCategory3Label">Mobility</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              Mobility resources include warm-ups, corrective sequences, and
+              daily routines to maintain joint health and longevity in training.
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="modalCategory4"
+        tabindex="-1"
+        aria-labelledby="modalCategory4Label"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalCategory4Label">
+                Cardiovascular
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              Cardio content includes pacing strategies, interval plans, and
+              recovery tactics for runners, cyclists, and general conditioning.
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="modalCategory5"
+        tabindex="-1"
+        aria-labelledby="modalCategory5Label"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalCategory5Label">
+                Primal Movements
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              Primal movement content focuses on movement variety — crawling,
+              carrying, and functional drills that enhance everyday performance.
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="modalCategory6"
+        tabindex="-1"
+        aria-labelledby="modalCategory6Label"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalCategory6Label">Yoga</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              Yoga articles cover breathwork, restorative flows, and flexibility
+              progressions aimed at recovery and stress management.
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- FOOTER -->
@@ -190,4 +960,3 @@
     </footer>
   </body>
 </html>
-
