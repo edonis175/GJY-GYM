@@ -2465,9 +2465,10 @@ body {
 @media (min-width: 768px) and (max-width: 912px) {
   .EoGalleryContainer {
     margin: -50px 0 0 0;
+    width: 100vw;
   }
   .EoGalleryContainer .Eoimage img {
-    width: 300px;
+    width: 280px;
   }
   .EoGalleryContainer .Eoimage.leftStack {
     margin-top: 80px;
@@ -2476,23 +2477,26 @@ body {
     transform: translateX(-215px);
   }
   .EoGalleryContainer .Eoimage.leftStack img:nth-child(2) {
-    width: 325px;
+    width: 300px;
     height: 200px;
-    margin-top: -95px;
+    margin-top: -115px;
     transform: translateX(20px);
   }
   .EoGalleryContainer .Eoimage.leftStack img:nth-child(3) {
     margin-top: -350px;
-    transform: translateX(235px);
+
+    transform: translateX(170px);
+    z-index: -1;
   }
   .EoGalleryHeader {
-    margin-top: 70px;
+    margin-top: 95px;
+    margin-left: 110px;
   }
   .EoGalleryContainer .Eoimage.rightStack {
-    margin-top: -190px;
+    margin-top: -20px;
   }
   .EoGalleryContainer .Eoimage.rightStack img:nth-child(1) {
-    transform: translateX(-230px);
+    transform: translateX(-215px);
     margin-top: 120px;
   }
   .EoGalleryContainer .Eoimage.rightStack img:nth-child(2) {
@@ -2502,8 +2506,9 @@ body {
     height: 200px;
   }
   .EoGalleryContainer .Eoimage.rightStack img:nth-child(3) {
-    transform: translateX(210px);
+    transform: translateX(240px);
     margin-top: -100px;
+    z-index: -1;
   }
 }
 
@@ -2544,14 +2549,18 @@ body {
 .EoGalleryHighlightsTitle {
   font-family: "Bebas Neue", sans-serif;
   font-size: 2.5rem;
+  text-align: center;
   color: var(--gray-900);
   font-weight: 600;
+  margin-bottom: 1.5rem;
 }
 
 .EoGalleryHighlightTitle {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--gray-900);
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .EoGalleryHighlightText {
@@ -2560,44 +2569,71 @@ body {
   color: var(--text-muted);
 }
 
-@media (max-width: 768px) {
+.EoGalleryHighlights {
+  padding: 4rem 0;
+}
+
+.EoGalleryHighlightCard,
+.EoGalleryHighlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  height: 100%;
+  gap: 0.75rem;
+}
+
+.EoGalleryHighlightImg {
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.164);
+  margin-bottom: 0.75rem;
+  max-width: 100%;
+}
+.EoGalleryHighlightText {
+  font-size: 1.05rem;
+  color: #2d2d2dd3;
+}
+@media (min-width: 320px) and (max-width: 767px) {
   .EoGalleryHighlights {
-    padding: 2rem 0;
+    padding: 100px;
   }
-  .EoGalleryHighlightsTitle {
-    font-size: 1.45rem;
+  .EoGalleryHighlightImg {
+    width: 95%;
+    height: 180px;
   }
-  .EoGalleryHighlightTitle {
-    font-size: 1.18rem;
+  .EoGalleryHighlightCard,
+  .EoGalleryHighlight {
+    margin-left: -117px;
+    width: 380px;
+    padding: 0.5rem;
   }
   .EoGalleryHighlightText {
-    font-size: 0.97rem;
+    color: #2d2d2dd3;
   }
 }
-@media (max-width: 600px) {
-  .EoGalleryHighlights,
-  .EoGalleryHighlights .container {
-    padding: 1.05rem 2vw !important;
-    margin: 0;
-    width: 100vw;
-    max-width: 100vw;
-  }
-  .EoGalleryHighlightsTitle {
-    font-size: 1.15rem;
-    margin-bottom: 1.25rem;
-  }
+@media (min-width: 768px) and (max-width: 912px) {
   .EoGalleryHighlightTitle {
-    font-size: 1.04rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    text-align: center;
+    margin-bottom: 1.5rem;
   }
   .EoGalleryHighlightText {
-    font-size: 0.85rem;
+    color: #2d2d2dd3;
   }
-  .EoGalleryHighlights .row {
-    gap: 0.8rem 0;
+
+  .EoGalleryHighlightImg {
+    width: 100vw;
+    height: 150px;
   }
-  .EoGalleryHighlights .col-md-4 {
-    padding-left: 4px !important;
-    padding-right: 4px !important;
+  .EoGalleryHighlightCard,
+  .EoGalleryHighlight {
+    padding: 0.75rem;
   }
 }
 

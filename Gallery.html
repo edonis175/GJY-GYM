@@ -1,297 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery - GJY-Gym Fitness</title>
 
-    <!-- Bootstrap 5 CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery - GJY-Gym Fitness</title>
 
-    <!-- Font Awesome for Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- External CSS -->
-    <link rel="stylesheet" href="./styles/main.css" />
-    <!-- External JavaScript -->
-    <script src="./scripts/main.js" defer></script>
-  </head>
-  <!-- Main body container with my Intials ID -->
-  <body id="EoBody">
-    <!-- HEADER: Responsive Bootstrap Navbar -->
-    <header>
-      <nav class="navbar navbar-expand-lg bg-dark EoNavbar">
-        <!-- Bootstrap container for fixed width -->
-        <div class="container">
-          <!-- Website Logo -->
-          <a href="index.html" class="Eo-Logo" alt="Website logo">
-            <img
-              src="./images/Logo.png"
-              alt="GJY-Gym Fitness Logo"
-              class="EoLogoImage"
-            />
-          </a>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-          <!-- Mobile Hamburger Menu Button - Bootstrap: navbar-toggler, navbar-light, bg-light, collapsed -->
-          <button
-            class="navbar-toggler bg-white collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#EoNavbarNav"
-            aria-controls="EoNavbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <!-- Custom classes: toggler-icon, hamburger-icon, close-icon (hamburger menu icons X and 3 lines) -->
-            <span class="toggler-icon hamburger-icon">&#9776;</span>
-            <span class="toggler-icon close-icon">&times;</span>
-          </button>
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="./styles/main.css" />
+  <!-- External JavaScript -->
+  <script src="./scripts/main.js" defer></script>
+</head>
+<!-- Main body container with my Intials ID -->
 
-          <!-- Navbar Links - Bootstrap: collapse, navbar-collapse -->
-          <div class="collapse navbar-collapse" id="EoNavbarNav">
-            <!-- Bootstrap: navbar-nav -->
-            <ul class="navbar-nav ms-auto EoNavLinks">
-              <!-- Each nav item has custom classes: Eo-nav-itemH, Eo-nav-itemAb, etc. -->
-              <!-- Bootstrap: nav-link, active -->
-              <li class="Eo-nav-itemH">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="Eo-nav-itemAb">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <li class="Eo-nav-itemS">
-                <a class="nav-link" href="services.html">Services</a>
-              </li>
-              <li class="Eo-nav-itemB">
-                <a class="nav-link" href="blog.html">Blog</a>
-              </li>
-              <li class="Eo-nav-itemG">
-                <a class="nav-link active" href="gallery.html">Gallery</a>
-              </li>
-              <li class="Eo-nav-itemT">
-                <a class="nav-link" href="team.html">Team</a>
-              </li>
-              <li class="Eo-nav-itemP">
-                <a class="nav-link" href="programs.html">Programs</a>
-              </li>
-
-              <li class="Eo-nav-itemF">
-                <a class="nav-link" href="faq.html">FAQ</a>
-              </li>
-              <li class="Eo-nav-itemTes">
-                <a class="nav-link" href="testimonials.html">Testimonials</a>
-              </li>
-              <li class="Eo-nav-itemC">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <!-- MAIN CONTENT -->
-    <main>
-      <section id="EoGalleryContainer">
-        <div class="EoGalleryContainer">
-          <!-- Left Images (3) -->
-          <div class="Eoimage leftStack">
-            <img src="./images/Gallery-img1.avif" alt="Gallery 1" />
-            <img src="./images/Gallery-img2.avif" alt="Gallery 2" />
-            <img src="./images/Gallery-img3.avif" alt="Gallery 3" />
-          </div>
-          <section class="EoGalleryHeader text-center">
-            <div class="container">
-              <h1 class="EoGalleryMainTitle">Gallery</h1>
-              <p class="EoGallerySubtitle">
-                Step into our community of strength and see the power of
-                transformation in action. This gallery showcases the real-life
-                journeys of our dedicated members, highlighting the grit,
-                discipline, and milestones achieved within our walls. Whether
-                it’s reaching a personal best or finding a new passion for
-                movement, these images celebrate the hard work that defines us.
-              </p>
-            </div>
-          </section>
-
-          <!-- Right Images (3 stacked) -->
-          <div class="Eoimage rightStack">
-            <img src="./images/Gallery-img4.avif" alt="Gallery 4" />
-            <img src="./images/Gallery-img5.avif" alt="Gallery 5" />
-            <img src="./images/Gallery-img6.avif" alt="Gallery 6" />
-          </div>
-        </div>
-      </section>
-
-      <section class="EoGallery container py-4">
-        <div class="row g-3">
-          <div class="col-12 col-md-6 col-lg-4">
-            <img
-              src="./images/Gallery-img7.avif"
-              alt="Strength area"
-              class="EoGalleryImage Eofirst-img w-100"
-            />
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <img
-              src="./images/Gallery-img9.webp"
-              alt="Strength area"
-              class="EoGalleryImage Eosecond-img w-100"
-            />
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <img
-              src="./images/Gallery-img8.avif"
-              alt="Cardio area"
-              class="EoGalleryImage Eothird-img w-100"
-            />
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <img
-              src="./images/Gallery-img10.avif"
-              alt="Yoga class"
-              class="EoGalleryImage Eofourth-img w-100"
-            />
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <img
-              src="./images/Gallery-img11.avif"
-              alt="Yoga class"
-              class="EoGalleryImage Eofifth-img w-100"
-            />
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <img
-              src="./images/Gallery-img12.avif"
-              alt="Yoga class"
-              class="EoGalleryImage Eosixth-img w-100"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section class="EoGalleryHighlights py-5">
-        <div class="container">
-          <h2 class="EoGalleryHighlightsTitle text-center mb-4">
-            Facility Highlights
-          </h2>
-          <div class="row g-4">
-            <div class="col-md-4">
-              <h3 class="EoGalleryHighlightTitle">Modern Equipment</h3>
-              <p class="EoGalleryHighlightText">
-                Top-of-the-line machines and a clean, safe environment.
-              </p>
-            </div>
-            <div class="col-md-4">
-              <h3 class="EoGalleryHighlightTitle">Expert Trainers</h3>
-              <p class="EoGalleryHighlightText">
-                Certified coaches who design safe, effective plans.
-              </p>
-            </div>
-            <div class="col-md-4">
-              <h3 class="EoGalleryHighlightTitle">Community</h3>
-              <p class="EoGalleryHighlightText">
-                Supportive members and motivating classes to keep you
-                consistent.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="EoFooter">
+<body id="EoBody">
+  <!-- HEADER: Responsive Bootstrap Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg bg-dark EoNavbar">
+      <!-- Bootstrap container for fixed width -->
       <div class="container">
-        <div class="row py-5">
-          <!-- Quick Navigation Links -->
-          <div class="col-md-4 mb-4 mb-md-0">
-            <h5 class="EoFooterHeading">Quick Links</h5>
-            <ul class="list-unstyled EoFooterLinks">
-              <li><a href="index.html" class="EoFooterLink">Home</a></li>
-              <li><a href="about.html" class="EoFooterLink">About Us</a></li>
-              <li><a href="services.html" class="EoFooterLink">Services</a></li>
-              <li><a href="programs.html" class="EoFooterLink">Programs</a></li>
-              <li><a href="gallery.html" class="EoFooterLink">Gallery</a></li>
-              <li><a href="blog.html" class="EoFooterLink">Blog</a></li>
-              <li><a href="team.html" class="EoFooterLink">Team</a></li>
-              <li>
-                <a href="testimonials.html" class="EoFooterLink"
-                  >Testiomonials</a
-                >
-              </li>
-              <li><a href="faq.html" class="EoFooterLink">FAQ</a></li>
-              <li><a href="contact.html" class="EoFooterLink">Contact</a></li>
-            </ul>
-          </div>
+        <!-- Website Logo -->
+        <a href="index.html" class="Eo-Logo" alt="Website logo">
+          <img src="./images/Logo.png" alt="GJY-Gym Fitness Logo" class="EoLogoImage" />
+        </a>
 
-          <!-- Contact Info -->
-          <div class="col-md-4 mb-4 mb-md-0">
-            <h5 class="EoFooterHeading">Contact Information</h5>
-            <ul class="list-unstyled EoFooterContact">
-              <li class="EoFooterContactItem">
-                <i class="fas fa-map-marker-alt me-2"></i>123 Fitness Street,
-                Health City
-              </li>
-              <li class="EoFooterContactItem">
-                <i class="fas fa-phone me-2"></i>(555) 123-4567
-              </li>
-              <li class="EoFooterContactItem">
-                <i class="fas fa-envelope me-2"></i>info@GJY-GYMFitness.com
-              </li>
-            </ul>
-          </div>
+        <!-- Mobile Hamburger Menu Button - Bootstrap: navbar-toggler, navbar-light, bg-light, collapsed -->
+        <button class="navbar-toggler bg-white collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#EoNavbarNav" aria-controls="EoNavbarNav" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <!-- Custom classes: toggler-icon, hamburger-icon, close-icon (hamburger menu icons X and 3 lines) -->
+          <span class="toggler-icon hamburger-icon">&#9776;</span>
+          <span class="toggler-icon close-icon">&times;</span>
+        </button>
 
-          <!-- Social Media Icons -->
+        <!-- Navbar Links - Bootstrap: collapse, navbar-collapse -->
+        <div class="collapse navbar-collapse" id="EoNavbarNav">
+          <!-- Bootstrap: navbar-nav -->
+          <ul class="navbar-nav ms-auto EoNavLinks">
+            <!-- Each nav item has custom classes: Eo-nav-itemH, Eo-nav-itemAb, etc. -->
+            <!-- Bootstrap: nav-link, active -->
+            <li class="Eo-nav-itemH">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="Eo-nav-itemAb">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="Eo-nav-itemS">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="Eo-nav-itemB">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="Eo-nav-itemG">
+              <a class="nav-link active" href="gallery.html">Gallery</a>
+            </li>
+            <li class="Eo-nav-itemT">
+              <a class="nav-link" href="team.html">Team</a>
+            </li>
+            <li class="Eo-nav-itemP">
+              <a class="nav-link" href="programs.html">Programs</a>
+            </li>
+
+            <li class="Eo-nav-itemF">
+              <a class="nav-link" href="faq.html">FAQ</a>
+            </li>
+            <li class="Eo-nav-itemTes">
+              <a class="nav-link" href="testimonials.html">Testimonials</a>
+            </li>
+            <li class="Eo-nav-itemC">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <section id="EoGalleryContainer">
+      <div class="EoGalleryContainer">
+        <!-- Left Images (3) -->
+        <div class="Eoimage leftStack">
+          <img src="./images/Gallery-img1.avif" alt="Gallery 1" />
+          <img src="./images/Gallery-img2.avif" alt="Gallery 2" />
+          <img src="./images/Gallery-img3.avif" alt="Gallery 3" />
+        </div>
+        <section class="EoGalleryHeader text-center">
+          <div class="container">
+            <h1 class="EoGalleryMainTitle">Gallery</h1>
+            <p class="EoGallerySubtitle">
+              Step into our community of strength and see the power of
+              transformation in action. This gallery showcases the real-life
+              journeys of our dedicated members, highlighting the grit,
+              discipline, and milestones achieved within our walls. Whether
+              it’s reaching a personal best or finding a new passion for
+              movement, these images celebrate the hard work that defines us.
+            </p>
+          </div>
+        </section>
+
+        <!-- Right Images (3 stacked) -->
+        <div class="Eoimage rightStack">
+          <img src="./images/Gallery-img4.avif" alt="Gallery 4" />
+          <img src="./images/Gallery-img5.avif" alt="Gallery 5" />
+          <img src="./images/Gallery-img6.avif" alt="Gallery 6" />
+        </div>
+      </div>
+    </section>
+
+    <section class="EoGallery container py-4">
+      <div class="row g-3">
+        <div class="col-12 col-md-6 col-lg-4">
+          <img src="./images/Gallery-img7.avif" alt="Strength area" class="EoGalleryImage Eofirst-img w-100" />
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <img src="./images/Gallery-img9.webp" alt="Strength area" class="EoGalleryImage Eosecond-img w-100" />
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <img src="./images/Gallery-img8.avif" alt="Cardio area" class="EoGalleryImage Eothird-img w-100" />
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <img src="./images/Gallery-img10.avif" alt="Yoga class" class="EoGalleryImage Eofourth-img w-100" />
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <img src="./images/Gallery-img11.avif" alt="Yoga class" class="EoGalleryImage Eofifth-img w-100" />
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <img src="./images/Gallery-img12.avif" alt="Yoga class" class="EoGalleryImage Eosixth-img w-100" />
+        </div>
+      </div>
+    </section>
+
+    <section class="EoGalleryHighlights">
+      <div class="container">
+        <h2 class="EoGalleryHighlightsTitle">
+          Facility Highlights
+        </h2>
+        <div class="row g-4">
           <div class="col-md-4">
-            <h5 class="EoFooterHeading">Follow Us</h5>
-            <div class="EoSocialMedia">
-              <a href="#" class="EoSocialIcon" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="EoSocialIcon" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="#" class="EoSocialIcon" aria-label="Twitter">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="EoSocialIcon" aria-label="YouTube">
-                <i class="fab fa-youtube"></i>
-              </a>
-              <a href="#" class="EoSocialIcon" aria-label="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
+            <div class="EoGalleryHighlightCard">
+              <h2 class="EoGalleryHighlightTitle">Modern Equipment</h2>
+              <img src="./images/Modern-Equipment.webp" alt="Modern equipment" class="EoGalleryHighlightImg" />
+              <p class="EoGalleryHighlightText">
+                Our gym features cutting-edge technology, from AI-integrated treadmills to
+                advanced recovery tools like therapy devices. We are committed to progress, with new
+                bio-density machines and augmented reality bikes arriving soon. Experience the future of fitness by
+                joining our community today.</p>
             </div>
           </div>
-        </div>
+          <div class="col-md-4">
+            <div class="EoGalleryHighlightCard">
+              <h2 class="EoGalleryHighlightTitle">Expert Trainers</h2>
+              <img src="./images/Expert-Trainers.avif" alt="Expert trainers" class="EoGalleryHighlightImg" />
+              <p class="EoGalleryHighlightText">
+                Our expert trainers provide personalized,science-based programs designed to maximize your potential.
+                Whether your goal is fat loss, functional strength, or elite muscle growth, our world-class coaches
+                offer the guidance and accountability you need to succeed .
 
-        <!-- Copyright -->
-        <div class="row">
-          <div class="col-12">
-            <div class="text-center py-3 EoCopyright">
-              <p class="mb-0 EoCopyrightText">
-                &copy; <span id="EoCopyrightYear"></span> GJY-GYM Fitness. All
-                rights reserved.
               </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="EoGalleryHighlightCard">
+              <h2 class="EoGalleryHighlightTitle">Community</h2>
+              <img src="./images/Gym-Community.avif" alt="Community" class="EoGalleryHighlightImg" />
+              <p class="EoGalleryHighlightText">
+                Our community is the heartbeat of the gym, offering a supportive brotherhood that carries you through
+                every challenge.Whether you’re struggling with motivation or pushing for a new record, our
+                members
+                provide the daily encouragement needed to conquer your goals together. </p>
             </div>
           </div>
         </div>
       </div>
-    </footer>
-  </body>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="EoFooter">
+    <div class="container">
+      <div class="row py-5">
+        <!-- Quick Navigation Links -->
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5 class="EoFooterHeading">Quick Links</h5>
+          <ul class="list-unstyled EoFooterLinks">
+            <li><a href="index.html" class="EoFooterLink">Home</a></li>
+            <li><a href="about.html" class="EoFooterLink">About Us</a></li>
+            <li><a href="services.html" class="EoFooterLink">Services</a></li>
+            <li><a href="programs.html" class="EoFooterLink">Programs</a></li>
+            <li><a href="gallery.html" class="EoFooterLink">Gallery</a></li>
+            <li><a href="blog.html" class="EoFooterLink">Blog</a></li>
+            <li><a href="team.html" class="EoFooterLink">Team</a></li>
+            <li>
+              <a href="testimonials.html" class="EoFooterLink">Testiomonials</a>
+            </li>
+            <li><a href="faq.html" class="EoFooterLink">FAQ</a></li>
+            <li><a href="contact.html" class="EoFooterLink">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5 class="EoFooterHeading">Contact Information</h5>
+          <ul class="list-unstyled EoFooterContact">
+            <li class="EoFooterContactItem">
+              <i class="fas fa-map-marker-alt me-2"></i>123 Fitness Street,
+              Health City
+            </li>
+            <li class="EoFooterContactItem">
+              <i class="fas fa-phone me-2"></i>(555) 123-4567
+            </li>
+            <li class="EoFooterContactItem">
+              <i class="fas fa-envelope me-2"></i>info@GJY-GYMFitness.com
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="col-md-4">
+          <h5 class="EoFooterHeading">Follow Us</h5>
+          <div class="EoSocialMedia">
+            <a href="#" class="EoSocialIcon" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="EoSocialIcon" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="EoSocialIcon" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="EoSocialIcon" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" class="EoSocialIcon" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center py-3 EoCopyright">
+            <p class="mb-0 EoCopyrightText">
+              &copy; <span id="EoCopyrightYear"></span> GJY-GYM Fitness. All
+              rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
