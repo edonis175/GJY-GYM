@@ -1,5 +1,5 @@
 /* ============================================
-   SCROLL  ANIMATION 
+   SCROLL ANIMATION 
    ============================================ */
 
 /**
@@ -145,7 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-
   // Initialize program filter
   EoInitProgramFilter();
 });
@@ -248,6 +247,97 @@ document.addEventListener("DOMContentLoaded", function () {
 //     }, 5000);
 //   }
 // }
+
+// Initialize FAQ search and accordion helper
+function EoInitFaq() {
+  // Get the FAQ search input element
+  const search = document.getElementById("EoFaqSearch");
+  if (!search) return; // Exit if search input doesn't exist
+
+  // Get all FAQ items marked with data-faq attribute
+  const items = document.querySelectorAll("[data-faq]");
+
+  /**
+   * Show or hide "no results" message
+   * @param {boolean} show - Whether to display the message
+   */
+  function showNoResults(show) {
+    const existing = document.querySelector(".EoFaqNoResults");
+    if (show && !existing) {
+      // Create and append no results notice if it doesn't exist
+      const notice = document.createElement("div");
+      notice.className = "EoFaqNoResults text-center";
+      notice.textContent = "No results found. Try searching for anything else.";
+      search.closest(".col-md-8").appendChild(notice);
+    } else if (!show && existing) {
+      // Remove no results notice if results are found
+      existing.remove();
+    }
+  }
+
+  // Listen for user input in search field
+  search.addEventListener("input", function () {
+    const q = this.value.trim().toLowerCase(); // Get and normalize search query
+    let visibleCount = 0;
+
+    // Filter FAQ items based on search query
+    items.forEach((item) => {
+      const text = (item.textContent || "").toLowerCase();
+      const collapseEl = item.querySelector(".accordion-collapse");
+
+      // Show item if query is empty or text matches query
+      if (!q || text.includes(q)) {
+        item.style.display = "";
+        visibleCount++;
+      } else {
+        // Hide item and collapse it if currently open
+        item.style.display = "none";
+        if (collapseEl && collapseEl.classList.contains("show")) {
+          const bs =
+            bootstrap.Collapse.getInstance(collapseEl) ||
+            new bootstrap.Collapse(collapseEl, { toggle: false });
+          bs.hide();
+        }
+      }
+    });
+
+    // Show/hide "no results" message based on visible items
+    showNoResults(visibleCount === 0);
+
+    // Auto-expand first matching item for better UX
+    if (q && visibleCount > 0) {
+      const first = [...items].find((it) => it.style.display !== "none");
+      if (first) {
+        const collapseFirst = first.querySelector(".accordion-collapse");
+        const bs =
+          bootstrap.Collapse.getInstance(collapseFirst) ||
+          new bootstrap.Collapse(collapseFirst, { toggle: false });
+        bs.show();
+      }
+    }
+  });
+
+  // Update accordion button styling when collapse state changes
+  const faqAccordion = document.getElementById("EoFaqAccordion");
+  if (faqAccordion) {
+    // When accordion item opens, remove "collapsed" class from button
+    faqAccordion.addEventListener("show.bs.collapse", function (e) {
+      const btn =
+        e.target.previousElementSibling.querySelector(".accordion-button");
+      if (btn) btn.classList.remove("collapsed");
+    });
+
+    // When accordion item closes, add "collapsed" class to button
+    faqAccordion.addEventListener("hide.bs.collapse", function (e) {
+      const btn =
+        e.target.previousElementSibling.querySelector(".accordion-button");
+      if (btn) btn.classList.add("collapsed");
+    });
+  }
+}
+
+// Initialize FAQ search & accordion UX when DOM is ready
+EoInitFaq();
 
 // Console log for debugging
 console.log("Eo Fitness website loaded successfully!");

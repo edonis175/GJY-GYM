@@ -3196,46 +3196,28 @@ body {
 /* FAQ Page - Section 2: FAQ Questions */
 .EoFaqQuestions {
   padding: 4rem 0;
-}
-
-.EoFaqItem {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.EoFaqQuestion {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--gray-900);
-}
-
-.EoFaqAnswer {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--text-muted);
-  margin: 0;
+  margin-top: 40px;
+  margin-bottom: 70px;
 }
 
 /* FAQ Page - Section 3: Contact for More Info */
 .EoFaqContact {
-  background: var(--bg-secondary);
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  margin-bottom: 1px;
   padding: 4rem 0;
 }
 
 .EoFaqContactTitle {
   font-family: "Bebas Neue", sans-serif;
   font-size: 2.5rem;
-  color: var(--gray-900);
+  color: var(--gray-0);
   font-weight: 600;
 }
 
 .EoFaqContactText {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--text-muted);
+  color: var(--gray-0);
 }
 
 @media (max-width: 768px) {
@@ -3245,6 +3227,58 @@ body {
 
   .EoFaqContactTitle {
     font-size: 2rem;
+  }
+}
+
+/* ============================================
+FAQ: Searchable accordion styles
+============================================ */
+.EoFaqQuestions .input-group {
+  max-width: 720px;
+  margin: 0 auto;
+}
+#EoFaqSearch {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.178);
+  border-radius: 40px;
+  padding: 0.75rem 1rem;
+}
+#EoFaqSearch:focus {
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.12);
+  border-color: rgba(102, 126, 234, 0.35);
+}
+.EoFaqQuestions .accordion-item {
+  border: none;
+  margin-bottom: 0.5rem;
+}
+.EoFaqQuestions .accordion-button {
+  font-weight: 600;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  transition: background 0.2s ease, transform 0.12s ease;
+}
+.EoFaqQuestions .accordion-button:not(.collapsed) {
+  background: linear-gradient(
+    90deg,
+    rgba(102, 126, 234, 0.06),
+    rgba(243, 156, 18, 0.03)
+  );
+  color: var(--gray-900);
+}
+.EoFaqQuestions .accordion-body {
+  color: var(--text-muted);
+}
+.EoFaqNoResults {
+  display: block;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+@media (max-width: 576px) {
+  #EoFaqSearch {
+    font-size: 0.95rem;
+  }
+  .EoFaqQuestions .accordion-button {
+    font-size: 0.95rem;
   }
 }
 

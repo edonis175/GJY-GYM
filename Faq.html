@@ -1,193 +1,384 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQ - GJY-Gym Fitness</title>
 
     <!-- Bootstrap 5 CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Font Awesome for Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- External CSS -->
     <link rel="stylesheet" href="./styles/main.css" />
     <!-- External JavaScript -->
     <script src="./scripts/main.js" defer></script>
-  </head>
-  <!-- Main body container with my Intials ID -->
-  <body id="EoBody">
+</head>
+<!-- Main body container with my Intials ID -->
+
+<body id="EoBody">
     <!-- HEADER: Responsive Bootstrap Navbar -->
     <header>
-      <nav class="navbar navbar-expand-lg bg-dark EoNavbar">
-        <!-- Bootstrap container for fixed width -->
-        <div class="container">
-          <!-- Website Logo -->
-          <a href="index.html" class="Eo-Logo" alt="Website logo">
-            <img
-              src="./images/Logo.png"
-              alt="GJY-Gym Fitness Logo"
-              class="EoLogoImage"
-            />
-          </a>
+        <nav class="navbar navbar-expand-lg bg-dark EoNavbar">
+            <!-- Bootstrap container for fixed width -->
+            <div class="container">
+                <!-- Website Logo -->
+                <a href="index.html" class="Eo-Logo" alt="Website logo">
+                    <img src="./images/Logo.png" alt="GJY-Gym Fitness Logo" class="EoLogoImage" />
+                </a>
 
-          <!-- Mobile Hamburger Menu Button - Bootstrap: navbar-toggler, navbar-light, bg-light, collapsed -->
-          <button
-            class="navbar-toggler bg-white collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#EoNavbarNav"
-            aria-controls="EoNavbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <!-- Custom classes: toggler-icon, hamburger-icon, close-icon (hamburger menu icons X and 3 lines) -->
-            <span class="toggler-icon hamburger-icon">&#9776;</span>
-            <span class="toggler-icon close-icon">&times;</span>
-          </button>
+                <!-- Mobile Hamburger Menu Button - Bootstrap: navbar-toggler, navbar-light, bg-light, collapsed -->
+                <button class="navbar-toggler bg-white collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#EoNavbarNav" aria-controls="EoNavbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <!-- Custom classes: toggler-icon, hamburger-icon, close-icon (hamburger menu icons X and 3 lines) -->
+                    <span class="toggler-icon hamburger-icon">&#9776;</span>
+                    <span class="toggler-icon close-icon">&times;</span>
+                </button>
 
-          <!-- Navbar Links - Bootstrap: collapse, navbar-collapse -->
-          <div class="collapse navbar-collapse" id="EoNavbarNav">
-            <!-- Bootstrap: navbar-nav -->
-            <ul class="navbar-nav ms-auto EoNavLinks">
-              <!-- Each nav item has custom classes: Eo-nav-itemH, Eo-nav-itemAb, etc. -->
-              <!-- Bootstrap: nav-link, active -->
-              <li class="Eo-nav-itemH">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="Eo-nav-itemAb">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <li class="Eo-nav-itemS">
-                <a class="nav-link" href="services.html">Services</a>
-              </li>
-              <li class="Eo-nav-itemB">
-                <a class="nav-link" href="blog.html">Blog</a>
-              </li>
-              <li class="Eo-nav-itemG">
-                <a class="nav-link" href="gallery.html">Gallery</a>
-              </li>
-              <li class="Eo-nav-itemT">
-                <a class="nav-link" href="team.html">Team</a>
-              </li>
-              <li class="Eo-nav-itemP">
-                <a class="nav-link" href="programs.html">Programs</a>
-              </li>
+                <!-- Navbar Links - Bootstrap: collapse, navbar-collapse -->
+                <div class="collapse navbar-collapse" id="EoNavbarNav">
+                    <!-- Bootstrap: navbar-nav -->
+                    <ul class="navbar-nav ms-auto EoNavLinks">
+                        <!-- Each nav item has custom classes: Eo-nav-itemH, Eo-nav-itemAb, etc. -->
+                        <!-- Bootstrap: nav-link, active -->
+                        <li class="Eo-nav-itemH">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="Eo-nav-itemAb">
+                            <a class="nav-link" href="About.html">About</a>
+                        </li>
+                        <li class="Eo-nav-itemS">
+                            <a class="nav-link" href="Services.html">Services</a>
+                        </li>
+                        <li class="Eo-nav-itemB">
+                            <a class="nav-link" href="Blog.html">Blog</a>
+                        </li>
+                        <li class="Eo-nav-itemG">
+                            <a class="nav-link" href="Gallery.html">Gallery</a>
+                        </li>
+                        <li class="Eo-nav-itemT">
+                            <a class="nav-link" href="Team.html">Team</a>
+                        </li>
+                        <li class="Eo-nav-itemP">
+                            <a class="nav-link" href="Programs.html">Programs</a>
+                        </li>
 
-              <li class="Eo-nav-itemF">
-                <a class="nav-link active" href="faq.html">FAQ</a>
-              </li>
-              <li class="Eo-nav-itemTes">
-                <a class="nav-link" href="testimonials.html">Testimonials</a>
-              </li>
-              <li class="Eo-nav-itemC">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+                        <li class="Eo-nav-itemF">
+                            <a class="nav-link active" href="Faq.html">FAQ</a>
+                        </li>
+                        <li class="Eo-nav-itemTes">
+                            <a class="nav-link" href="Testimonials.html">Testimonials</a>
+                        </li>
+                        <li class="Eo-nav-itemC">
+                            <a class="nav-link" href="Contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <!-- MAIN CONTENT -->
     <main>
-      <!-- Add your FAQ page content here -->
+        <section class="EoFaqHeader text-center py-5">
+            <div class="container">
+                <h1 class="EoFaqMainTitle">Frequently Asked Questions</h1>
+                <p class="EoFaqSubtitle">
+                    Answers to common membership and class questions.
+                </p>
+            </div>
+        </section>
+
+        <section class="EoFaqQuestions container py-5">
+            <div class="row mb-4">
+                <div class="col-md-8 mx-auto">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-0" id="faqSearchIcon"><i
+                                class="fas fa-search text-muted"></i></span>
+                        <input id="EoFaqSearch" type="search" class="form-control border-0 "
+                            placeholder="Search FAQ (e.g., opening hours, training)" aria-label="Search FAQ" />
+                    </div>
+                    <small class="text-muted d-block mt-2">Search by keywords to quickly find answers.</small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="EoFaqAccordion">
+                        <div class="accordion-item" data-faq>
+                            <h2 class="accordion-header" id="faqHeading1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                                    What are your opening hours?
+                                </button>
+                            </h2>
+                            <div id="faqCollapse1" class="accordion-collapse collapse show"
+                                aria-labelledby="faqHeading1" data-bs-parent="#EoFaqAccordion">
+                                <div class="accordion-body">Weekdays: 5am–11pm • Weekends: 6am–9pm</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" data-faq>
+                            <h2 class="accordion-header" id="faqHeading2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                                    Do you offer personal training?
+                                </button>
+                            </h2>
+                            <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2"
+                                data-bs-parent="#EoFaqAccordion">
+                                <div class="accordion-body">Yes — 1:1 and small-group personal training options are
+                                    available.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" data-faq>
+                            <h2 class="accordion-header" id="faqHeading3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                                    How do I get started?
+                                </button>
+                            </h2>
+                            <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3"
+                                data-bs-parent="#EoFaqAccordion">
+                                <div class="accordion-body">Start with a free tour and a fitness assessment — then we’ll
+                                    recommend the right program.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" data-faq>
+                            <h2 class="accordion-header" id="faqHeading4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                                    What should I bring to my first visit?
+                                </button>
+                            </h2>
+                            <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4"
+                                data-bs-parent="#EoFaqAccordion">
+                                <div class="accordion-body">Bring comfortable workout clothes, closed-toe shoes, a water
+                                    bottle, and any medical information your trainer should know.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" data-faq>
+                            <h2 class="accordion-header" id="faqHeading5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+                                    Do you offer class passes or drop-ins?
+                                </button>
+                            </h2>
+                            <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5"
+                                data-bs-parent="#EoFaqAccordion">
+                                <div class="accordion-body">Yes — we have day passes and class drop-ins available. Check
+                                    the Programs or Contact page for current pricing and schedules.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" data-faq>
+                            <h2 class="accordion-header" id="faqHeading6">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faqCollapse6" aria-expanded="false" aria-controls="faqCollapse6">
+                                    What equipment and amenities do you have?
+                                </button>
+                            </h2>
+                            <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6"
+                                data-bs-parent="#EoFaqAccordion">
+                                <div class="accordion-body">We offer latest tech machines with AI-integrated
+                                    and a full recovery suite featuring infrared saunas and cold plunges for
+                                    optimal 2026 performance.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" data-faq>
+                            <h2 class="accordion-header" id="faqHeading7">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faqCollapse7" aria-expanded="false" aria-controls="faqCollapse7">
+                                    Can I access workouts when I can't make it to the gym?
+
+                                </button>
+                            </h2>
+                            <div id="faqCollapse7" class="accordion-collapse collapse" aria-labelledby="faqHeading7"
+                                data-bs-parent="#EoFaqAccordion">
+                                <div class="accordion-body">Absolutely! Our 2026 hybrid membership includes an
+                                    AI-powered mobile app with live-streamed classes and on-demand personalized routines
+                                    for any location.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" data-faq>
+                            <h2 class="accordion-header" id="faqHeading8">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faqCollapse8" aria-expanded="false" aria-controls="faqCollapse8">
+                                    Are there dedicated zones for Calisthenics or Pilates & Yoga?
+
+                                </button>
+                            </h2>
+                            <div id="faqCollapse8" class="accordion-collapse collapse" aria-labelledby="faqHeading8"
+                                data-bs-parent="#EoFaqAccordion">
+                                <div class="accordion-body">Yes! We have a dedicated functional rig for
+                                    calisthenics,infrared-heated studio for both Reformer Pilates & restorative Yoga
+                                    plus we have zones for Bodybuilding, Crossfit All of them! </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" data-faq>
+                            <h2 class="accordion-header" id="faqHeading9">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faqCollapse9" aria-expanded="false" aria-controls="faqCollapse9">
+                                    Can I sync my wearable tech with your equipment?
+
+                                </button>
+                            </h2>
+                            <div id="faqCollapse9" class="accordion-collapse collapse" aria-labelledby="faqHeading9"
+                                data-bs-parent="#EoFaqAccordion">
+                                <div class="accordion-body">Yes! Our equipment automatically syncs with your Apple
+                                    Watch, Garmin, or smart ring to track real-time heart rate and 2026 recovery
+                                    metrics.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" data-faq>
+                            <h2 class="accordion-header" id="faqHeading10">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faqCollapse10" aria-expanded="false" aria-controls="faqCollapse10">
+                                    How do you incorporate AI into personal coaching?
+                                </button>
+                            </h2>
+                            <div id="faqCollapse10" class="accordion-collapse collapse" aria-labelledby="faqHeading10"
+                                data-bs-parent="#EoFaqAccordion">
+                                <div class="accordion-body">Providing advice on incorporating AI into personal coaching
+                                    that involves sleep and recovery data is not possible. For guidance on such matters,
+                                    consulting with a qualified professional is recommended.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="EoFaqContact py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 text-center">
+                        <h2 class="EoFaqContactTitle mb-2">Still have questions?</h2>
+                        <p class="EoFaqContactText mt-3">Reach out to our team or visit the Contact page for
+                            more details.</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <a href="Contact.html" class="btn btn-success btn-lg"><i
+                                    class="fas fa-envelope me-2"></i>Contact Us</a>
+                            <a href="tel:+15551234567" class="btn btn-outline-light btn-lg"><i
+                                    class="fas fa-phone me-2"></i>Call Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- FOOTER -->
     <footer class="EoFooter">
-      <div class="container">
-        <div class="row py-5">
-          <!-- Quick Navigation Links -->
-          <div class="col-md-4 mb-4 mb-md-0">
-            <h5 class="EoFooterHeading">Quick Links</h5>
-            <ul class="list-unstyled EoFooterLinks">
-              <li><a href="index.html" class="EoFooterLink">Home</a></li>
-              <li><a href="about.html" class="EoFooterLink">About Us</a></li>
-              <li><a href="services.html" class="EoFooterLink">Services</a></li>
-              <li><a href="programs.html" class="EoFooterLink">Programs</a></li>
-              <li><a href="gallery.html" class="EoFooterLink">Gallery</a></li>
-              <li><a href="blog.html" class="EoFooterLink">Blog</a></li>
-              <li><a href="team.html" class="EoFooterLink">Team</a></li>
-              <li>
-                <a href="testimonials.html" class="EoFooterLink"
-                  >Testiomonials</a
-                >
-              </li>
-              <li><a href="faq.html" class="EoFooterLink">FAQ</a></li>
-              <li><a href="contact.html" class="EoFooterLink">Contact</a></li>
-            </ul>
-          </div>
+        <div class="container">
+            <div class="row py-5">
+                <!-- Quick Navigation Links -->
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="EoFooterHeading">Quick Links</h5>
+                    <ul class="list-unstyled EoFooterLinks">
+                        <li>
+                            <a href="index.html" class="EoFooterLink">Home</a>
+                        </li>
+                        <li>
+                            <a href="About.html" class="EoFooterLink">About Us</a>
+                        </li>
+                        <li>
+                            <a href="Services.html" class="EoFooterLink">Services</a>
+                        </li>
+                        <li>
+                            <a href="Programs.html" class="EoFooterLink">Programs</a>
+                        </li>
+                        <li>
+                            <a href="Gallery.html" class="EoFooterLink">Gallery</a>
+                        </li>
+                        <li>
+                            <a href="Blog.html" class="EoFooterLink">Blog</a>
+                        </li>
+                        <li>
+                            <a href="Team.html" class="EoFooterLink">Team</a>
+                        </li>
+                        <li>
+                            <a href="Testimonials.html" class="EoFooterLink">Testiomonials</a>
+                        </li>
+                        <li>
+                            <a href="Faq.html" class="EoFooterLink">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="Contact.html" class="EoFooterLink">Contact</a>
+                        </li>
+                    </ul>
+                </div>
 
-          <!-- Contact Info -->
-          <div class="col-md-4 mb-4 mb-md-0">
-            <h5 class="EoFooterHeading">Contact Information</h5>
-            <ul class="list-unstyled EoFooterContact">
-              <li class="EoFooterContactItem">
-                <i class="fas fa-map-marker-alt me-2"></i>123 Fitness Street,
-                Health City
-              </li>
-              <li class="EoFooterContactItem">
-                <i class="fas fa-phone me-2"></i>(555) 123-4567
-              </li>
-              <li class="EoFooterContactItem">
-                <i class="fas fa-envelope me-2"></i>info@GJY-GYMFitness.com
-              </li>
-            </ul>
-          </div>
+                <!-- Contact Info -->
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="EoFooterHeading">Contact Information</h5>
+                    <ul class="list-unstyled EoFooterContact">
+                        <li class="EoFooterContactItem">
+                            <i class="fas fa-map-marker-alt me-2"></i>123
+                            Fitness Street, Health City
+                        </li>
+                        <li class="EoFooterContactItem">
+                            <i class="fas fa-phone me-2"></i>(555) 123-4567
+                        </li>
+                        <li class="EoFooterContactItem">
+                            <i class="fas fa-envelope me-2"></i>info@GJY-GYMFitness.com
+                        </li>
+                    </ul>
+                </div>
 
-          <!-- Social Media Icons -->
-          <div class="col-md-4">
-            <h5 class="EoFooterHeading">Follow Us</h5>
-            <div class="EoSocialMedia">
-              <a href="#" class="EoSocialIcon" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="EoSocialIcon" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="#" class="EoSocialIcon" aria-label="Twitter">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="EoSocialIcon" aria-label="YouTube">
-                <i class="fab fa-youtube"></i>
-              </a>
-              <a href="#" class="EoSocialIcon" aria-label="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
+                <!-- Social Media Icons -->
+                <div class="col-md-4">
+                    <h5 class="EoFooterHeading">Follow Us</h5>
+                    <div class="EoSocialMedia">
+                        <a href="#" class="EoSocialIcon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="EoSocialIcon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="EoSocialIcon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="EoSocialIcon" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="EoSocialIcon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Copyright -->
-        <div class="row">
-          <div class="col-12">
-            <div class="text-center py-3 EoCopyright">
-              <p class="mb-0 EoCopyrightText">
-                &copy; <span id="EoCopyrightYear"></span> GJY-GYM Fitness. All
-                rights reserved.
-              </p>
+            <!-- Copyright -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center py-3 EoCopyright">
+                        <p class="mb-0 EoCopyrightText">
+                            &copy;
+                            <span id="EoCopyrightYear"></span> GJY-GYM
+                            Fitness. All rights reserved.
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </footer>
-  </body>
-</html>
+</body>
 
+</html>
