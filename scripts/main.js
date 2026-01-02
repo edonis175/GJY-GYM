@@ -1,93 +1,97 @@
+/* ============================================
+   SCROLL  ANIMATION 
+   ============================================ */
+
 /**
- * Observes an element and adds an animation class when it becomes visible
- * @param {string} elementId - The ID of the element to observe
- * @param {string} animationClass - The CSS class to add when element is visible (default: 'is-visible')
- * @param {number} threshold - The percentage of element that must be visible (default: 0.1 = 10%)
- * @returns {void}
+ * Observes elements and animates them when they become visible
+ * @param {string} selector - CSS selector (#id or .class)
+ * @param {Object} options
+ * @param {string} options.animationClass - Class added when visible
+ * @param {number} options.threshold - Visibility threshold
+ * @param {boolean} options.useInlineStyles - Apply inline styles (legacy support)
  */
 function EoAnimateOnScroll(
-  elementId,
-  animationClass = "is-visible",
-  threshold = 0.1
+  selector,
+  {
+    animationClass = "is-visible",
+    threshold = 0.1,
+    useInlineStyles = false,
+  } = {}
 ) {
-  // Safely get the element by ID - fail gracefully if element doesn't exist
-  const element = document.getElementById(elementId);
+  const elements = document.querySelectorAll(selector);
 
-  // Early return if element doesn't exist - fail gracefully
-  if (!element) {
-    console.warn(
-      `EoAnimateOnScroll: Element with ID "${elementId}" not found. Animation not applied.`
-    );
+  if (!elements.length) {
+    console.warn(`EoAnimateOnScroll: No elements found for "${selector}"`);
     return;
   }
 
-  // Check if IntersectionObserver is supported by the browser
   if (!("IntersectionObserver" in window)) {
-    console.warn(
-      "IntersectionObserver is not supported in this browser. Animation will not work."
-    );
-    // Fallback: add the class immediately if IntersectionObserver is not supported
-    element.classList.add(animationClass);
+    elements.forEach((el) => el.classList.add(animationClass));
     return;
   }
 
-  // Configuration options for the IntersectionObserver
-  const observerOptions = {
-    threshold: 0.3, // Triggser when at least 10% (0.1) of the element is visible
-    rootMargin: "0px", // No margin offset from the viewport
-  };
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (useInlineStyles) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          } else {
+            entry.target.classList.add(animationClass);
+          }
 
-  // Create the IntersectionObserver instance
-  const observer = new IntersectionObserver(function (entries) {
-    // Process each entry (in case multiple elements are observed)
-    entries.forEach(function (entry) {
-      // Check if the element is currently intersecting (visible in viewport)
-      if (entry.isIntersecting) {
-        // Add the animation class to trigger CSS animations
-        entry.target.classList.add(animationClass);
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold,
+      rootMargin: "0px 0px -50px 0px",
+    }
+  );
 
-        // Stop observing this element after animation is triggered once
-        // This improves performance by not continuously checking elements that have already animated
-        observer.unobserve(entry.target);
+  elements.forEach((el) => {
+    if (useInlineStyles) {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(20px)";
+      el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    }
 
-        // Optional: Log for debugging (can be removed in production)
-        console.log(`Animation triggered for element: ${elementId}`);
-      } else {
-        // Optional: Remove the animation class if the element is not visible
-        // This allows re-triggering the animation if the user scrolls away and back
-        // entry.target.classList.remove(animationClass);
-        // Optional: Log for debugging (can be removed in production)
-      }
-    });
-  }, observerOptions);
-
-  // Start observing the target element
-  observer.observe(element);
+    observer.observe(el);
+  });
 }
+document.addEventListener("DOMContentLoaded", () => {
+  // Id elements
+  EoAnimateOnScroll("#Eo-main-title");
+  EoAnimateOnScroll("#Eo-main-p");
+  EoAnimateOnScroll("#Eo-facility-title");
+  EoAnimateOnScroll("#Eo-facility-p");
+  EoAnimateOnScroll("#Eo-facility-image");
+  EoAnimateOnScroll("#Tables");
+  EoAnimateOnScroll("#EoAboutHero1");
+  EoAnimateOnScroll("#EoFeaturesShowcase2");
+  EoAnimateOnScroll("#EoServicesIntro");
+  EoAnimateOnScroll("#EoServicesSection2");
+  EoAnimateOnScroll("#EoBlogPanel1");
+  EoAnimateOnScroll("#EoBlogArticles");
+  // Class elements
+  EoAnimateOnScroll(".EoServiceCard", { useInlineStyles: true });
+  EoAnimateOnScroll(".EoProgramCard", { useInlineStyles: true });
+  EoAnimateOnScroll(".EoFeatureItem", { useInlineStyles: true });
+  EoAnimateOnScroll(".EoBlogArticle", { useInlineStyles: true });
+  EoAnimateOnScroll(".EoBlogCategoryItem", { useInlineStyles: true });
+  EoAnimateOnScroll(".EoGalleryImage", { useInlineStyles: true });
+  EoAnimateOnScroll(".EoGalleryHighlightCard", { useInlineStyles: true });
+  EoAnimateOnScroll(".EoTeamMemberImage", { useInlineStyles: true });
+});
 
-// Apply animations to the elements by just calling the id here
-// Each element will animate when it enters the viewport
-EoAnimateOnScroll("Eo-main-title");
-EoAnimateOnScroll("Eo-main-p");
-EoAnimateOnScroll("Eo-facility-title");
-EoAnimateOnScroll("Eo-facility-p");
-EoAnimateOnScroll("Eo-facility-image");
-EoAnimateOnScroll("Tables");
-EoAnimateOnScroll("EoAboutHero1");
-EoAnimateOnScroll("EoFeaturesShowcase2");
-EoAnimateOnScroll("EoServicesIntro");
-EoAnimateOnScroll("EoServicesSection2");
-EoAnimateOnScroll("EoBlogPanel1");
-EoAnimateOnScroll("EoBlogArticle");
-
-// End //
-
+/* ============================================
+     DYNAMIC COPYRIGHT YEAR
+     Updates the copyright year automatically in Footer Section
+     ============================================ */
 // Wait for DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", function () {
-  /* ============================================
-       DYNAMIC COPYRIGHT YEAR
-       Updates the copyright year automatically in Footer Section
-       ============================================ */
   function EoUpdateCopyrightYear() {
     const copyrightYearElement = document.getElementById("EoCopyrightYear");
     if (copyrightYearElement) {
@@ -99,176 +103,152 @@ document.addEventListener("DOMContentLoaded", function () {
   // Call function to update copyright year
   EoUpdateCopyrightYear();
 
-  // /* ============================================
-  //      FORM VALIDATION
-  //      Custom form validation with HTML5 validation in Contact Form Section
-  //      ============================================ */
-  // const EoContactForm = document.getElementById("EoContactForm");
-
-  // if (EoContactForm) {
-  //   // Get form inputs
-  //   const EoFormName = document.getElementById("EoFormName");
-  //   const EoFormEmail = document.getElementById("EoFormEmail");
-  //   const EoFormMessage = document.getElementById("EoFormMessage");
-
-  //   // Real-time validation on input
-  //   EoFormName.addEventListener("input", function () {
-  //     EoValidateField(this, this.value.length >= 2);
-  //   });
-
-  //   EoFormEmail.addEventListener("input", function () {
-  //     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  //     EoValidateField(this, emailPattern.test(this.value));
-  //   });
-
-  //   EoFormMessage.addEventListener("input", function () {
-  //     EoValidateField(this, this.value.length >= 10);
-  //   });
-
-  //   // Form submission handler
-  //   EoContactForm.addEventListener("submit", function (event) {
-  //     event.preventDefault();
-  //     event.stopPropagation();
-
-  //     // Validate all fields
-  //     let isNameValid = EoFormName.value.length >= 2;
-  //     let isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(EoFormEmail.value);
-  //     let isMessageValid = EoFormMessage.value.length >= 10;
-
-  //     // Update validation states
-  //     EoValidateField(EoFormName, isNameValid);
-  //     EoValidateField(EoFormEmail, isEmailValid);
-  //     EoValidateField(EoFormMessage, isMessageValid);
-
-  //     // Check if form is valid
-  //     if (isNameValid && isEmailValid && isMessageValid) {
-  //       // Form is valid - show success alert
-  //       EoShowFormSuccessAlert();
-
-  //       // Reset form after successful submission
-  //       setTimeout(function () {
-  //         EoContactForm.reset();
-  //         EoContactForm.classList.remove("was-validated");
-  //         // Remove validation classes from inputs
-  //         EoFormName.classList.remove("is-invalid", "is-valid");
-  //         EoFormEmail.classList.remove("is-invalid", "is-valid");
-  //         EoFormMessage.classList.remove("is-invalid", "is-valid");
-  //       }, 2000);
-  //     } else {
-  //       // Form is invalid - add Bootstrap validation class
-  //       EoContactForm.classList.add("was-validated");
-  //     }
-  //   });
-  // }
-
-  // Helper function to validate individual fields
-  // function EoValidateField(field, isValid) {
-  //   if (isValid) {
-  //     field.classList.remove("is-invalid");
-  //     field.classList.add("is-valid");
-  //   } else {
-  //     field.classList.remove("is-valid");
-  //     field.classList.add("is-invalid");
-  //   }
-  // }
-
-  // // Function to show success alert after form submission
-  // function EoShowFormSuccessAlert() {
-  //   // Create alert element
-  //   const alertDiv = document.createElement("div");
-  //   alertDiv.className =
-  //     "alert alert-success alert-dismissible fade show EoFormSuccessAlert";
-  //   alertDiv.setAttribute("role", "alert");
-  //   alertDiv.innerHTML = `
-  //           <i class="fas fa-check-circle me-2"></i>
-  //           <strong>Success!</strong> Thank you for contacting us. We will get back to you soon!
-  //           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  //       `;
-
-  //   // Insert alert before the form
-  //   const formSection = document.querySelector(".EoFormSection");
-  //   if (formSection) {
-  //     formSection.insertBefore(alertDiv, EoContactForm);
-
-  //     // Auto-dismiss after 5 seconds
-  //     setTimeout(function () {
-  //       const bsAlert = new bootstrap.Alert(alertDiv);
-  //       bsAlert.close();
-  //     }, 5000);
-  //   }
-  // }
-
   /* ============================================
-       TOGGLE FUNCTION
-       Toggle functionality for interactive elements
+       PROGRAM FILTER FUNCTIONALITY
+       Filter program cards by fitness level
        ============================================ */
+  function EoInitProgramFilter() {
+    // Select all filter buttons
+    const filterButtons = document.querySelectorAll(".EoProgramFilterBtn");
+    // Select all program cards inside the .row.g-4.mt-4 container
+    const programCards = document.querySelectorAll(
+      ".row.g-4.mt-4 > div[data-level]"
+    );
 
-  // Toggle function for navbar on scroll
-  // let EoLastScroll = 0;
-  // const EoNavbar = document.querySelector(".EoNavbar");
+    // Exit if no filter buttons are found (means not on Programs page)
+    if (filterButtons.length === 0) {
+      return;
+    }
 
-  // window.addEventListener("scroll", function () {
-  //   const currentScroll = window.pageYOffset;
+    // For each filter button, add a click event listener
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", function (e) {
+        e.preventDefault(); // Prevent form/button default behavior
+        const selectedLevel = this.getAttribute("data-level"); // Get level of the clicked button
 
-  //   if (EoNavbar) {
-  //     if (currentScroll > 100) {
-  //       EoNavbar.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.2)";
-  //     } else {
-  //       EoNavbar.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
-  //     }
-  //   }
+        // Remove active state from all buttons
+        filterButtons.forEach((btn) => btn.classList.remove("active"));
+        // Add active state to just the clicked button
+        this.classList.add("active");
 
-  //   EoLastScroll = currentScroll;
-  // });
+        // For each program card, show or hide based on selected level
+        programCards.forEach((card) => {
+          const cardLevel = card.getAttribute("data-level");
 
-  /* ============================================
-       SMOOTH SCROLLING
-       Smooth scroll behavior for anchor links
-       ============================================ */
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      const href = this.getAttribute("href");
-      if (href !== "#" && href.length > 1) {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }
-      }
+          // Show if matching filter (or "all")
+          if (selectedLevel === "all" || cardLevel === selectedLevel) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
     });
-  });
+  }
 
-  /* ============================================
-       ADDITIONAL INTERACTIVE FEATURES
-       ============================================ */
-
-  // Add animation on scroll for cards
-  const EoObserverOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
-  };
-
-  const EoObserver = new IntersectionObserver(function (entries) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-      }
-    });
-  }, EoObserverOptions);
-
-  // Observe service cards
-  document.querySelectorAll(".EoServiceCard").forEach((card) => {
-    card.style.opacity = "0";
-    card.style.transform = "translateY(20px)";
-    card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-    EoObserver.observe(card);
-  });
-
-  // Console log for debugging
-  console.log("Eo Fitness website loaded successfully!");
-  console.log("All interactive features are active.");
+  // Initialize program filter
+  EoInitProgramFilter();
 });
+
+// /* ============================================
+//      FORM VALIDATION
+//      Custom form validation with HTML5 validation in Contact Form Section
+//      ============================================ */
+// const EoContactForm = document.getElementById("EoContactForm");
+
+// if (EoContactForm) {
+//   // Get form inputs
+//   const EoFormName = document.getElementById("EoFormName");
+//   const EoFormEmail = document.getElementById("EoFormEmail");
+//   const EoFormMessage = document.getElementById("EoFormMessage");
+
+//   // Real-time validation on input
+//   EoFormName.addEventListener("input", function () {
+//     EoValidateField(this, this.value.length >= 2);
+//   });
+
+//   EoFormEmail.addEventListener("input", function () {
+//     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//     EoValidateField(this, emailPattern.test(this.value));
+//   });
+
+//   EoFormMessage.addEventListener("input", function () {
+//     EoValidateField(this, this.value.length >= 10);
+//   });
+
+//   // Form submission handler
+//   EoContactForm.addEventListener("submit", function (event) {
+//     event.preventDefault();
+//     event.stopPropagation();
+
+//     // Validate all fields
+//     let isNameValid = EoFormName.value.length >= 2;
+//     let isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(EoFormEmail.value);
+//     let isMessageValid = EoFormMessage.value.length >= 10;
+
+//     // Update validation states
+//     EoValidateField(EoFormName, isNameValid);
+//     EoValidateField(EoFormEmail, isEmailValid);
+//     EoValidateField(EoFormMessage, isMessageValid);
+
+//     // Check if form is valid
+//     if (isNameValid && isEmailValid && isMessageValid) {
+//       // Form is valid - show success alert
+//       EoShowFormSuccessAlert();
+
+//       // Reset form after successful submission
+//       setTimeout(function () {
+//         EoContactForm.reset();
+//         EoContactForm.classList.remove("was-validated");
+//         // Remove validation classes from inputs
+//         EoFormName.classList.remove("is-invalid", "is-valid");
+//         EoFormEmail.classList.remove("is-invalid", "is-valid");
+//         EoFormMessage.classList.remove("is-invalid", "is-valid");
+//       }, 2000);
+//     } else {
+//       // Form is invalid - add Bootstrap validation class
+//       EoContactForm.classList.add("was-validated");
+//     }
+//   });
+// }
+
+// Helper function to validate individual fields
+// function EoValidateField(field, isValid) {
+//   if (isValid) {
+//     field.classList.remove("is-invalid");
+//     field.classList.add("is-valid");
+//   } else {
+//     field.classList.remove("is-valid");
+//     field.classList.add("is-invalid");
+//   }
+// }
+
+// // Function to show success alert after form submission
+// function EoShowFormSuccessAlert() {
+//   // Create alert element
+//   const alertDiv = document.createElement("div");
+//   alertDiv.className =
+//     "alert alert-success alert-dismissible fade show EoFormSuccessAlert";
+//   alertDiv.setAttribute("role", "alert");
+//   alertDiv.innerHTML = `
+//           <i class="fas fa-check-circle me-2"></i>
+//           <strong>Success!</strong> Thank you for contacting us. We will get back to you soon!
+//           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+//       `;
+
+//   // Insert alert before the form
+//   const formSection = document.querySelector(".EoFormSection");
+//   if (formSection) {
+//     formSection.insertBefore(alertDiv, EoContactForm);
+
+//     // Auto-dismiss after 5 seconds
+//     setTimeout(function () {
+//       const bsAlert = new bootstrap.Alert(alertDiv);
+//       bsAlert.close();
+//     }, 5000);
+//   }
+// }
+
+// Console log for debugging
+console.log("Eo Fitness website loaded successfully!");
+console.log("All interactive features are active.");
