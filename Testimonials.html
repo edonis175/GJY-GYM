@@ -1,193 +1,447 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Testimonials - GJY-Gym Fitness</title>
 
-    <!-- Bootstrap 5 CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials - GJY-Gym Fitness</title>
 
-    <!-- Font Awesome for Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- External CSS -->
-    <link rel="stylesheet" href="./styles/main.css" />
-    <!-- External JavaScript -->
-    <script src="./scripts/main.js" defer></script>
-  </head>
-  <!-- Main body container with my Intials ID -->
-  <body id="EoBody">
-    <!-- HEADER: Responsive Bootstrap Navbar -->
-    <header>
-      <nav class="navbar navbar-expand-lg bg-dark EoNavbar">
-        <!-- Bootstrap container for fixed width -->
-        <div class="container">
-          <!-- Website Logo -->
-          <a href="index.html" class="Eo-Logo" alt="Website logo">
-            <img
-              src="./images/Logo.png"
-              alt="GJY-Gym Fitness Logo"
-              class="EoLogoImage"
-            />
-          </a>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-          <!-- Mobile Hamburger Menu Button - Bootstrap: navbar-toggler, navbar-light, bg-light, collapsed -->
-          <button
-            class="navbar-toggler bg-white collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#EoNavbarNav"
-            aria-controls="EoNavbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <!-- Custom classes: toggler-icon, hamburger-icon, close-icon (hamburger menu icons X and 3 lines) -->
-            <span class="toggler-icon hamburger-icon">&#9776;</span>
-            <span class="toggler-icon close-icon">&times;</span>
-          </button>
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="./styles/main.css" />
+  <!-- External JavaScript -->
+  <script src="./scripts/main.js" defer></script>
+</head>
+<!-- Main body container with my Intials ID -->
 
-          <!-- Navbar Links - Bootstrap: collapse, navbar-collapse -->
-          <div class="collapse navbar-collapse" id="EoNavbarNav">
-            <!-- Bootstrap: navbar-nav -->
-            <ul class="navbar-nav ms-auto EoNavLinks">
-              <!-- Each nav item has custom classes: Eo-nav-itemH, Eo-nav-itemAb, etc. -->
-              <!-- Bootstrap: nav-link, active -->
-              <li class="Eo-nav-itemH">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="Eo-nav-itemAb">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <li class="Eo-nav-itemS">
-                <a class="nav-link" href="services.html">Services</a>
-              </li>
-              <li class="Eo-nav-itemB">
-                <a class="nav-link" href="blog.html">Blog</a>
-              </li>
-              <li class="Eo-nav-itemG">
-                <a class="nav-link" href="gallery.html">Gallery</a>
-              </li>
-              <li class="Eo-nav-itemT">
-                <a class="nav-link" href="team.html">Team</a>
-              </li>
-              <li class="Eo-nav-itemP">
-                <a class="nav-link" href="programs.html">Programs</a>
-              </li>
-
-              <li class="Eo-nav-itemF">
-                <a class="nav-link" href="faq.html">FAQ</a>
-              </li>
-              <li class="Eo-nav-itemTes">
-                <a class="nav-link active" href="testimonials.html">Testimonials</a>
-              </li>
-              <li class="Eo-nav-itemC">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <!-- MAIN CONTENT -->
-    <main>
-      <!-- Add your testimonials page content here -->
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="EoFooter">
+<body id="EoBody">
+  <!-- HEADER: Responsive Bootstrap Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg bg-dark EoNavbar">
+      <!-- Bootstrap container for fixed width -->
       <div class="container">
-        <div class="row py-5">
-          <!-- Quick Navigation Links -->
-          <div class="col-md-4 mb-4 mb-md-0">
-            <h5 class="EoFooterHeading">Quick Links</h5>
-            <ul class="list-unstyled EoFooterLinks">
-              <li><a href="index.html" class="EoFooterLink">Home</a></li>
-              <li><a href="about.html" class="EoFooterLink">About Us</a></li>
-              <li><a href="services.html" class="EoFooterLink">Services</a></li>
-              <li><a href="programs.html" class="EoFooterLink">Programs</a></li>
-              <li><a href="gallery.html" class="EoFooterLink">Gallery</a></li>
-              <li><a href="blog.html" class="EoFooterLink">Blog</a></li>
-              <li><a href="team.html" class="EoFooterLink">Team</a></li>
-              <li>
-                <a href="testimonials.html" class="EoFooterLink"
-                  >Testiomonials</a
-                >
-              </li>
-              <li><a href="faq.html" class="EoFooterLink">FAQ</a></li>
-              <li><a href="contact.html" class="EoFooterLink">Contact</a></li>
-            </ul>
-          </div>
+        <!-- Website Logo -->
+        <a href="index.html" class="Eo-Logo" alt="Website logo">
+          <img src="./images/Logo.png" alt="GJY-Gym Fitness Logo" class="EoLogoImage" />
+        </a>
 
-          <!-- Contact Info -->
-          <div class="col-md-4 mb-4 mb-md-0">
-            <h5 class="EoFooterHeading">Contact Information</h5>
-            <ul class="list-unstyled EoFooterContact">
-              <li class="EoFooterContactItem">
-                <i class="fas fa-map-marker-alt me-2"></i>123 Fitness Street,
-                Health City
-              </li>
-              <li class="EoFooterContactItem">
-                <i class="fas fa-phone me-2"></i>(555) 123-4567
-              </li>
-              <li class="EoFooterContactItem">
-                <i class="fas fa-envelope me-2"></i>info@GJY-GYMFitness.com
-              </li>
-            </ul>
-          </div>
+        <!-- Mobile Hamburger Menu Button - Bootstrap: navbar-toggler, navbar-light, bg-light, collapsed -->
+        <button class="navbar-toggler bg-white collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#EoNavbarNav" aria-controls="EoNavbarNav" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <!-- Custom classes: toggler-icon, hamburger-icon, close-icon (hamburger menu icons X and 3 lines) -->
+          <span class="toggler-icon hamburger-icon">&#9776;</span>
+          <span class="toggler-icon close-icon">&times;</span>
+        </button>
 
-          <!-- Social Media Icons -->
-          <div class="col-md-4">
-            <h5 class="EoFooterHeading">Follow Us</h5>
-            <div class="EoSocialMedia">
-              <a href="#" class="EoSocialIcon" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="EoSocialIcon" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="#" class="EoSocialIcon" aria-label="Twitter">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="EoSocialIcon" aria-label="YouTube">
-                <i class="fab fa-youtube"></i>
-              </a>
-              <a href="#" class="EoSocialIcon" aria-label="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
-          </div>
+        <!-- Navbar Links - Bootstrap: collapse, navbar-collapse -->
+        <div class="collapse navbar-collapse" id="EoNavbarNav">
+          <!-- Bootstrap: navbar-nav -->
+          <ul class="navbar-nav ms-auto EoNavLinks">
+            <!-- Each nav item has custom classes: Eo-nav-itemH, Eo-nav-itemAb, etc. -->
+            <!-- Bootstrap: nav-link, active -->
+            <li class="Eo-nav-itemH">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="Eo-nav-itemAb">
+              <a class="nav-link" href="About.html">About</a>
+            </li>
+            <li class="Eo-nav-itemS">
+              <a class="nav-link" href="Services.html">Services</a>
+            </li>
+            <li class="Eo-nav-itemB">
+              <a class="nav-link" href="Blog.html">Blog</a>
+            </li>
+            <li class="Eo-nav-itemG">
+              <a class="nav-link" href="Gallery.html">Gallery</a>
+            </li>
+            <li class="Eo-nav-itemT">
+              <a class="nav-link" href="Team.html">Team</a>
+            </li>
+            <li class="Eo-nav-itemP">
+              <a class="nav-link" href="Programs.html">Programs</a>
+            </li>
+
+            <li class="Eo-nav-itemF">
+              <a class="nav-link" href="Faq.html">FAQ</a>
+            </li>
+            <li class="Eo-nav-itemTes">
+              <a class="nav-link active" href="Testimonials.html">Testimonials</a>
+            </li>
+            <li class="Eo-nav-itemC">
+              <a class="nav-link" href="Contact.html">Contact</a>
+            </li>
+          </ul>
         </div>
+      </div>
+    </nav>
+  </header>
 
-        <!-- Copyright -->
-        <div class="row">
-          <div class="col-12">
-            <div class="text-center py-3 EoCopyright">
-              <p class="mb-0 EoCopyrightText">
-                &copy; <span id="EoCopyrightYear"></span> GJY-GYM Fitness. All
-                rights reserved.
-              </p>
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="EoTestimonialsHero">
+      <div class="EoTestimonialsHeroBackground"></div>
+      <div class="container">
+        <div class="EoTestimonialsHeroContent">
+          <div class="EoTestimonialsBadge">Member Success</div>
+          <h1 class="EoTestimonialsMainTitle">What Our Members Say</h1>
+          <p class="EoTestimonialsSubtitle">
+            Real stories from people who transformed their lives with us
+          </p>
+          <div class="EoTestimonialsStats">
+            <div class="EoStatItem">
+              <div class="EoStatNumber">500+</div>
+              <div class="EoStatLabel">Success Stories</div>
+            </div>
+            <div class="EoStatItem">
+              <div class="EoStatNumber">98%</div>
+              <div class="EoStatLabel">Satisfaction Rate</div>
+            </div>
+            <div class="EoStatItem">
+              <div class="EoStatNumber">4.5★</div>
+              <div class="EoStatLabel">Average Rating</div>
             </div>
           </div>
         </div>
       </div>
-    </footer>
-  </body>
-</html>
+    </section>
 
+    <section class="EoTestimonialsShowcase">
+      <div class="container">
+        <div class="EoTestimonialsGrid">
+          <div class="EoTestimonialFeatured">
+            <div class="EoTestimonialCard EoFeaturedCard">
+              <div class="EoTestimonialQuote">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <div class="EoTestimonialContent">
+                <p class="EoTestimonialText">
+                  "The trainers helped me make measurable progress in just a few months. I've lost 30 pounds and gained
+                  confidence I never thought possible."
+                </p>
+                <div class="EoTestimonialAuthorInfo">
+                  <div class="EoTestimonialAvatar">
+                    <img src="./images/Alex-TestimonialCards.avif" alt="Alex P." />
+                  </div>
+                  <div class="EoTestimonialDetails">
+                    <p class="EoTestimonialAuthor">— Alex P.</p>
+                    <p class="EoTestimonialRole">Member since 2005</p>
+                    <div class="EoTestimonialRating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="EoTestimonialsRegular">
+            <div class="EoTestimonialCard">
+              <div class="EoTestimonialQuote">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <div class="EoTestimonialContent">
+                <p class="EoTestimonialText">
+                  "Friendly community and classes that actually get results. The personal training program exceeded all
+                  my expectations."
+                </p>
+                <div class="EoTestimonialAuthorInfo">
+                  <div class="EoTestimonialAvatar">
+                    <img src="./images/Maria-TestimonialCard.avif" alt="Maria L." />
+                  </div>
+                  <div class="EoTestimonialDetails">
+                    <p class="EoTestimonialAuthor">— Maria L.</p>
+                    <p class="EoTestimonialRole">Member since 2022</p>
+                    <div class="EoTestimonialRating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="EoTestimonialCard">
+              <div class="EoTestimonialQuote">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <div class="EoTestimonialContent">
+                <p class="EoTestimonialText">
+                  "Best investment in my health! The nutrition guidance and workout plans are personalized and
+                  effective."
+                </p>
+                <div class="EoTestimonialAuthorInfo">
+                  <div class="EoTestimonialAvatar">
+                    <img src="./images/James-TestimonialCard.avif" alt="James K." />
+                  </div>
+                  <div class="EoTestimonialDetails">
+                    <p class="EoTestimonialAuthor">— James K.</p>
+                    <p class="EoTestimonialRole">Member since 2021</p>
+                    <div class="EoTestimonialRating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="EoTestimonialCard">
+              <div class="EoTestimonialQuote">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <div class="EoTestimonialContent">
+                <p class="EoTestimonialText">
+                  "Best investment in my health! The nutrition guidance and workout plans are personalized and
+                  effective."
+                </p>
+                <div class="EoTestimonialAuthorInfo">
+                  <div class="EoTestimonialAvatar">
+                    <img src="./images/jake-TestimonialCard.avif" alt="Jake M." />
+                  </div>
+                  <div class="EoTestimonialDetails">
+                    <p class="EoTestimonialAuthor">— Jake M.</p>
+                    <p class="EoTestimonialRole">Member since 2021</p>
+                    <div class="EoTestimonialRating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="EoTestimonialCard">
+              <div class="EoTestimonialQuote">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <div class="EoTestimonialContent">
+                <p class="EoTestimonialText">
+                  "Best investment in my health! The nutrition guidance and workout plans are personalized and
+                  effective."
+                </p>
+                <div class="EoTestimonialAuthorInfo">
+                  <div class="EoTestimonialAvatar">
+                    <img src="./images/Fellipe-TestiomonialCard.avif" alt="Fellipe J." />
+                  </div>
+                  <div class="EoTestimonialDetails">
+                    <p class="EoTestimonialAuthor">— Fellipe J.</p>
+                    <p class="EoTestimonialRole">Member since 2021</p>
+                    <div class="EoTestimonialRating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="EoTestimonialCard">
+              <div class="EoTestimonialQuote">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <div class="EoTestimonialContent">
+                <p class="EoTestimonialText">
+                  "Best investment in my health! The nutrition guidance and workout plans are personalized and
+                  effective."
+                </p>
+                <div class="EoTestimonialAuthorInfo">
+                  <div class="EoTestimonialAvatar">
+                    <img src="./images/Mustafa-TestimonialCard.avif" alt="Mustafa K." />
+                  </div>
+                  <div class="EoTestimonialDetails">
+                    <p class="EoTestimonialAuthor">— Mustafa K.</p>
+                    <p class="EoTestimonialRole">Member since 2021</p>
+                    <div class="EoTestimonialRating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="EoTestimonialCard">
+              <div class="EoTestimonialQuote">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <div class="EoTestimonialContent">
+                <p class="EoTestimonialText">
+                  "The group fitness classes are amazing! Great energy, supportive instructors, and I've made lifelong
+                  friends."
+                </p>
+                <div class="EoTestimonialAuthorInfo">
+                  <div class="EoTestimonialAvatar">
+                    <img src="./images/Sarah-TestimonialCard.avif" alt="Sarah M." />
+                  </div>
+                  <div class="EoTestimonialDetails">
+                    <p class="EoTestimonialAuthor">— Sarah M.</p>
+                    <p class="EoTestimonialRole">Member since 2023</p>
+                    <div class="EoTestimonialRating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="EoTestimonialsSuccess">
+      <div class="EoSuccessBackground"></div>
+      <div class="container">
+        <div class="EoSuccessContent">
+          <div class="EoSuccessBadge">Transformations</div>
+          <h2 class="EoTestimonialsSuccessTitle">Success Stories</h2>
+          <p class="EoTestimonialsSuccessText">
+            Join members who have transformed their lives with consistent coaching, training, and community support.
+          </p>
+          <div class="EoSuccessMetrics">
+            <div class="EoMetricItem">
+              <div class="EoMetricIcon">
+                <i class="fas fa-weight"></i>
+              </div>
+              <div class="EoMetricText">
+                <div class="EoMetricNumber">1,500+ lbs</div>
+                <div class="EoMetricLabel">Weight Lost</div>
+              </div>
+            </div>
+            <div class="EoMetricItem">
+              <div class="EoMetricIcon">
+                <i class="fas fa-dumbbell"></i>
+              </div>
+              <div class="EoMetricText">
+                <div class="EoMetricNumber">10,000+</div>
+                <div class="EoMetricLabel">Sessions Completed</div>
+              </div>
+            </div>
+            <div class="EoMetricItem">
+              <div class="EoMetricIcon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <div class="EoMetricText">
+                <div class="EoMetricNumber">100%</div>
+                <div class="EoMetricLabel">Health Improvement</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="EoFooter">
+    <div class="container">
+      <div class="row py-5">
+        <!-- Quick Navigation Links -->
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5 class="EoFooterHeading">Quick Links</h5>
+          <ul class="list-unstyled EoFooterLinks">
+            <li><a href="index.html" class="EoFooterLink">Home</a></li>
+            <li><a href="About.html" class="EoFooterLink">About Us</a></li>
+            <li><a href="Services.html" class="EoFooterLink">Services</a></li>
+            <li><a href="Programs.html" class="EoFooterLink">Programs</a></li>
+            <li><a href="Gallery.html" class="EoFooterLink">Gallery</a></li>
+            <li><a href="Blog.html" class="EoFooterLink">Blog</a></li>
+            <li><a href="Team.html" class="EoFooterLink">Team</a></li>
+            <li>
+              <a href="Testimonials.html" class="EoFooterLink">Testiomonials</a>
+            </li>
+            <li><a href="Faq.html" class="EoFooterLink">FAQ</a></li>
+            <li><a href="Contact.html" class="EoFooterLink">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5 class="EoFooterHeading">Contact Information</h5>
+          <ul class="list-unstyled EoFooterContact">
+            <li class="EoFooterContactItem">
+              <i class="fas fa-map-marker-alt me-2"></i>123 Fitness Street,
+              Health City
+            </li>
+            <li class="EoFooterContactItem">
+              <i class="fas fa-phone me-2"></i>(555) 123-4567
+            </li>
+            <li class="EoFooterContactItem">
+              <i class="fas fa-envelope me-2"></i>info@GJY-GYMFitness.com
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="col-md-4">
+          <h5 class="EoFooterHeading">Follow Us</h5>
+          <div class="EoSocialMedia">
+            <a href="#" class="EoSocialIcon" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="EoSocialIcon" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="EoSocialIcon" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="EoSocialIcon" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" class="EoSocialIcon" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center py-3 EoCopyright">
+            <p class="mb-0 EoCopyrightText">
+              &copy; <span id="EoCopyrightYear"></span> GJY-GYM Fitness. All
+              rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

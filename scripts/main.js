@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
   EoAnimateOnScroll("#EoServicesSection2");
   EoAnimateOnScroll("#EoBlogPanel1");
   EoAnimateOnScroll("#EoBlogArticles");
+  EoAnimateOnScroll("#EoTestimonialsHeroContent");
   // Class elements
   EoAnimateOnScroll(".EoServiceCard", { useInlineStyles: true });
   EoAnimateOnScroll(".EoProgramCard", { useInlineStyles: true });
@@ -84,6 +85,10 @@ document.addEventListener("DOMContentLoaded", () => {
   EoAnimateOnScroll(".EoGalleryImage", { useInlineStyles: true });
   EoAnimateOnScroll(".EoGalleryHighlightCard", { useInlineStyles: true });
   EoAnimateOnScroll(".EoTeamMemberImage", { useInlineStyles: true });
+  EoAnimateOnScroll(".EoTestimonialFeatured", { useInlineStyles: true });
+  EoAnimateOnScroll(".EoTestimonialCard", { useInlineStyles: true });
+  EoAnimateOnScroll(".EoTestimonialsHeroContent", { useInlineStyles: true });
+  EoAnimateOnScroll(".EoSuccessMetrics", { useInlineStyles: true });
 });
 
 /* ============================================
