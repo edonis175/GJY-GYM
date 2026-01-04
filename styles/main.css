@@ -622,49 +622,8 @@ body {
 }
 
 /* ============================================
-<<<<<<< HEAD
    MEMBERSHIP PLANS
    ============================================ */
-
-.EoTableSection {
-  padding: 2rem 0; /* Add space above and below */
-}
-
-/* The main heading above the table */
-.EoTableHeading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #667eea;
-  text-transform: uppercase;
-}
-
-.EoMembershipTable {
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.EoTableHeader {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #fff;
-}
-
-.EoTableHeader th {
-  font-weight: 600;
-  text-transform: uppercase;
-  padding: 1rem;
-  border: none;
-}
-
-.EoTableBody td {
-  padding: 1rem;
-  vertical-align: middle;
-}
-
-.EoTableBody tr:hover {
-  background-color: #f0f0f0;
-  transition: background-color 0.3s ease;
-}
 
 /* ============================================
  CARDS SECTION STYLES
@@ -987,90 +946,6 @@ body {
 /* ============================================
  RESPONSIVE STYLES
  ============================================ */
-
-/* Tablet Styles */
-@media (max-width: 992px) {
-  .EoCarouselHeading {
-    font-size: 2.5rem;
-  }
-
-  .EoCarouselText {
-    font-size: 1rem;
-  }
-
-  .EoMainHeading {
-    font-size: 2.5rem;
-  }
-
-  .EoSubHeading {
-    font-size: 2rem;
-  }
-}
-
-/* Mobile Styles */
-@media (max-width: 768px) {
-  .EoCarouselImage {
-    height: 400px;
-  }
-
-  .EoCarouselHeading {
-    font-size: 2rem;
-  }
-
-  .EoCarouselText {
-    font-size: 0.9rem;
-  }
-
-  .EoMainHeading {
-    font-size: 2rem;
-  }
-
-  .EoSubHeading {
-    font-size: 1.75rem;
-  }
-
-  .EoSectionHeading {
-    font-size: 1.5rem;
-  }
-
-  .EoContactForm {
-    padding: 1.5rem;
-  }
-
-  .EoSocialMedia {
-    justify-content: center;
-  }
-
-  .EoFooter {
-    text-align: center;
-  }
-
-  /* Ensure containers don't cause horizontal overflow */
-  .container {
-    max-width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-
-/* Small Mobile Styles */
-@media (max-width: 576px) {
-  .EoCarouselImage {
-    height: 300px;
-  }
-
-  .EoCarouselHeading {
-    font-size: 1.5rem;
-  }
-
-  .EoMainHeading {
-    font-size: 1.75rem;
-  }
-
-  .EoTableSection {
-    overflow-x: auto;
-  }
-}
 
 /* ============================================
    ABOUT PAGE 
@@ -2191,32 +2066,42 @@ body {
   color: rgba(255, 255, 255, 0.95);
   font-weight: 500;
 }
-
-@media (max-width: 768px) {
+@media (min-width: 320px) and (max-width: 767px) {
   .EoBlogIntroPanel {
-    width: fit-content;
-    max-width: 600px;
-    height: fit-content;
-    margin: 0 auto;
+    width: 350px;
+    height: 300px;
+    margin-left: 5px;
+    margin-right: 10px;
+  }
+  .EoBlogMainTitle {
+    font-size: 2.5rem;
+  }
+  .EoBlogIntroText {
+    font-size: 0.93rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 912px) {
+  .EoBlogIntroPanel {
+    width: 600px;
+    height: 320px;
+    margin-left: 50px;
     display: block;
   }
   .EoBlogMainTitle {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
   .EoBlogIntroText {
-    font-size: 1.01rem;
-    max-width: 100%;
+    font-size: 1.2rem;
     padding-top: 0.5rem;
     font-weight: 400;
   }
 }
-@media (max-width: 1024px) {
+
+@media (min-width: 913px) and (max-width: 1024px) {
   .EoBlogIntroPanel {
-    margin: 0 20px 0 0;
-    width: fit-content;
-    height: fit-content;
-    max-width: 100%;
+    width: 720px;
+    margin-left: 100px;
   }
 }
 
@@ -2227,8 +2112,7 @@ body {
   transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.EoBlogIntroPanel.is-visible,
-.EoBlogIntroPanel.isvisible {
+.EoBlogIntroPanel.is-visible {
   opacity: 1;
   transform: none;
 }
@@ -2312,10 +2196,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .EoBlogMainTitle {
-    font-size: 2.5rem;
-  }
-
   .EoBlogCategoriesTitle {
     font-size: 2rem;
   }
@@ -3841,19 +3721,10 @@ FAQ: Searchable accordion styles
 
 .EoContactFormInput,
 .EoContactFormTextarea {
-  /* border: 1px solid var(--border); */
-  /* border-radius: 5px; */
   outline: none;
   padding: 0.75rem;
   font-size: 1rem;
 }
-
-/* .EoContactFormInput:focus,
-.EoContactFormTextarea:focus {
-  border-color: var(--primary);
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-  } */
 
 .EoContactFormButton {
   background: var(--primary);
