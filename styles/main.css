@@ -927,11 +927,6 @@ body {
   font-size: 1rem;
 }
 
-.EoFooterContactItem i {
-  color: var(--primary);
-  width: 20px;
-}
-
 /* Social Media Icons */
 .EoSocialMedia {
   display: flex;
@@ -3782,14 +3777,14 @@ FAQ: Searchable accordion styles
 .EoContactMainTitle {
   font-family: "Bebas Neue", sans-serif;
   font-size: 4rem;
-  color: var(--gray-900);
+  color: var(--gray-0);
   font-weight: 600;
 }
 
 .EoContactSubtitle {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: var(--text-muted);
+  color: var(--gray-50);
 }
 
 /* Contact Page - Section 2: Contact Information */
@@ -3806,7 +3801,7 @@ FAQ: Searchable accordion styles
 
 .EoContactInfoTitle {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--gray-900);
 }
 
@@ -3816,10 +3811,17 @@ FAQ: Searchable accordion styles
   color: var(--text-muted);
   margin: 0;
 }
+.EoContactInfoText {
+  font-size: 1rem;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+  margin-top: -30px;
+
+  font-weight: 600;
+}
 
 /* Contact Page - Section 3: Contact Form */
 .EoContactFormSection {
-  background: var(--bg-secondary);
   padding: 4rem 0;
 }
 
@@ -3839,18 +3841,19 @@ FAQ: Searchable accordion styles
 
 .EoContactFormInput,
 .EoContactFormTextarea {
-  border: 1px solid var(--border);
-  border-radius: 5px;
+  /* border: 1px solid var(--border); */
+  /* border-radius: 5px; */
+  outline: none;
   padding: 0.75rem;
   font-size: 1rem;
 }
 
-.EoContactFormInput:focus,
+/* .EoContactFormInput:focus,
 .EoContactFormTextarea:focus {
   border-color: var(--primary);
   outline: none;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-}
+  } */
 
 .EoContactFormButton {
   background: var(--primary);
@@ -3896,5 +3899,1061 @@ FAQ: Searchable accordion styles
 
   .EoContactVisitTitle {
     font-size: 2rem;
+  }
+}
+
+/* ============================================
+   MODERN CONTACT PAGE STYLES
+   ============================================ */
+
+/* Hero Section with Animated Background */
+.EoContactHero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.EoHeroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 20% 80%,
+      rgba(243, 156, 18, 0.3) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(102, 126, 234, 0.3) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 40%,
+      rgba(118, 75, 162, 0.2) 0%,
+      transparent 50%
+    );
+  animation: heroGradient 15s ease infinite;
+}
+
+@keyframes heroGradient {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg);
+  }
+}
+
+.EoHeroParticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(2px 2px at 20px 30px, white, transparent),
+    radial-gradient(2px 2px at 40px 70px, white, transparent),
+    radial-gradient(1px 1px at 50px 50px, white, transparent),
+    radial-gradient(1px 1px at 80px 10px, white, transparent),
+    radial-gradient(2px 2px at 130px 80px, white, transparent);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: particles 60s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes particles {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-200px);
+  }
+}
+
+.EoContactHeroContent {
+  color: white;
+  z-index: 2;
+  position: relative;
+}
+
+.EoContactHero .EoContactMainTitle {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out;
+}
+
+.EoContactHero .EoContactSubtitle {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.EoContactHeroStats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.EoStatItem {
+  text-align: center;
+}
+
+.EoStatNumbers {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f39c12;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.EoStatLabel {
+  display: block;
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modern Contact Cards */
+.EoContactInfoSection {
+  background: var(--bg-secondary);
+  padding: 5rem 0;
+}
+
+.EoContactInfoCardModern {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.EoContactInfoCardModern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #f39c12, #764ba2);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.EoContactIconWrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 2rem;
+}
+
+.EoContactIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #667eea;
+  z-index: 2;
+}
+
+.EoIconGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(102, 126, 234, 0.2) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: iconGlow 3s ease-in-out infinite;
+}
+
+@keyframes iconGlow {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.EoContactCardContent {
+  text-align: center;
+}
+
+.EoContactInfoCardModern .EoContactInfoTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 1rem;
+}
+
+.EoContactInfoCardModern .EoContactInfoText {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.EoContactAction {
+  margin-top: 1.5rem;
+}
+
+.EoContactLink {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Enhanced Form Section */
+.EoContactFormSection {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 5rem 0;
+  position: relative;
+}
+
+.EoContactFormSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 20% 80%,
+      rgba(102, 126, 234, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(118, 75, 162, 0.1) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+.EoFormWrapper {
+  background: var(--card-bg);
+  border-radius: 24px;
+  margin-top: -20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  position: relative;
+  overflow: hidden;
+}
+
+.EoFormHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.EoFormHeader .EoContactFormTitle {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.5rem;
+  color: var(--gray-900);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.EoFormHeader .EoContactFormTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.EoFormSubtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 1.5rem;
+  font-weight: 400;
+}
+
+.EoContactFormModern {
+  max-width: 100%;
+  position: relative;
+}
+
+.EoFormGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.EoFormGroup {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.EoFormLabel {
+  display: block;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  margin-left: 5px;
+}
+
+.EoFormLabel::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.EoFormField {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--gray-0);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: transparent;
+  position: relative;
+}
+
+.EoFormField:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+.EoFormField::placeholder {
+  color: #a0a0a0;
+  font-style: italic;
+}
+
+.EoTextarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.EoFormActions {
+  text-align: center;
+  margin-top: 2.5rem;
+  position: relative;
+}
+
+.EoSubmitBtn {
+  background: linear-gradient(135deg, #2c3e50 0%, #7f8c8d 50%, #2c3e50 100%);
+
+  color: white;
+  border: none;
+  padding: 1.25rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 85, 255, 0.4);
+}
+
+.EoSubmitBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.EoSubmitBtn:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.EoSubmitBtn:focus::before {
+  left: 100%;
+}
+
+.EoSubmitBtn i {
+  transition: transform 0.3s ease;
+}
+
+.EoSubmitBtn:focus i {
+  transform: translateX(3px);
+}
+
+.EoPrivacyNote {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 1rem 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  opacity: 0.8;
+}
+
+.EoPrivacyNote i {
+  color: red;
+  font-size: 0.85rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .EoFormGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .EoFormTitle {
+    font-size: 2rem;
+  }
+
+  .EoFormField {
+    padding: 0.875rem 1rem;
+  }
+
+  .EoSubmitBtn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .EoFormWrapper {
+    padding: 2rem;
+    margin-top: 0;
+  }
+
+  .EoFormHeader .EoContactFormTitle::after {
+    width: 40px;
+  }
+
+  .EoFormLabel {
+    font-size: 0.9rem;
+  }
+
+  .EoFormLabel::before {
+    left: -6px;
+  }
+}
+
+@media (max-width: 576px) {
+  .EoContactFormSection {
+    padding: 3rem 0;
+  }
+
+  .EoFormWrapper {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .EoFormHeader {
+    margin-bottom: 2rem;
+  }
+
+  .EoFormHeader .EoContactFormTitle {
+    font-size: 1.75rem;
+  }
+
+  .EoFormSubtitle {
+    font-size: 1rem;
+  }
+
+  .EoSubmitBtn {
+    width: 100%;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .EoContactHero .EoContactMainTitle {
+    font-size: 3.5rem;
+  }
+
+  .EoContactHeroStats {
+    gap: 2rem;
+    border: 2px solid red;
+  }
+
+  .EoStatNumber {
+    font-size: 2rem;
+  }
+
+  .EoFormRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .EoCTAButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .EoCTAButton {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .EoContactHero {
+    min-height: 80vh;
+    padding: 2rem 0;
+  }
+
+  .EoContactHero .EoContactMainTitle {
+    font-size: 2.5rem;
+  }
+
+  .EoContactHero .EoContactSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .EoContactHeroStats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .EoContactInfoCardModern {
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .EoFormWrapper {
+    padding: 2rem;
+  }
+
+  .EoFormHeader .EoContactFormTitle {
+    font-size: 2rem;
+  }
+
+  .EoMapWrapper {
+    padding: 1.5rem;
+  }
+
+  .EoGymMap iframe {
+    height: 300px;
+  }
+
+  .EoContactVisitSection .EoContactVisitTitle {
+    font-size: 2.5rem;
+  }
+
+  .EoCTACard {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .EoContactHero .EoContactMainTitle {
+    font-size: 2rem;
+  }
+
+  .EoContactHeroStats {
+    gap: 1rem;
+  }
+
+  .EoStatNumber {
+    font-size: 1.8rem;
+  }
+
+  .EoContactInfoCardModern {
+    padding: 1.5rem;
+  }
+
+  .EoFormWrapper {
+    padding: 1.5rem;
+  }
+
+  .EoContactFormButton {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+
+  .EoMapWrapper {
+    padding: 1rem;
+  }
+
+  .EoGymMap iframe {
+    height: 250px;
+  }
+
+  .EoContactVisitSection .EoContactVisitTitle {
+    font-size: 2rem;
+  }
+
+  .EoCTACard {
+    padding: 1.5rem;
+  }
+
+  .EoCTAButton {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* ============================================
+   CONTACT PAGE 
+   ============================================ */
+
+/* Hero Section - Location and Map */
+.EoContactHero {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  min-height: auto;
+  padding: 6rem 0;
+  color: white;
+}
+
+.EoLocationMapSection {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.EoLocationTitle {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.EoLocationSubtitle {
+  font-size: 1.2rem;
+  color: #b0b0b0;
+  margin-bottom: 2rem;
+}
+
+.EoGymMap {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background: white;
+}
+
+.EoGymMap iframe {
+  width: 100%;
+  border: none;
+}
+
+/* Contact Form Section with Contact Info */
+.EoContactFormSection {
+  background: var(--bg-secondary);
+  padding: 6rem 0;
+}
+
+.EoContactInfoLeft {
+  margin-top: 90px;
+  padding: 2rem;
+}
+
+.EoContactInfoTitle {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.5rem;
+  color: var(--gray-900);
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+/* Social Links */
+.EoSocialLinks {
+  margin-bottom: 3rem;
+}
+
+.EoSocialTitle {
+  font-size: 1.5rem;
+  color: var(--gray-900);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.EoSocialIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.EoSocialLink {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(to bottom right, #000000, #667eea);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* Contact Details */
+.EoContactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.EoContactDetailItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.EoContactDetailIcon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(to bottom right, #000000, #667eea);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.EoContactDetailInfo h4 {
+  font-size: 1.2rem;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.EoContactDetailInfo p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* We're Here to Assist You Section */
+.EoContactVisitSection {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 6rem 0;
+  color: white;
+}
+
+.EoAssistContent {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.EoAssistTitle {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.EoAssistText {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.EoAssistButton {
+  display: flex;
+  justify-content: center;
+}
+
+.EoAskQuestionBtn {
+  background: white;
+  color: #667eea;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.EoAskQuestionBtn:focus {
+  transform: translateY(-3px);
+}
+
+/* Contact Footer */
+.EoContactFooter {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.EoFooterContactItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.EoFooterContactItem i {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.EoFooterContactInfo h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.EoFooterContactInfo p {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.EoFooterSocial {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.EoFooterSocial h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.EoFooterSocialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.EoFooterSocialLink {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (min-width: 820px) and (max-width: 912px) {
+  .EoFooterContactItem i.fa-map-marker-alt,
+  .EoFooterContactItem i.fa-envelope {
+    width: 70px;
+    height: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .EoLocationTitle {
+    font-size: 2rem;
+  }
+
+  .EoContactInfoTitle {
+    font-size: 2rem;
+  }
+
+  .EoAssistTitle {
+    font-size: 2.5rem;
+  }
+
+  .EoAssistText {
+    font-size: 1.1rem;
+  }
+
+  .EoContactFooter {
+    padding: 2rem;
+  }
+
+  .EoFooterContactItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  .EoFooterContactItem i.fa-phone,
+  .EoFooterContactItem i.fa-map-marker-alt,
+  .EoFooterContactItem i.fa-envelope {
+    width: 50px;
+    height: 50px;
+  }
+
+  .EoSocialIcons {
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   CUSTOM ALERT STYLES
+   ============================================ */
+.EoCustomAlert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  max-width: 400px;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.EoCustomAlert--show {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.EoCustomAlert-content {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.EoCustomAlert--success .EoCustomAlert-content {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+}
+
+.EoCustomAlert--error .EoCustomAlert-content {
+  background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%);
+  color: white;
+}
+
+.EoCustomAlert-icon {
+  font-size: 24px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.EoCustomAlert-message {
+  flex: 1;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.EoCustomAlert-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: 12px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  border-radius: 4px;
+}
+
+.EoCustomAlert-close:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile responsive for custom alerts */
+@media (max-width: 768px) {
+  .EoCustomAlert {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+
+  .EoCustomAlert-content {
+    padding: 14px 16px;
+  }
+
+  .EoCustomAlert-icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .EoCustomAlert-message {
+    font-size: 13px;
   }
 }

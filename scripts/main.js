@@ -344,6 +344,107 @@ function EoInitFaq() {
 // Initialize FAQ search & accordion UX when DOM is ready
 EoInitFaq();
 
+/* ============================================
+   CONTACT FORM CUSTOM ALERT
+   Custom alert for contact form submission
+   ============================================ */
+function EoInitContactForm() {
+  const contactForm = document.getElementById("contactForm");
+  const submitBtn = document.querySelector(".EoSubmitBtn");
+
+  if (!contactForm || !submitBtn) return; // Exit if elements don't exist
+
+  // Add click event listener to submit button
+  submitBtn.addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    // Get form values
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Basic validation
+    if (!name || !email || !phone || !message) {
+      EoShowCustomAlert("error", "Please fill in all required fields!");
+      return;
+    }
+
+    // Email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      EoShowCustomAlert("error", "Please enter a valid email address!");
+      return;
+    }
+
+    // Show success message
+    EoShowCustomAlert(
+      "success",
+      `Thank you ${name}! Your message has been sent successfully. We'll get back to you soon!`
+    );
+
+    // Reset form after 2 seconds
+    setTimeout(() => {
+      contactForm.reset();
+    }, 2000);
+  });
+}
+
+// Custom alert function
+function EoShowCustomAlert(type, message) {
+  // Remove any existing custom alerts
+  const existingAlert = document.querySelector(".EoCustomAlert");
+  if (existingAlert) {
+    existingAlert.remove();
+  }
+
+  // Create alert element
+  const alertDiv = document.createElement("div");
+  alertDiv.className = `EoCustomAlert EoCustomAlert--${type}`;
+
+  // Set icon based on type
+  const icon =
+    type === "success" ? "fa-check-circle" : "fa-exclamation-triangle";
+
+  alertDiv.innerHTML = `
+    <div class="EoCustomAlert-content">
+      <i class="fas ${icon} EoCustomAlert-icon"></i>
+      <div class="EoCustomAlert-message">${message}</div>
+      <button class="EoCustomAlert-close" onclick="this.parentElement.parentElement.remove()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  `;
+
+  // Add to page (after the form wrapper)
+  const formWrapper = document.querySelector(".EoFormWrapper");
+  if (formWrapper) {
+    formWrapper.appendChild(alertDiv);
+
+    // Add animation class
+    setTimeout(() => {
+      alertDiv.classList.add("EoCustomAlert--show");
+    }, 10);
+
+    // Auto-remove after 7 seconds
+    setTimeout(() => {
+      if (alertDiv.parentElement) {
+        alertDiv.classList.remove("EoCustomAlert--show");
+        setTimeout(() => {
+          if (alertDiv.parentElement) {
+            alertDiv.remove();
+          }
+        }, 300);
+      }
+    }, 7000);
+  }
+}
+
+// Initialize contact form when DOM is ready
+document.addEventListener("DOMContentLoaded", function () {
+  EoInitContactForm();
+});
+
 // Console log for debugging
 console.log("Eo Fitness website loaded successfully!");
 console.log("All interactive features are active.");
