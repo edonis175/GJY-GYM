@@ -943,6 +943,26 @@ body {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.9rem;
 }
+
+/* Footer Mobile Responsive Styles */
+@media (max-width: 767px) {
+  .EoFooterHeading {
+    text-align: center;
+  }
+
+  .EoFooterLinks {
+    text-align: center;
+  }
+
+  .EoFooterContact {
+    text-align: center;
+  }
+
+  .EoSocialMedia {
+    justify-content: center;
+  }
+}
+
 /* ============================================
  RESPONSIVE STYLES
  ============================================ */
